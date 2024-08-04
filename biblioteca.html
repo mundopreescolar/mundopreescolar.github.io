@@ -353,19 +353,15 @@
     </div>
 
     <script>
-        let audioElement = document.getElementById('popup-audio');
-
         function showPopup(audioFile, imageFile) {
             document.getElementById('popup-img').src = imageFile;
             document.getElementById('popup-audio-source').src = audioFile;
-            audioElement.load();
+            document.getElementById('popup-audio').load();
             document.getElementById('popup').style.display = 'flex';
         }
 
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
-            audioElement.pause();
-            audioElement.currentTime = 0;
         }
     </script>
 </body>
