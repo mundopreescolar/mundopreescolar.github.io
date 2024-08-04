@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Preescolar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="imagenes/dado.ico" type="image/x-icon">
     <style>
         /* General Styles */
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('background.jpg') no-repeat center center fixed;
+            background: url('imagenes/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
             line-height: 1.6;
@@ -246,20 +247,21 @@
         footer {
             background-color: #ffeb3b;
             color: #00796b;
-            padding: 10px;
             text-align: center;
+            padding: 10px 20px;
             border-top: 5px solid #00796b;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 1em;
-            transition: transform 1s ease; /* Transición para el desorden */
+            transition: transform 1s ease;
         }
 
-        footer p {
-            margin: 0;
+        footer a {
+            color: #00796b;
+            margin: 0 10px;
+            text-decoration: none;
         }
 
-        footer .social-icons {
-            margin: 10px 0;
+        footer a:hover {
+            text-decoration: underline;
         }
 
         footer .social-icons a {
@@ -292,6 +294,39 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
         }
+        /* New Styles for Column Background with Diagonal Pastel Rainbow Gradient */
+.two-column .column {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.8); /* Fondo blanco con 80% de opacidad */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #333;
+}
+
+/* Pastel rainbow gradient background for each column */
+.two-column .column:nth-child(1) {
+    background: linear-gradient(135deg, #ffb3b3, #ffcc99, #ffff99, #c2f0c2, #b3b3ff); /* Pastel rainbow gradient */
+}
+
+.two-column .column:nth-child(2) {
+    background: linear-gradient(135deg, #ffcc99, #ffff99, #c2f0c2, #b3b3ff, #e6b3e6); /* Pastel rainbow gradient */
+}
+
+.two-column .column:nth-child(3) {
+    background: linear-gradient(135deg, #ffff99, #c2f0c2, #b3b3ff, #e6b3e6, #ffb3b3); /* Pastel rainbow gradient */
+}
+
+.two-column .column:nth-child(4) {
+    background: linear-gradient(135deg, #c2f0c2, #b3b3ff, #e6b3e6, #ffb3b3, #ffcc99); /* Pastel rainbow gradient */
+}
+
+.two-column .column:nth-child(5) {
+    background: linear-gradient(135deg, #b3b3ff, #e6b3e6, #ffb3b3, #ffcc99, #ffff99); /* Pastel rainbow gradient */
+}
+
 
         .two-column .column:hover {
             transform: translateY(-10px);
@@ -310,66 +345,140 @@
                 margin: 20px auto;
             }
         }
+.carousel-container {
+    position: relative;
+    width: 80%; /* Ajusta el ancho del contenedor según tu diseño */
+    max-width: 600px; /* Puedes ajustar este valor según tus necesidades */
+    margin: auto; /* Centra el contenedor */
+    overflow: hidden;
+}
 
-        /* Animation for Disordered State */
-        .disordered {
-            transform: rotate(180deg); /* Gira toda la página 180 grados */
-            transform-origin: center; /* Asegura que el giro sea alrededor del centro */
-            filter: blur(2px); /* Opcional: Agrega un desenfoque para acentuar el desorden */
-        }
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ancho del contenedor */
+}
+
+.carousel-slide img {
+    width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    font-size: 24px;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
     </style>
 </head>
 <body>
     <header>
-        <i class="fas fa-child"></i> Página de Preescolar
+        <i id="headerIcon" class="fas fa-child"></i> Página de Preescolar
     </header>
     <nav>
-        <a href="#home"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#library"><i class="fas fa-book"></i> Biblioteca</a>
-        <a href="#ludoteca"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="#materials"><i class="fas fa-cogs"></i> Materiales</a>
-        <a href="#gallery"><i class="fas fa-images"></i> Galería</a>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
+        <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
+        <a href="materiales.html"><i class="fas fa-cogs"></i> Materiales</a>
+        <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
     </nav>
     <main id="mainContent">
         <section id="home" class="section">
-            <h2>Bienvenidos a la Página de Preescolar</h2>
-            <p>¡Hola! En nuestra página encontrarás una variedad de recursos y actividades diseñadas para niños en edad preescolar. Desde libros y juegos hasta materiales educativos y una galería llena de diversión, estamos aquí para apoyar el aprendizaje y la diversión de los más pequeños.</p>
+            <h2>Prevención de Riesgos para Infantes</h2>
+            <p>La seguridad de los niños es una prioridad esencial en cualquier entorno. Aquí te ofrecemos algunas recomendaciones clave para garantizar un entorno seguro para los más pequeños:.</p>
             <div class="image-container">
-                <img src="imagen3.jpg" alt="Imagen 3">
-                <img src="imagen4.jpg" alt="Imagen 4">
-                <img src="imagen5.jpg" alt="Imagen 5">
+                <img src="imagenes/img1.jpg" alt="Imagen 3">
+                <img src="imagenes/img2.jpg" alt="Imagen 4">
+                <img src="imagenes/img3.jpg" alt="Imagen 5">
             </div>
             <div class="card-body">
                 <h3>Información Adicional</h3>
-                <p>Explora más sobre nuestras actividades y recursos en la sección de Biblioteca y Ludoteca. Cada sección está diseñada para proporcionar una experiencia educativa y divertida para los niños.</p>
+                <p>En esta pagina web, exploraremos las mejores prácticas y recomendaciones para minimizar los riesgos y asegurar un ambiente seguro para los infantes. Cubriremos aspectos esenciales como la seguridad en el hogar, el transporte, la seguridad en el agua, la educación sobre riesgos y mucho más. A través de una combinación de prevención activa y educación, podemos crear un entorno donde los niños puedan explorar, aprender y crecer con confianza y seguridad.</p>
             </div>
         </section>
 
         <section id="gallery" class="section two-column">
             <div class="column">
-                <h2>Galería</h2>
-                <p>Explora nuestra galería de imágenes y videos para ver a los niños disfrutando de nuestras actividades y eventos.</p>
+                <h2>Entorno seguro en el hogar</h2>
+                <p>Mobiliario: Asegúrate de que los muebles estén seguros y utiliza protectores de esquina en mesas y estanterías.
+Cables y Enchufes: Mantén los cables eléctricos fuera del alcance de los niños y usa protectores de enchufes.
+Productos Químicos: Guarda productos tóxicos en lugares seguros, fuera del alcance de los niños.
+Escaleras y Ventanas: Instala rejas en las ventanas y puertas que den a las escaleras.</p>
                 <!-- Más contenido de la galería -->
             </div>
             <div class="column">
-                <h2>Biblioteca</h2>
-                <p>Encuentra una colección de libros y recursos educativos adaptados a la edad preescolar. Ideal para apoyar el aprendizaje en casa.</p>
+                <h2>Seguridad en el área de juegos</h2>
+                <p>Supervisión Activa:
+
+Vigilancia Constante: Supervisa a los niños durante el juego para prevenir accidentes y asegurar que estén usando el equipo de manera segura.
+Equipamiento de Juego:
+
+Revisión Regular: Inspecciona el equipo de juego regularmente para detectar posibles daños o desgaste.
+Mantenimiento Adecuado: Reemplaza o repara el equipo dañado de inmediato.
+Superficies de Juego:
+
+Suelo Acolchado: Asegúrate de que el área de juego tenga una superficie blanda, como caucho o arena, para amortiguar las caídas.</p>
                 <!-- Más contenido de la biblioteca -->
             </div>
         </section>
 
         <section id="ludoteca" class="section two-column">
             <div class="column">
-                <h2>Ludoteca</h2>
-                <p>Descubre los juegos y actividades recreativas diseñadas para estimular el desarrollo y la creatividad de los niños.</p>
+                <h2>Prevencion de accidentes en agua</h2>
+                <p>Supervisión Ininterrumpida:
+
+Presencia Constante: Nunca dejes a un niño solo en el agua, incluso si está en una bañera o piscina inflable.
+Uso de Flotadores:
+
+Dispositivos de Seguridad: Utiliza flotadores y otros dispositivos de seguridad adecuados, pero no sustituyen la supervisión activa.
+Enseñanza de Habilidades Acuáticas:
+
+Clases de Natación: Considera inscribir a los niños en clases de natación adecuadas para su edad.</p>
                 <!-- Más contenido de la ludoteca -->
             </div>
             <div class="column">
-                <h2>Materiales</h2>
-                <p>Encuentra materiales educativos y recursos prácticos para utilizar en casa o en el aula.</p>
+                <h2>Educación y conciencia</h2>
+                <p>Enseñanza de Seguridad Básica:
+
+Reglas de Seguridad: Educa a los niños sobre las reglas básicas de seguridad, como no tocar objetos calientes o afilados.
+Simulacros: Realiza simulacros de emergencias y enséñales cómo actuar en caso de incendio o terremoto.</p>
                 <!-- Más contenido de materiales -->
             </div>
         </section>
+           <section id="carousel" class="section">
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="imagenes/carrusel1.jpg" alt="Imagen 1">
+            <img src="imagenes/carrusel2.jpg" alt="Imagen 2">
+            <img src="imagenes/carrusel3.jpg" alt="Imagen 3">
+            <!-- Añade más imágenes según sea necesario -->
+        </div>
+           <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+    </div>
+</section>
 
         <section id="contact" class="section">
             <div class="contact-form">
@@ -386,6 +495,8 @@
             </div>
         </section>
     </main>
+ 
+
     <footer>
         <p>&copy; 2024 Página de Preescolar. Todos los derechos reservados.</p>
         <div class="social-icons">
@@ -396,20 +507,41 @@
             <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
+
     <script>
-        let clickCount = 0; // Variable to track clicks
 
-        document.addEventListener('click', () => {
-            clickCount++;
-            const body = document.querySelector('body');
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelector('.carousel-slide');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    const images = document.querySelectorAll('.carousel-slide img');
 
-            if (clickCount === 1) {
-                body.classList.add('disordered');
-            } else if (clickCount === 2) {
-                body.classList.remove('disordered');
-            }
-            // No additional actions are performed for the third click and beyond.
-        });
+    let index = 0; // Índice de la diapositiva actual
+    const totalSlides = images.length;
+    const slideWidth = 100; // El ancho de cada diapositiva en porcentaje
+
+    function updateCarousel() {
+        const offset = -index * slideWidth; // Desplazamiento en porcentaje
+        slides.style.transform = `translateX(${offset}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        index = (index + 1) % totalSlides;
+        updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+        index = (index - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    });
+
+    // Inicializa la posición del carrusel
+    updateCarousel();
+});
+
+
+</script>
+
     </script>
 </body>
 </html>
