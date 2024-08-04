@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca - Ludoteca</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="libro.ico" type="image/x-icon">
+    <link rel="icon" href="imagenes/libro.ico" type="image/x-icon">
     <style>
-                footer {
+        footer {
             background-color: #ffeb3b;
             color: #00796b;
             text-align: center;
@@ -88,11 +88,11 @@
 
         nav a {
             color: white;
-            padding: 15px 25px;
+            padding: 10px 15px;
             text-decoration: none;
             text-align: center;
-            font-size: 1.2em;
-            border-radius: 10px;
+            font-size: 1em;
+            border-radius: 5px;
             margin: 5px;
             transition: color 0.3s, transform 0.3s, background-color 0.3s;
             position: relative;
@@ -127,26 +127,11 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        /* Button Colors */
-        nav a:nth-child(1) {
-            background-color: #ff4081; /* Pink */
-        }
-
-        nav a:nth-child(2) {
-            background-color: #ffeb3b; /* Yellow */
-        }
-
-        nav a:nth-child(3) {
-            background-color: #4caf50; /* Green */
-        }
-
-        nav a:nth-child(4) {
-            background-color: #2196f3; /* Blue */
-        }
-
-        nav a:nth-child(5) {
-            background-color: #ff5722; /* Orange */
-        }
+        nav a:nth-child(1) { background-color: #ff4081; } /* Pink */
+        nav a:nth-child(2) { background-color: #ffeb3b; } /* Yellow */
+        nav a:nth-child(3) { background-color: #4caf50; } /* Green */
+        nav a:nth-child(4) { background-color: #2196f3; } /* Blue */
+        nav a:nth-child(5) { background-color: #ff5722; } /* Orange */
 
         nav a::after {
             content: '';
@@ -197,7 +182,7 @@
         }
 
         .book-box {
-            width: calc(33.333% - 20px);
+            width: calc(100% / 1.5 - 20px); /* Adjust for smaller screens */
             box-sizing: border-box;
             padding: 15px;
             text-align: center;
@@ -244,7 +229,7 @@
             display: inline-block;
             color: #00796b;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1em;
             padding: 10px;
             border: 2px solid #00796b;
             border-radius: 5px;
@@ -274,7 +259,7 @@
             background: #fff;
             padding: 20px;
             border-radius: 10px;
-            width: 80%;
+            width: 90%;
             max-width: 600px;
             text-align: center;
         }
@@ -304,6 +289,43 @@
 
         .popup button:hover {
             background: #e91e63;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                font-size: 2em;
+            }
+
+            nav a {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+
+            .book-box {
+                width: calc(50% - 20px); /* Adjust for medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.5em;
+                padding: 15px;
+            }
+
+            nav a {
+                font-size: 0.8em;
+                padding: 8px;
+            }
+
+            .book-box {
+                width: calc(100% - 20px); /* Full width for small screens */
+            }
+
+            .popup-content {
+                width: 95%;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -373,7 +395,7 @@
             </div>
         </div>
     </main>
-      <footer>
+    <footer>
         <p>&copy; 2024 Página de Preescolar. Todos los derechos reservados.</p>
         <div class="social-icons">
             <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -383,7 +405,6 @@
             <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
-
 
     <!-- Popup for Audiobooks -->
     <div id="popup" class="popup">
@@ -414,5 +435,4 @@
         }
     </script>
 </body>
-
 </html>
