@@ -5,8 +5,304 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Preescolar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="dado.ico" type="image/x-icon">
+    <link rel="icon" href="imagenes/dado.ico" type="image/x-icon">
     <style>
+/* General Styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('imagenes/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #ffeb3b;
+    color: #00796b;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    border-bottom: 5px solid #00796b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header i {
+    margin-right: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
+    background-size: 500% 500%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+nav a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1em;
+    border-radius: 5px;
+    margin: 5px;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+nav a i {
+    margin-right: 8px;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 200%;
+    height: 2px;
+    background: #ffeb3b;
+    transition: transform 0.3s ease;
+    transform: translateX(-50%) scaleX(0);
+}
+
+nav a:hover::before {
+    transform: translateX(-50%) scaleX(1);
+}
+
+nav a:hover {
+    transform: scale(1.1);
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+nav a:nth-child(1) { background-color: #ff4081; } /* Pink */
+nav a:nth-child(2) { background-color: #ffeb3b; } /* Yellow */
+nav a:nth-child(3) { background-color: #4caf50; } /* Green */
+nav a:nth-child(4) { background-color: #2196f3; } /* Blue */
+nav a:nth-child(5) { background-color: #ff5722; } /* Orange */
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 80px;
+}
+
+.section {
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #00796b;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.book-box {
+    width: calc(100% / 1.5 - 20px); /* Adjust for smaller screens */
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.book-box img {
+    width: auto;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.book-box h3 {
+    color: #00796b;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.book-box p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-container a {
+    display: inline-block;
+    color: #00796b;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    border: 2px solid #00796b;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button-container a:hover {
+    background-color: #00796b;
+    color: #fff;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.popup img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.popup audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.popup button {
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+.popup button:hover {
+    background: #e91e63;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .section h2 {
+        font-size: 1.5em;
+    }
+
+    .book-box {
+        width: calc(50% - 20px); /* Two items per row */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .section h2 {
+        font-size: 1.2em;
+    }
+
+    .book-box {
+        width: calc(100% - 20px); /* One item per row */
+    }
+
+    .button-container a {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
 
         @media (max-width: 768px) {
     nav a {
@@ -29,7 +325,7 @@
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('background.jpg') no-repeat center center fixed;
+            background: url('imagenes/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
             line-height: 1.6;
@@ -430,9 +726,9 @@ button.next {
             <h2>Prevención de Riesgos para Infantes</h2>
             <p>La seguridad de los niños es una prioridad esencial en cualquier entorno. Aquí te ofrecemos algunas recomendaciones clave para garantizar un entorno seguro para los más pequeños:.</p>
             <div class="image-container">
-                <img src="img1.jpg" alt="Imagen 3">
-                <img src="img2.jpg" alt="Imagen 4">
-                <img src="img3.jpg" alt="Imagen 5">
+                <img src="imagenes/img1.jpg" alt="Imagen 3">
+                <img src="imagenes/img2.jpg" alt="Imagen 4">
+                <img src="imagenes/img3.jpg" alt="Imagen 5">
             </div>
             <div class="card-body">
                 <h3>Información Adicional</h3>
@@ -491,9 +787,9 @@ Simulacros: Realiza simulacros de emergencias y enséñales cómo actuar en caso
            <section id="carousel" class="section">
     <div class="carousel-container">
         <div class="carousel-slide">
-            <img src="carrusel1.jpg" alt="Imagen 1">
-            <img src="carrusel2.jpg" alt="Imagen 2">
-            <img src="carrusel3.jpg" alt="Imagen 3">
+            <img src="imagenes/carrusel1.jpg" alt="Imagen 1">
+            <img src="imagenes/carrusel2.jpg" alt="Imagen 2">
+            <img src="imagenes/carrusel3.jpg" alt="Imagen 3">
             <!-- Añade más imágenes según sea necesario -->
         </div>
            <button class="prev">&#10094;</button>
