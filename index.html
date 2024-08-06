@@ -365,6 +365,42 @@ footer .social-icons a:hover {
                 font-size: 0.9em;
             }
         }
+        .carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-images {
+    display: flex;
+    width: 500%;
+    animation: slide 20s infinite linear;
+}
+
+.carousel-images img {
+    width: 20%;
+    flex-shrink: 0;
+    object-fit: cover; /* Asegura que las imágenes llenen el contenedor sin distorsión */
+}
+
+/* Animación para deslizar las imágenes */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .carousel-images img {
+        width: 25%;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-images img {
+        width: 50%;
+    }
+}
     </style>
 </head>
 <body>
@@ -414,14 +450,15 @@ Explora nuestras secciones y aplica estas recomendaciones para crear un entorno 
         </section>
 
         <section id="galeria" class="section">
-            <h2>Galería</h2>
-            <p>Disfruta de nuestra galería de fotos y vídeos de actividades y eventos.</p>
-            <div class="image-container">
-                <img src="actividad1.jpg" alt="Actividad 1">
-                <img src="actividad2.jpg" alt="Actividad 2">
-                <img src="actividad3.jpg" alt="Actividad 3">
-                <img src="actividad4.jpg" alt="Actividad 4">
-            </div>
+            <div class="carousel">
+        <div class="carousel-images">
+            <img src="carrusel1.jpg" alt="Foto 1">
+            <img src="carrusel2.jpg" alt="Foto 2">
+            <img src="carrusel3.jpg" alt="Foto 3">
+            <img src="carrusel4.jpg" alt="Foto 4">
+            <img src="carrusel5.jpg" alt="Foto 5">
+        </div>
+    </div>
         </section>
 
         <section id="contacto" class="section">
