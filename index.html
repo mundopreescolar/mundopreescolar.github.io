@@ -366,9 +366,10 @@ footer .social-icons a:hover {
             }
         }
 /* Estilos del carrusel */
+/* Estilos del carrusel */
 .carousel {
-    width: 90%;
-    max-width: 90px; /* Ajusta el tamaño máximo del carrusel */
+    width: 100%;
+    max-width: 400px; /* Ajusta el tamaño máximo del carrusel */
     overflow: hidden;
     margin: auto;
     position: relative;
@@ -376,8 +377,8 @@ footer .social-icons a:hover {
 
 .carousel-wrapper {
     display: flex;
-    width: 90%; /* 5 imágenes, 100% * 5 */
-    animation: slide 25s infinite; /* Ajusta la velocidad aquí */
+    width: 500%; /* 5 imágenes, 100% * 5 */
+    animation: slide 20s infinite; /* Ajusta la velocidad aquí */
 }
 
 .carousel-slide {
@@ -389,6 +390,8 @@ footer .social-icons a:hover {
     width: 100%;
     height: auto; /* Ajusta la altura automáticamente */
     display: block;
+    max-height: 300px; /* Ajusta la altura máxima de las imágenes */
+    object-fit: cover; /* Asegura que la imagen se ajuste adecuadamente */
 }
 
 @keyframes slide {
@@ -399,6 +402,7 @@ footer .social-icons a:hover {
     80% { transform: translateX(-400%); }
     100% { transform: translateX(0); }
 }
+
 
     </style>
 </head>
