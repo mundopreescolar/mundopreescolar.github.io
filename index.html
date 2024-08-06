@@ -365,40 +365,49 @@ footer .social-icons a:hover {
                 font-size: 0.9em;
             }
         }
-        .carousel {
+.carousel-container {
     width: 100%;
     overflow: hidden;
+}
+
+.carousel {
     position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
-.carousel-images {
+.carousel-slide {
     display: flex;
+    transition: transform 0.5s ease-in-out;
     width: 500%;
-    animation: slide 20s infinite linear;
 }
 
-.carousel-images img {
-    width: 20%;
-    flex-shrink: 0;
-    object-fit: cover; /* Asegura que las imágenes llenen el contenedor sin distorsión */
+.carousel-slide img {
+    width: 33.3333%; /* Muestra 3 imágenes a la vez */
+    height: auto;
+    object-fit: cover;
 }
 
-/* Animación para deslizar las imágenes */
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-66.6667%); }
+}
+
+.carousel {
+    animation: slide 15s infinite;
 }
 
 /* Ajustes para pantallas más pequeñas */
 @media (max-width: 768px) {
-    .carousel-images img {
-        width: 25%;
+    .carousel-slide img {
+        width: 50%; /* Muestra 3 imágenes a la vez en pantallas más pequeñas */
     }
 }
 
 @media (max-width: 480px) {
-    .carousel-images img {
-        width: 50%;
+    .carousel-slide img {
+        width: 100%; /* Muestra 1 imagen a la vez en pantallas muy pequeñas */
     }
 }
     </style>
@@ -449,17 +458,29 @@ Explora nuestras secciones y aplica estas recomendaciones para crear un entorno 
             <p>Encuentra materiales educativos para aprender y jugar en casa.</p>
         </section>
 
-        <section id="galeria" class="section">
-            <div class="carousel">
-        <div class="carousel-images">
-            <img src="carrusel1.jpg" alt="Foto 1">
-            <img src="carrusel2.jpg" alt="Foto 2">
-            <img src="carrusel3.jpg" alt="Foto 3">
-            <img src="carrusel4.jpg" alt="Foto 4">
-            <img src="carrusel5.jpg" alt="Foto 5">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Fotos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-slide">
+                <img src="carrusel1.jpg" alt="Foto 1">
+                <img src="carrusel2.jpg" alt="Foto 2">
+                <img src="carrusel3.jpg" alt="Foto 3">
+                <img src="carrusel4.jpg" alt="Foto 4">
+                <img src="carrusel5.jpg" alt="Foto 5">
+            </div>
         </div>
     </div>
-        </section>
+</body>
+</html>
+
 
         <section id="contacto" class="section">
             <h2>Contacto</h2>
