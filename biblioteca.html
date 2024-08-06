@@ -324,125 +324,116 @@
         <a href="galeria.html"><i class="fa fa-images"></i>Galería</a>
     </nav>
     <main>
+         <!-- Sección de Biblioteca -->
         <section class="section">
             <h2>Biblioteca</h2>
             <div class="book-container">
-                <!-- Example Book -->
+                <!-- Primer Libro -->
                 <div class="book-box" onclick="openPopup('book1')">
                     <img src="libro1.jpg" alt="El lobo y los siete cabritos">
                     <h3>El lobo y los siete cabritos</h3>
                     <p>Una historia clásica llena de aventuras.</p>
                 </div>
-                <div id="book1" class="popup" onclick="closePopup('book1')">
-    <div class="popup-content">
-        <img src="libro1.jpg" alt="El lobo y los siete cabritos">
-        <audio id="popup-audio-book1" controls>
-            <source src="audio1.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="closePopup('book1')">Cerrar</button>
-    </div>
-</div>
-                <!-- Repeat for other books -->
-            </div>
-        </section>
-          <section class="section">
-            <h2>Biblioteca</h2>
-            <div class="book-container">
-                <!-- Example Book -->
-                <div class="book-box" onclick="openPopup('book1')">
-                    <img src="libro2.jpg" alt="El lobo y los siete cabritos">
-                    <h3>El lobo y los siete cabritos</h3>
-                    <p>Una historia clásica llena de aventuras.</p>
+                <!-- Segundo Libro -->
+                <div class="book-box" onclick="openPopup('book2')">
+                    <img src="libro2.jpg" alt="Los tres cerditos">
+                    <h3>Los tres cerditos</h3>
+                    <p>Una divertida fábula sobre la perseverancia.</p>
                 </div>
-                <div id="book2" class="popup" onclick="closePopup('book2')">
-    <div class="popup-content">
-        <img src="libro2.jpg" alt="El lobo y los siete cabritos">
-        <audio id="popup-audio-book2" controls>
-            <source src="cuento2.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="closePopup('book2')">Cerrar</button>
-    </div>
-</div>
-                <!-- Repeat for other books -->
-            </div>
-        </section>  <section class="section">
-            <h2>Biblioteca</h2>
-            <div class="book-container">
-                <!-- Example Book -->
+                <!-- Tercer Libro -->
                 <div class="book-box" onclick="openPopup('book3')">
-                    <img src="libro3.jpg" alt="El lobo y los siete cabritos">
-                    <h3>El lobo y los siete cabritos</h3>
-                    <p>Una historia clásica llena de aventuras.</p>
+                    <img src="libro3.jpg" alt="Caperucita Roja">
+                    <h3>Caperucita Roja</h3>
+                    <p>Una clásica historia de valentía y astucia.</p>
                 </div>
-                <div id="book3" class="popup" onclick="closePopup('book3')">
-    <div class="popup-content">
-        <img src="libro3.jpg" alt="El lobo y los siete cabritos">
-        <audio id="popup-audio-book3" controls>
-            <source src="cuento3.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="closePopup('book3')">Cerrar</button>
-    </div>
-</div>
-                <!-- Repeat for other books -->
-            </div>
-        </section>  <section class="section">
-            <h2>Biblioteca</h2>
-            <div class="book-container">
-                <!-- Example Book -->
+                <!-- Cuarto Libro -->
                 <div class="book-box" onclick="openPopup('book4')">
-                    <img src="libro4.jpg" alt="El lobo y los siete cabritos">
-                    <h3>El lobo y los siete cabritos</h3>
-                    <p>Una historia clásica llena de aventuras.</p>
+                    <img src="libro4.jpg" alt="El patito feo">
+                    <h3>El patito feo</h3>
+                    <p>Una conmovedora historia sobre la belleza interior.</p>
                 </div>
-                <div id="book4" class="popup" onclick="closePopup('book4')">
-    <div class="popup-content">
-        <img src="libro4.jpg" alt="El lobo y los siete cabritos">
-        <audio id="popup-audio-book4" controls>
-            <source src="cuento4.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="closePopup('book4')">Cerrar</button>
-    </div>
-</div>
-                <!-- Repeat for other books -->
-            </div>
-        </section>  <section class="section">
-            <h2>Biblioteca</h2>
-            <div class="book-container">
-                <!-- Example Book -->
+                <!-- Quinto Libro -->
                 <div class="book-box" onclick="openPopup('book5')">
-                    <img src="libro5.jpg" alt="El lobo y los siete cabritos">
-                    <h3>El lobo y los siete cabritos</h3>
-                    <p>Una historia clásica llena de aventuras.</p>
+                    <img src="libro5.jpg" alt="Blancanieves y los siete enanitos">
+                    <h3>Blancanieves y los siete enanitos</h3>
+                    <p>Un cuento mágico de amistad y valentía.</p>
                 </div>
-                <div id="book5" class="popup" onclick="closePopup('book5')">
-    <div class="popup-content">
-        <img src="libro5.jpg" alt="El lobo y los siete cabritos">
-        <audio id="popup-audio-book5" controls>
-            <source src="cuento5.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="closePopup('book5')">Cerrar</button>
-    </div>
-</div>
-                <!-- Repeat for other books -->
+                <!-- Sexto Libro -->
+                <div class="book-box" onclick="openPopup('book6')">
+                    <img src="libro6.jpg" alt="Ricitos de Oro y los tres osos">
+                    <h3>Ricitos de Oro y los tres osos</h3>
+                    <p>Una historia encantadora sobre curiosidad y respeto.</p>
+                </div>
             </div>
         </section>
     </main>
-<!-- Popup -->
-<div id="book1" class="popup" onclick="closePopup('book1')">
-    <div class="popup-content">
-        <img src="libro1.jpg" alt="El lobo y los siete cabritos">
-        <audio id="popup-audio-book1" controls>
-            <source src="audio1.mp3" type="audio/mp3">
-            Tu navegador no soporta el elemento de audio.
-        </audio>
-        <button onclick="closePopup('book1')">Cerrar</button>
+
+    <!-- Popups -->
+    <div id="book1" class="popup" onclick="closePopup('book1')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <img src="libro1.jpg" alt="El lobo y los siete cabritos">
+            <audio id="popup-audio-book1" controls>
+                <source src="cuento1.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="closePopup('book1')">Cerrar</button>
+        </div>
     </div>
-</div>
+
+    <div id="book2" class="popup" onclick="closePopup('book2')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <img src="libro2.jpg" alt="Los tres cerditos">
+            <audio id="popup-audio-book2" controls>
+                <source src="cuento2.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="closePopup('book2')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="book3" class="popup" onclick="closePopup('book3')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <img src="libro3.jpg" alt="Caperucita Roja">
+            <audio id="popup-audio-book3" controls>
+                <source src="cuento3.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="closePopup('book3')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="book4" class="popup" onclick="closePopup('book4')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <img src="libro4.jpg" alt="El patito feo">
+            <audio id="popup-audio-book4" controls>
+                <source src="cuento4.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="closePopup('book4')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="book5" class="popup" onclick="closePopup('book5')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <img src="libro5.jpg" alt="Blancanieves y los siete enanitos">
+            <audio id="popup-audio-book5" controls>
+                <source src="cuento5.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="closePopup('book5')">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="book6" class="popup" onclick="closePopup('book6')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <img src="libro6.jpg" alt="Ricitos de Oro y los tres osos">
+            <audio id="popup-audio-book6" controls>
+                <source src="cuento6.mp3" type="audio/mp3">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+            <button onclick="closePopup('book6')">Cerrar</button>
+        </div>
+    </div>
 
 <script>
     function openPopup(id) {
