@@ -368,12 +368,13 @@ footer .social-icons a:hover {
 /* Estilos del carrusel */
 .carousel {
     width: 100%;
-    max-width: 600px; /* Ajusta el tamaño máximo del carrusel */
-    height: 300px; /* Ajusta la altura del carrusel según sea necesario */
+    max-width: 1200px; /* Ajusta el tamaño máximo del carrusel */
+    height: 600px; /* Ajusta la altura del carrusel según sea necesario */
     overflow: hidden;
     margin: auto;
     position: relative;
     border: 2px solid #ddd; /* Opcional: Añade un borde para visualizar mejor el carrusel */
+    background-color: #f8f8f8; /* Fondo para cuando las imágenes no ocupan todo el espacio */
 }
 
 .carousel-wrapper {
@@ -392,9 +393,9 @@ footer .social-icons a:hover {
 }
 
 .carousel-slide img {
-    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Ajusta la imagen para que se ajuste dentro del contenedor sin recortarla */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que ocupe todo el contenedor sin perder proporción */
 }
 
     </style>
@@ -499,6 +500,7 @@ function nextSlide() {
 // Navegación automática ajustada
 const interval = 10000; // Cambia la imagen cada 10 segundos
 let autoSlide = setInterval(nextSlide, interval);
+
 
 </script>
 </body>
