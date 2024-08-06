@@ -365,51 +365,41 @@ footer .social-icons a:hover {
                 font-size: 0.9em;
             }
         }
-.carousel-container {
+/* Estilos del carrusel */
+.carousel {
     width: 100%;
+    max-width: 600px; /* Ajusta el tamaño máximo del carrusel */
     overflow: hidden;
+    margin: auto;
+    position: relative;
 }
 
-.carousel {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+.carousel-wrapper {
+    display: flex;
+    width: 500%; /* 5 imágenes, 100% * 5 */
+    animation: slide 20s infinite; /* Ajusta la velocidad aquí */
 }
 
 .carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 500%;
+    width: 100%;
+    flex: 0 0 100%;
 }
 
 .carousel-slide img {
-    width: 33.3333%; /* Muestra 3 imágenes a la vez */
-    height: auto;
-    object-fit: cover;
+    width: 100%;
+    height: auto; /* Ajusta la altura automáticamente */
+    display: block;
 }
 
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-66.6667%); }
+    20% { transform: translateX(-100%); }
+    40% { transform: translateX(-200%); }
+    60% { transform: translateX(-300%); }
+    80% { transform: translateX(-400%); }
+    100% { transform: translateX(0); }
 }
 
-.carousel {
-    animation: slide 15s infinite;
-}
-
-/* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .carousel-slide img {
-        width: 50%; /* Muestra 3 imágenes a la vez en pantallas más pequeñas */
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-slide img {
-        width: 100%; /* Muestra 1 imagen a la vez en pantallas muy pequeñas */
-    }
-}
     </style>
 </head>
 <body>
@@ -459,17 +449,17 @@ Explora nuestras secciones y aplica estas recomendaciones para crear un entorno 
         </section>
 
 
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-slide">
-                <img src="carrusel1.jpg" alt="Foto 1">
-                <img src="carrusel2.jpg" alt="Foto 2">
-                <img src="carrusel3.jpg" alt="Foto 3">
-                <img src="carrusel4.jpg" alt="Foto 4">
-                <img src="carrusel5.jpg" alt="Foto 5">
-            </div>
+
+    <div class="carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-slide"><img src="carrusel1.jpg" alt="Foto 1"></div>
+            <div class="carousel-slide"><img src="carrusel2.jpg" alt="Foto 2"></div>
+            <div class="carousel-slide"><img src="carrusel3.jpg" alt="Foto 3"></div>
+            <div class="carousel-slide"><img src="carrusel4.jpg" alt="Foto 4"></div>
+            <div class="carousel-slide"><img src="carrusel5.jpg" alt="Foto 5"></div>
         </div>
     </div>
+
 
 
         <section id="contacto" class="section">
