@@ -389,38 +389,11 @@ footer .social-icons a:hover {
 
 .carousel-slide img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
 }
 
-/* General Styles */
-/* ... (otros estilos) ... */
-
-.carousel {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    margin: 0 auto;
-    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total */
-}
-
-.carousel-wrapper {
-    display: flex;
-    transition: transform 0.4s ease;
-    width: 100%;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box; /* Incluye padding y border en el tamaño del elemento */
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
+/* Estilos específicos para el carrusel */
 #carrusel {
     max-width: 100%; /* Asegura que no se desborde del contenedor */
     height: 300px; /* Ajusta la altura según el tamaño deseado */
