@@ -393,26 +393,58 @@ footer .social-icons a:hover {
     display: block;
 }
 
+/* General Styles */
+/* ... (otros estilos) ... */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño total */
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box; /* Incluye padding y border en el tamaño del elemento */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 #carrusel {
     max-width: 100%; /* Asegura que no se desborde del contenedor */
     height: 300px; /* Ajusta la altura según el tamaño deseado */
     overflow: hidden; /* Oculta cualquier parte que se salga del contenedor */
     position: relative;
     margin: 20px 0; /* Espaciado superior e inferior */
+    margin-bottom: 30px; /* Espaciado adicional en la parte inferior */
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
     #carrusel {
         height: 200px; /* Ajusta la altura en pantallas más pequeñas */
+        margin-bottom: 20px; /* Menos espacio en la parte inferior en pantallas más pequeñas */
     }
 }
 
 @media (max-width: 480px) {
     #carrusel {
         height: 150px; /* Ajusta la altura en pantallas más pequeñas */
+        margin-bottom: 15px; /* Menos espacio en la parte inferior en pantallas más pequeñas */
     }
 }
+
 
    </style>
 </head>
