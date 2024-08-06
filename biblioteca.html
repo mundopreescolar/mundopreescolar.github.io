@@ -382,30 +382,41 @@
             </div>
         </section>
     </main>
-    <!-- Popup -->
-    <div id="book1" class="popup" onclick="closePopup()">
-        <div class="popup-content">
-            <img src="libro1.jpg" alt="El lobo y los siete cabritos">
-            <audio controls>
-                <source src="cuento1.mp3" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <button onclick="closePopup()">Cerrar</button>
-        </div>
-    </div>   
-   
+<!-- Popup -->
+<div id="book1" class="popup" onclick="closePopup()">
+    <div class="popup-content">
+        <img src="libro1.jpg" alt="El lobo y los siete cabritos">
+        <audio id="popup-audio" controls>
+            <source src="cuento1.mp3" type="audio/mp3">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        <button onclick="closePopup()">Cerrar</button>
+    </div>
+</div>
 
-    
-       
-    <script>
-        function openPopup(id) {
-            document.getElementById(id).style.display = 'flex';
+<script>
+    function openPopup(id) {
+        // Mostrar el popup
+        document.getElementById(id).style.display = 'flex';
+        // Reproducir el audio
+        const audio = document.getElementById('popup-audio');
+        if (audio) {
+            audio.play();
         }
+    }
 
-        function closePopup() {
-            document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
+    function closePopup() {
+        // Ocultar todos los popups
+        document.querySelectorAll('.popup').forEach(popup => popup.style.display = 'none');
+        // Detener el audio
+        const audio = document.getElementById('popup-audio');
+        if (audio) {
+            audio.pause();
+            audio.currentTime = 0; // Reiniciar el audio al inicio
         }
-    </script>
+    }
+</script>
+
 </body>
         <footer>
         <p>&copy; 2023 Página de Preescolar. Todos los derechos reservados.</p>
