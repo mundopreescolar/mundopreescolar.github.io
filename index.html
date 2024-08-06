@@ -391,12 +391,13 @@ footer .social-icons a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Para poder centrar las imágenes adecuadamente */
 }
 
 .carousel-slide img {
-    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Ajusta la imagen para que se ajuste dentro del contenedor sin recortarla */
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
+    max-height: 100%; /* Ajusta la altura máxima de la imagen al contenedor */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
 }
 
 @keyframes slide {
@@ -407,6 +408,7 @@ footer .social-icons a:hover {
     80% { transform: translateX(-400%); }
     100% { transform: translateX(0); }
 }
+
 
     </style>
 </head>
