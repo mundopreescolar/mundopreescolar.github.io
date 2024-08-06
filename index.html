@@ -26,7 +26,7 @@
 
 .carousel-slide img {
     width: 100%;
-    vertical-align: middle;
+    height: auto; /* Mantén la relación de aspecto en dispositivos móviles */
 }
 
 .carousel-prev, .carousel-next {
@@ -58,6 +58,15 @@
 .carousel-prev:hover, .carousel-next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Media queries para el carrusel */
+@media (max-width: 768px) {
+    .carousel-prev, .carousel-next {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
 
 @media (max-width: 768px) {
     nav a {
@@ -168,8 +177,28 @@ nav {
     0% { background-position: 0% 0%; }
     50% { background-position: 100% 100%; }
     100% { background-position: 0% 0%; }
+/* Estilo general de la navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
+    background-size: 500% 500%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilos del menú */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+/* Enlaces del menú */
 nav a {
     color: white;
     padding: 15px 25px;
@@ -186,57 +215,52 @@ nav a {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-nav a i {
-    margin-right: 8px;
+/* Botón de hamburguesa */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin: 10px;
 }
 
-nav a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 200%;
-    height: 2px;
-    background: #ffeb3b;
-    transition: transform 0.3s ease;
-    transform: translateX(-50%) scaleX(0);
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
 }
 
-nav a:hover::before {
-    transform: translateX(-50%) scaleX(1);
+/* Menú desplegable */
+nav ul {
+    display: flex;
 }
 
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.6);
-    transform: scale(1.1);
-    color: #333;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+.navbar-collapse {
+    display: flex;
 }
 
-/* Button Colors */
-nav a:nth-child(1) { background-color: #ff4081; } /* Pink */
-nav a:nth-child(2) { background-color: #ffeb3b; } /* Yellow */
-nav a:nth-child(3) { background-color: #4caf50; } /* Green */
-nav a:nth-child(4) { background-color: #2196f3; } /* Blue */
-nav a:nth-child(5) { background-color: #ff5722; } /* Orange */
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #ff5722, #ff9800);
-    transition: transform 0.3s ease;
-    transform: scaleX(0);
-    transform-origin: bottom right;
+    .navbar-collapse {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-collapse.active {
+        display: flex;
+    }
+
+    nav a {
+        font-size: 1em;
+        padding: 10px;
+    }
 }
 
-nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
 
 main {
     flex: 1;
@@ -393,13 +417,21 @@ footer p {
     <header>
         <i id="headerIcon" class="fas fa-child"></i> Página de Preescolar
     </header>
-    <nav>
-        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
-        <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
-        <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="materiales.html"><i class="fas fa-cogs"></i> Materiales</a>
-        <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
-    </nav>
+   <nav>
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul class="navbar-collapse">
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a></li>
+        <li><a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a></li>
+        <li><a href="materiales.html"><i class="fas fa-cogs"></i> Materiales</a></li>
+        <li><a href="galeria.html"><i class="fas fa-images"></i> Galería</a></li>
+    </ul>
+</nav>
+
     <main id="mainContent">
         <section id="home" class="section">
             <h2>Prevención de Riesgos para Infantes</h2>
@@ -507,9 +539,9 @@ Simulacros: Realiza simulacros de emergencias y enséñales cómo actuar en caso
     <script>
 
 document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelector('.carousel-slide');
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
+    const slides = document.querySelector('.carousel-container');
+    const prevButton = document.querySelector('.carousel-prev');
+    const nextButton = document.querySelector('.carousel-next');
     const images = document.querySelectorAll('.carousel-slide img');
 
     let index = 0; // Índice de la diapositiva actual
@@ -534,31 +566,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inicializa la posición del carrusel
     updateCarousel();
 });
-let slideIndex = 0;
 
-function showSlides() {
-    const slides = document.querySelectorAll('.carousel-slide');
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
-    }
-    if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
-    }
-    slides.forEach((slide, index) => {
-        slide.style.transform = `translateX(${-(slideIndex * 100)}%)`;
-    });
-}
-
-function moveSlide(n) {
-    slideIndex += n;
-    showSlides();
-}
-
-showSlides(); // Inicializar la primera diapositiva
-
+document.getElementById('hamburger').addEventListener('click', () => {
+    document.querySelector('.navbar-collapse').classList.toggle('active');
+});
 
 </script>
 
     </script>
+    
 </body>
 </html>
