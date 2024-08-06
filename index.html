@@ -388,9 +388,10 @@ footer .social-icons a:hover {
 }
 
 .carousel-slide img {
-    width: 100%;
+    width: 80%; /* Ajusta el ancho de la imagen al 80% del contenedor del slide */
     height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: contain; /* Ajusta la imagen dentro del contenedor sin recortarla */
+    display: block;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
 /* Estilos específicos para el carrusel */
@@ -408,6 +409,10 @@ footer .social-icons a:hover {
         height: 200px; /* Ajusta la altura en pantallas más pequeñas */
         margin-bottom: 20px; /* Menos espacio en la parte inferior en pantallas más pequeñas */
     }
+
+    .carousel-slide img {
+        width: 70%; /* Reduce aún más el tamaño en pantallas más pequeñas */
+    }
 }
 
 @media (max-width: 480px) {
@@ -415,8 +420,11 @@ footer .social-icons a:hover {
         height: 150px; /* Ajusta la altura en pantallas más pequeñas */
         margin-bottom: 15px; /* Menos espacio en la parte inferior en pantallas más pequeñas */
     }
-}
 
+    .carousel-slide img {
+        width: 60%; /* Reduce aún más el tamaño en pantallas más pequeñas */
+    }
+}
 
    </style>
 </head>
