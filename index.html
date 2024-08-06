@@ -5,62 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Preescolar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="dado.ico" type="image/x-icon">
     <style>
-        /* Carrusel */
-        .carousel {
-            position: relative;
-            max-width: 100%;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .carousel-container {
+        /* General Styles */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
             display: flex;
-            transition: transform 0.5s ease-in-out;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: auto;
+            transition: transform 1s ease;
         }
 
-        .carousel-slide {
-            min-width: 100%;
-            box-sizing: border-box;
+        header {
+            background-color: #ffeb3b;
+            color: #00796b;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            border-bottom: 5px solid #00796b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 1s ease;
         }
 
-        .carousel-slide img {
-            width: 100%;
-            vertical-align: middle;
-        }
-
-        .carousel-prev, .carousel-next {
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .carousel-prev {
-            left: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .carousel-next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .carousel-prev:hover, .carousel-next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Menú de navegación */
         nav {
             display: flex;
             justify-content: center;
@@ -71,7 +43,6 @@
             padding: 10px 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 1s ease;
-            position: relative;
         }
 
         @keyframes gradientAnimation {
@@ -123,137 +94,42 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        /* Menú hamburguesa */
-        .menu-toggle {
-            display: none;
-            font-size: 2em;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: white;
-            position: absolute;
-            right: 10px;
-            top: 10px;
+        nav a:nth-child(1) {
+            background-color: #ff4081;
         }
 
-        .nav-links {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .nav-links a {
-            display: inline-block;
-        }
-
-        .nav-links.collapsed {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background-color: #333;
-                position: absolute;
-                top: 50px;
-                left: 0;
-                padding: 10px 0;
-            }
-
-            .nav-links a {
-                padding: 10px;
-                color: white;
-                text-align: center;
-                font-size: 1.2em;
-            }
-
-            .nav-links a:hover {
-                background-color: rgba(255, 255, 255, 0.6);
-                transform: scale(1.1);
-                color: #333;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            nav a {
-                padding: 10px 15px;
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 992px) {
-            header {
-                font-size: 2em;
-            }
-            .section {
-                padding: 15px;
-            }
-            .contact-form input, .contact-form textarea {
-                width: calc(100% - 16px);
-            }
-            .contact-form button {
-                font-size: 1em;
-            }
-        }
-
-        @media (max-width: 576px) {
-            header {
-                font-size: 1.5em;
-            }
-            nav a {
-                font-size: 0.9em;
-                padding: 8px 12px;
-            }
-            .section {
-                padding: 10px;
-                margin: 10px;
-            }
-            .contact-form {
-                padding: 15px;
-            }
-            .contact-form input, .contact-form textarea {
-                width: calc(100% - 10px);
-            }
-            .contact-form button {
-                font-size: 0.9em;
-            }
-        }
-
-        /* General Styles */
-        body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow: auto;
-            transition: transform 1s ease;
-        }
-
-        header {
+        nav a:nth-child(2) {
             background-color: #ffeb3b;
-            color: #00796b;
-            padding: 20px;
-            text-align: center;
-            font-size: 2.5em;
-            border-bottom: 5px solid #00796b;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 1s ease;
-            position: relative;
+        }
+
+        nav a:nth-child(3) {
+            background-color: #4caf50;
+        }
+
+        nav a:nth-child(4) {
+            background-color: #2196f3;
+        }
+
+        nav a:nth-child(5) {
+            background-color: #ff5722;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff5722, #ff9800);
+            transition: transform 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
         }
 
         main {
@@ -276,122 +152,262 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .section:hover {
-            transform: scale(1.02);
+        section:hover {
+            transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
+        .section h2 {
+            color: #00796b;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 5px solid #00796b;
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 200px;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
         .contact-form {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 3px solid #00796b;
             max-width: 600px;
-            margin: 20px auto;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(135deg, #ff5722, #ff9800, #ffeb3b, #4caf50, #2196f3);
+            background-size: 400% 400%;
+            animation: gradientMovement 8s ease infinite;
+        }
+
+        @keyframes gradientMovement {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        .contact-form h2 {
+            margin-top: 0;
+            color: #ff5722;
+            font-size: 1.8em;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
         .contact-form input, .contact-form textarea {
-            width: calc(100% - 20px);
+            width: calc(100% - 22px);
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            margin: 5px 0;
             box-sizing: border-box;
-            font-size: 1em;
+            border: 2px solid #00796b;
+            border-radius: 5px;
         }
 
         .contact-form button {
+            padding: 10px 15px;
             background-color: #00796b;
-            color: white;
+            color: #fff;
             border: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
         }
 
         .contact-form button:hover {
             background-color: #004d40;
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
         footer {
-            background-color: #00796b;
-            color: white;
-            text-align: center;
+            background-color: #ffeb3b;
+            color: #00796b;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            text-align: center;
+            border-top: 5px solid #00796b;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 0.9em;
+            font-size: 1em;
+            transition: transform 1s ease;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons a {
+            color: #00796b;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header {
+                font-size: 2em;
+            }
+
+            nav {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav a {
+                padding: 10px;
+                margin: 5px 0;
+                font-size: 1.1em;
+            }
+
+            .section {
+                padding: 15px;
+                margin: 15px auto;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            .contact-form {
+                padding: 15px;
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.5em;
+                padding: 15px;
+            }
+
+            nav a {
+                font-size: 1em;
+                padding: 8px;
+            }
+
+            .section {
+                padding: 10px;
+                margin: 10px auto;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .contact-form {
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a Preescolar</h1>
-        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
-    </header>
-    <nav class="nav-links collapsed">
-        <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-info-circle"></i> Información</a>
-        <a href="#"><i class="fas fa-graduation-cap"></i> Actividades</a>
-        <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+    <header>Página de Preescolar</header>
+    <nav>
+        <a href="#inicio"><i class="fas fa-home"></i>Inicio</a>
+        <a href="#biblioteca"><i class="fas fa-book"></i>Biblioteca</a>
+        <a href="#ludoteca"><i class="fas fa-gamepad"></i>Ludoteca</a>
+        <a href="#materiales"><i class="fas fa-paint-brush"></i>Materiales</a>
+        <a href="#galeria"><i class="fas fa-images"></i>Galería</a>
     </nav>
     <main>
-        <div class="carousel">
-            <div class="carousel-container">
-                <div class="carousel-slide"><img src="image1.jpg" alt="Imagen 1"></div>
-                <div class="carousel-slide"><img src="image2.jpg" alt="Imagen 2"></div>
-                <div class="carousel-slide"><img src="image3.jpg" alt="Imagen 3"></div>
+        <section id="inicio" class="section">
+            <h2>Bienvenidos a nuestra página de preescolar</h2>
+            <p>En esta página encontrarán recursos educativos y entretenidos para los más pequeños.</p>
+        </section>
+
+        <section id="biblioteca" class="section">
+            <h2>Biblioteca</h2>
+            <p>Descubre cuentos fascinantes y aventuras increíbles en nuestra biblioteca infantil.</p>
+            <div class="image-container">
+                <img src="libro1.jpg" alt="El lobo y los siete cabritos">
+                <img src="libro2.jpg" alt="Los tres cerditos">
+                <img src="libro3.jpg" alt="Caperucita Roja">
+                <img src="libro4.jpg" alt="El patito feo">
+                <img src="libro5.jpg" alt="Blancanieves y los siete enanitos">
+                <img src="libro6.jpg" alt="Ricitos de Oro y los tres osos">
             </div>
-            <a class="carousel-prev" onclick="moveSlide(-1)">&#10094;</a>
-            <a class="carousel-next" onclick="moveSlide(1)">&#10095;</a>
-        </div>
-        <div class="section">
-            <h2>Sobre Nosotros</h2>
-            <p>Descubre más sobre nuestra misión y visión.</p>
-        </div>
-        <div class="contact-form">
+        </section>
+
+        <section id="ludoteca" class="section">
+            <h2>Ludoteca</h2>
+            <p>Explora juegos y actividades divertidas que estimulan el aprendizaje y la creatividad.</p>
+        </section>
+
+        <section id="materiales" class="section">
+            <h2>Materiales</h2>
+            <p>Encuentra materiales educativos para aprender y jugar en casa.</p>
+        </section>
+
+        <section id="galeria" class="section">
+            <h2>Galería</h2>
+            <p>Disfruta de nuestra galería de fotos y vídeos de actividades y eventos.</p>
+            <div class="image-container">
+                <img src="actividad1.jpg" alt="Actividad 1">
+                <img src="actividad2.jpg" alt="Actividad 2">
+                <img src="actividad3.jpg" alt="Actividad 3">
+                <img src="actividad4.jpg" alt="Actividad 4">
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
             <h2>Contacto</h2>
-            <form>
-                <input type="text" name="name" placeholder="Nombre" required>
-                <input type="email" name="email" placeholder="Correo Electrónico" required>
-                <textarea name="message" placeholder="Tu Mensaje" rows="4" required></textarea>
+            <form class="contact-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
                 <button type="submit">Enviar</button>
             </form>
-        </div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 Preescolar. Todos los derechos reservados.</p>
+        <p>&copy; 2023 Página de Preescolar. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
-    <script>
-        let slideIndex = 0;
-
-        function showSlides() {
-            const slides = document.querySelectorAll('.carousel-slide');
-            if (slides.length > 0) {
-                slides.forEach((slide, index) => {
-                    slide.style.display = 'none';  
-                });
-                slideIndex = (slideIndex + slides.length) % slides.length;
-                slides[slideIndex].style.display = 'block';
-            }
-        }
-
-        function moveSlide(n) {
-            const slides = document.querySelectorAll('.carousel-slide');
-            if (slides.length > 0) {
-                slideIndex = (slideIndex + n + slides.length) % slides.length;
-                showSlides();
-            }
-        }
-
-        showSlides();
-        setInterval(() => moveSlide(1), 3000);
-
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('show');
-        });
-    </script>
 </body>
 </html>
