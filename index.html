@@ -381,7 +381,6 @@ footer .social-icons a:hover {
     width: 500%; /* 5 imágenes, 100% * 5 */
     height: 100%;
     transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento */
-    animation: slide 25s infinite; /* Animación del carrusel con velocidad ajustada */
 }
 
 .carousel-slide {
@@ -398,14 +397,26 @@ footer .social-icons a:hover {
     object-fit: contain; /* Ajusta la imagen para que se ajuste dentro del contenedor sin recortarla */
 }
 
-/* Animación del carrusel */
-@keyframes slide {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-100%); }
-    40% { transform: translateX(-200%); }
-    60% { transform: translateX(-300%); }
-    80% { transform: translateX(-400%); }
-    100% { transform: translateX(0); }
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
     </style>
@@ -455,21 +466,18 @@ Explora nuestras secciones y aplica estas recomendaciones para crear un entorno 
             <h2>Materiales</h2>
             <p>Encuentra materiales educativos para aprender y jugar en casa.</p>
         </section>
-
-
-
-    <div class="carousel">
+        
+<div class="carousel">
+        <button class="carousel-btn prev">&#10094;</button>
         <div class="carousel-wrapper">
-            <div class="carousel-slide"><img src="carrusel1.jpg" alt="Foto 1"></div>
-            <div class="carousel-slide"><img src="carrusel2.jpg" alt="Foto 2"></div>
-            <div class="carousel-slide"><img src="carrusel3.jpg" alt="Foto 3"></div>
-            <div class="carousel-slide"><img src="carrusel4.jpg" alt="Foto 4"></div>
-            <div class="carousel-slide"><img src="carrusel5.jpg" alt="Foto 5"></div>
+            <div class="carousel-slide"><img src="image1.jpg" alt="Imagen 1"></div>
+            <div class="carousel-slide"><img src="image2.jpg" alt="Imagen 2"></div>
+            <div class="carousel-slide"><img src="image3.jpg" alt="Imagen 3"></div>
+            <div class="carousel-slide"><img src="image4.jpg" alt="Imagen 4"></div>
+            <div class="carousel-slide"><img src="image5.jpg" alt="Imagen 5"></div>
         </div>
+        <button class="carousel-btn next">&#10095;</button>
     </div>
-
-
-
         <section id="contacto" class="section">
             <h2>Contacto</h2>
             <form class="contact-form">
@@ -494,5 +502,28 @@ Explora nuestras secciones y aplica estas recomendaciones para crear un entorno 
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
+    <script>// script.js
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const carouselWrapper = document.querySelector('.carousel-wrapper');
+
+let index = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+const totalSlides = slides.length;
+
+function showSlide(n) {
+    if (n >= totalSlides) index = 0;
+    else if (n < 0) index = totalSlides - 1;
+    else index = n;
+
+    carouselWrapper.style.transform = `translateX(-${index * 100}%)`;
+}
+
+prevBtn.addEventListener('click', () => showSlide(index - 1));
+nextBtn.addEventListener('click', () => showSlide(index + 1));
+
+// Opcional: Navegación automática
+setInterval(() => showSlide(index + 1), 5000); // Cambia la imagen cada 5 segundos
+</script>
 </body>
 </html>
