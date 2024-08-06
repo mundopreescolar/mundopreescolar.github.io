@@ -368,11 +368,12 @@ footer .social-icons a:hover {
 /* Estilos del carrusel */
 .carousel {
     width: 100%;
-    max-width: 600px; /* Ajusta el tamaño máximo del carrusel */
-    height: 300px; /* Ajusta la altura del carrusel según sea necesario */
+    max-width: 800px; /* Ajusta el tamaño máximo del carrusel */
+    height: 400px; /* Ajusta la altura del carrusel según sea necesario */
     overflow: hidden;
     margin: auto;
     position: relative;
+    border: 2px solid #ddd; /* Opcional: Añade un borde para visualizar mejor el carrusel */
 }
 
 .carousel-wrapper {
@@ -392,8 +393,8 @@ footer .social-icons a:hover {
 }
 
 .carousel-slide img {
-    max-width: 100%; /* Ajusta la imagen para que no se salga del contenedor */
-    max-height: 100%; /* Ajusta la imagen para que no se salga del contenedor */
+    width: auto; /* Mantiene la proporción de la imagen */
+    height: 100%; /* Ajusta la altura de la imagen al contenedor */
     object-fit: contain; /* Ajusta la imagen para que se ajuste dentro del contenedor sin recortarla */
     display: block;
 }
