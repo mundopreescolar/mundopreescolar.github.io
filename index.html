@@ -391,14 +391,12 @@ footer .social-icons a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* Para centrar las imágenes adecuadamente */
-    box-sizing: border-box; /* Incluye el borde y padding en el tamaño total del slide */
 }
 
 .carousel-slide img {
-    max-width: 100%; /* Ajusta el ancho máximo de la imagen al contenedor */
-    max-height: 100%; /* Ajusta la altura máxima de la imagen al contenedor */
-    object-fit: contain; /* Mantiene la proporción de la imagen */
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    height: 100%; /* Ajusta la altura de la imagen al contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
     display: block; /* Elimina el espacio en blanco debajo de la imagen */
 }
 
