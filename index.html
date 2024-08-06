@@ -368,8 +368,8 @@ footer .social-icons a:hover {
 /* Estilos del carrusel */
 .carousel {
     width: 100%;
-    max-width: 1200px; /* Ajusta el tamaño máximo del carrusel */
-    height: 600px; /* Ajusta la altura del carrusel según sea necesario */
+    max-width: 800px; /* Ajusta el tamaño máximo del carrusel al tamaño de #materiales */
+    height: 400px; /* Ajusta la altura del carrusel según sea necesario */
     overflow: hidden;
     margin: auto;
     position: relative;
@@ -397,6 +397,7 @@ footer .social-icons a:hover {
     height: 100%;
     object-fit: cover; /* Ajusta la imagen para que ocupe todo el contenedor sin perder proporción */
 }
+
 
     </style>
 </head>
@@ -479,7 +480,7 @@ Explora nuestras secciones y aplica estas recomendaciones para crear un entorno 
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-    <script>// script.js
+    <script>
 const carouselWrapper = document.querySelector('.carousel-wrapper');
 const totalSlides = document.querySelectorAll('.carousel-slide').length;
 
@@ -500,7 +501,6 @@ function nextSlide() {
 // Navegación automática ajustada
 const interval = 10000; // Cambia la imagen cada 10 segundos
 let autoSlide = setInterval(nextSlide, interval);
-
 
 </script>
 </body>
