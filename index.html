@@ -369,7 +369,7 @@ footer .social-icons a:hover {
 .carousel {
     width: 100%;
     max-width: 600px; /* Ajusta el tamaño máximo del carrusel */
-    height: 400px; /* Ajusta la altura del carrusel */
+    height: 300px; /* Ajusta la altura del carrusel según sea necesario */
     overflow: hidden;
     margin: auto;
     position: relative;
@@ -378,19 +378,23 @@ footer .social-icons a:hover {
 .carousel-wrapper {
     display: flex;
     width: 500%; /* 5 imágenes, 100% * 5 */
-    animation: slide 15s infinite; /* Ajusta la velocidad aquí */
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento */
 }
 
 .carousel-slide {
     width: 100%;
     flex: 0 0 100%;
-    box-sizing: border-box; /* Asegura que el tamaño sea consistente */
+    height: 100%; /* Asegura que cada slide tenga la altura completa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-slide img {
-    width: 100%;
-    height: 100%; /* Ajusta la imagen para que llene el contenedor */
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionar */
+    max-width: 100%; /* Ajusta la imagen para que no se salga del contenedor */
+    max-height: 100%; /* Ajusta la imagen para que no se salga del contenedor */
+    object-fit: contain; /* Ajusta la imagen para que se ajuste dentro del contenedor sin recortarla */
     display: block;
 }
 
@@ -401,6 +405,11 @@ footer .social-icons a:hover {
     60% { transform: translateX(-300%); }
     80% { transform: translateX(-400%); }
     100% { transform: translateX(0); }
+}
+
+/* Animación del carrusel */
+.carousel {
+    animation: slide 15s infinite;
 }
 
     </style>
