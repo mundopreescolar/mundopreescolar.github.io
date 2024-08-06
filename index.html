@@ -380,7 +380,8 @@ footer .social-icons a:hover {
     display: flex;
     width: 500%; /* 5 imágenes, 100% * 5 */
     height: 100%;
-    animation: slide 15s infinite; /* Animación del carrusel */
+    transition: transform 0.5s ease-in-out; /* Transición suave para el movimiento */
+    animation: slide 30s infinite; /* Animación del carrusel */
 }
 
 .carousel-slide {
@@ -407,7 +408,6 @@ footer .social-icons a:hover {
     80% { transform: translateX(-400%); }
     100% { transform: translateX(0); }
 }
-
 
     </style>
 </head>
