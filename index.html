@@ -7,573 +7,391 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="dado.ico" type="image/x-icon">
     <style>
-.carousel {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-}
+        /* Carrusel */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-.carousel-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-}
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
 
-.carousel-slide img {
-    width: 100%;
-    height: auto; /* Mantén la relación de aspecto en dispositivos móviles */
-}
+        .carousel-slide img {
+            width: 100%;
+            vertical-align: middle;
+        }
 
-.carousel-prev, .carousel-next {
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-.carousel-prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-}
+        .carousel-prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
 
-.carousel-next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
+        .carousel-next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
 
-.carousel-prev:hover, .carousel-next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+        .carousel-prev:hover, .carousel-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-/* Media queries para el carrusel */
-@media (max-width: 768px) {
-    .carousel-prev, .carousel-next {
-        padding: 10px;
-        font-size: 14px;
-    }
-}
+        /* Menú de navegación */
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
+            background-size: 500% 500%;
+            animation: gradientAnimation 15s ease infinite;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 1s ease;
+            position: relative;
+        }
 
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
 
-@media (max-width: 768px) {
-    nav a {
-        font-size: 1em; /* Ajusta el tamaño del texto en el menú */
-        padding: 10px; /* Reduce el padding para los dispositivos móviles */
-    }
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 10px;
+            margin: 5px;
+            transition: color 0.3s, transform 0.3s, background-color 0.3s;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
 
-    .image-container img {
-        max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-        height: auto;
-    }
+        nav a i {
+            margin-right: 8px;
+        }
 
-    .contact-form input, .contact-form textarea {
-        width: calc(100% - 20px); /* Ajusta el ancho para el relleno */
-    }
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200%;
+            height: 2px;
+            background: #ffeb3b;
+            transition: transform 0.3s ease;
+            transform: translateX(-50%) scaleX(0);
+        }
 
-    .two-column {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+        nav a:hover::before {
+            transform: translateX(-50%) scaleX(1);
+        }
 
-@media (max-width: 1200px) {
-    nav a {
-        padding: 10px 15px;
-        font-size: 1em;
-    }
-}
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
 
-@media (max-width: 992px) {
-    header {
-        font-size: 2em;
-    }
-    .section {
-        padding: 15px;
-    }
-    .contact-form input, .contact-form textarea {
-        width: calc(100% - 16px);
-    }
-    .contact-form button {
-        font-size: 1em;
-    }
-}
+        /* Menú hamburguesa */
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
 
-@media (max-width: 576px) {
-    header {
-        font-size: 1.5em;
-    }
-    nav a {
-        font-size: 0.9em;
-        padding: 8px 12px;
-    }
-    .section {
-        padding: 10px;
-        margin: 10px;
-    }
-    .contact-form {
-        padding: 15px;
-    }
-    .contact-form input, .contact-form textarea {
-        width: calc(100% - 10px);
-    }
-    .contact-form button {
-        font-size: 0.9em;
-    }
-}
+        .nav-links {
+            display: flex;
+            flex-direction: row;
+        }
 
-/* General Styles */
-body {
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow: auto; /* Asegúrate de permitir el scroll */
-    transition: transform 1s ease; /* Transición para el desorden */
-}
+        .nav-links a {
+            display: inline-block;
+        }
 
-header {
-    background-color: #ffeb3b;
-    color: #00796b;
-    padding: 20px;
-    text-align: center;
-    font-size: 2.5em;
-    border-bottom: 5px solid #00796b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 1s ease; /* Transición para el desorden */
-}
+        .nav-links.collapsed {
+            display: none;
+        }
 
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
-    background-size: 500% 500%;
-    animation: gradientAnimation 15s ease infinite;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 1s ease; /* Transición para el desorden */
-}
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #333;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding: 10px 0;
+            }
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-/* Estilo general de la navbar */
-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
-    background-size: 500% 500%;
-    animation: gradientAnimation 15s ease infinite;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+            .nav-links a {
+                padding: 10px;
+                color: white;
+                text-align: center;
+                font-size: 1.2em;
+            }
 
-/* Estilos del menú */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 10px;
-}
+            .nav-links a:hover {
+                background-color: rgba(255, 255, 255, 0.6);
+                transform: scale(1.1);
+                color: #333;
+            }
 
-/* Enlaces del menú */
-nav a {
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.2em;
-    border-radius: 10px;
-    margin: 5px;
-    transition: color 0.3s, transform 0.3s, background-color 0.3s;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.3);
-}
+            .menu-toggle {
+                display: block;
+            }
 
-/* Botón de hamburguesa */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    margin: 10px;
-}
+            .nav-links.show {
+                display: flex;
+            }
+        }
 
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-}
+        @media (max-width: 1200px) {
+            nav a {
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+        }
 
-/* Menú desplegable */
-nav ul {
-    display: flex;
-}
+        @media (max-width: 992px) {
+            header {
+                font-size: 2em;
+            }
+            .section {
+                padding: 15px;
+            }
+            .contact-form input, .contact-form textarea {
+                width: calc(100% - 16px);
+            }
+            .contact-form button {
+                font-size: 1em;
+            }
+        }
 
-.navbar-collapse {
-    display: flex;
-}
+        @media (max-width: 576px) {
+            header {
+                font-size: 1.5em;
+            }
+            nav a {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+            .section {
+                padding: 10px;
+                margin: 10px;
+            }
+            .contact-form {
+                padding: 15px;
+            }
+            .contact-form input, .contact-form textarea {
+                width: calc(100% - 10px);
+            }
+            .contact-form button {
+                font-size: 0.9em;
+            }
+        }
 
-/* Media queries para pantallas pequeñas */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
+        /* General Styles */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow: auto;
+            transition: transform 1s ease;
+        }
 
-    .navbar-collapse {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-    }
+        header {
+            background-color: #ffeb3b;
+            color: #00796b;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            border-bottom: 5px solid #00796b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 1s ease;
+            position: relative;
+        }
 
-    .navbar-collapse.active {
-        display: flex;
-    }
+        main {
+            flex: 1;
+            padding: 20px;
+            margin-bottom: 80px;
+            transition: transform 1s ease;
+        }
 
-    nav a {
-        font-size: 1em;
-        padding: 10px;
-    }
-}
+        .section {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
+        .section:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
 
-main {
-    flex: 1;
-    padding: 20px;
-    margin-bottom: 80px;
-    transition: transform 1s ease;
-}
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+        }
 
-.section {
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 15px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
 
-.section:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
+        .contact-form button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
 
-.section h2 {
-    color: #00796b;
-    font-size: 2em;
-    margin-bottom: 20px;
-}
+        .contact-form button:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+        }
 
-.image-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    border: 5px solid #00796b;
-    transition: transform 0.3s, box-shadow 0.3s;
-    max-width: 200px;
-}
-
-.image-container img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.contact-form {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 3px solid #00796b;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    background: linear-gradient(135deg, #ff5722, #ff9800, #ffeb3b, #4caf50, #2196f3);
-    background-size: 400% 400%;
-    animation: gradientMovement 8s ease infinite;
-}
-
-@keyframes gradientMovement {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
-.contact-form h2 {
-    margin-top: 0;
-    color: #ff5722;
-    font-size: 1.8em;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
-.contact-form input, .contact-form textarea {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    border: 2px solid #00796b;
-    border-radius: 5px;
-}
-
-.contact-form button {
-    padding: 10px 15px;
-    background-color: #00796b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.contact-form button:hover {
-    background-color: #004d40;
-    transform: scale(1.05);
-}
-
-footer {
-    background-color: #00796b;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-}
-
-footer p {
-    margin: 0;
-    font-size: 1em;
-}
-
-/* Two-column layout */
-.two-column {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.two-column .column {
-    flex: 1;
-    min-width: 300px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.two-column .column:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-
+        footer {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
     <header>
-        <i id="headerIcon" class="fas fa-child"></i> Página de Preescolar
+        <h1>Bienvenido a Preescolar</h1>
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button>
     </header>
-   <nav>
-    <div class="hamburger" id="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <ul class="navbar-collapse">
-        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-        <li><a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a></li>
-        <li><a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a></li>
-        <li><a href="materiales.html"><i class="fas fa-cogs"></i> Materiales</a></li>
-        <li><a href="galeria.html"><i class="fas fa-images"></i> Galería</a></li>
-    </ul>
-</nav>
-
-    <main id="mainContent">
-        <section id="home" class="section">
-            <h2>Prevención de Riesgos para Infantes</h2>
-            <p>La seguridad de los niños es una prioridad esencial en cualquier entorno. Aquí te ofrecemos algunas recomendaciones clave para garantizar un entorno seguro para los más pequeños:.</p>
-            <div class="image-container">
-                <img src="img1.jpg" alt="Imagen 3">
-                <img src="img2.jpg" alt="Imagen 4">
-                <img src="img3.jpg" alt="Imagen 5">
+    <nav class="nav-links collapsed">
+        <a href="#"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#"><i class="fas fa-info-circle"></i> Información</a>
+        <a href="#"><i class="fas fa-graduation-cap"></i> Actividades</a>
+        <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+    </nav>
+    <main>
+        <div class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide"><img src="image1.jpg" alt="Imagen 1"></div>
+                <div class="carousel-slide"><img src="image2.jpg" alt="Imagen 2"></div>
+                <div class="carousel-slide"><img src="image3.jpg" alt="Imagen 3"></div>
             </div>
-            <div class="card-body">
-                <h3>Información Adicional</h3>
-                <p>En esta pagina web, exploraremos las mejores prácticas y recomendaciones para minimizar los riesgos y asegurar un ambiente seguro para los infantes. Cubriremos aspectos esenciales como la seguridad en el hogar, el transporte, la seguridad en el agua, la educación sobre riesgos y mucho más. A través de una combinación de prevención activa y educación, podemos crear un entorno donde los niños puedan explorar, aprender y crecer con confianza y seguridad.</p>
-            </div>
-        </section>
-
-        <section id="gallery" class="section two-column">
-            <div class="column">
-                <h2>Entorno seguro en el hogar</h2>
-                <p>Mobiliario: Asegúrate de que los muebles estén seguros y utiliza protectores de esquina en mesas y estanterías.
-Cables y Enchufes: Mantén los cables eléctricos fuera del alcance de los niños y usa protectores de enchufes.
-Productos Químicos: Guarda productos tóxicos en lugares seguros, fuera del alcance de los niños.
-Escaleras y Ventanas: Instala rejas en las ventanas y puertas que den a las escaleras.</p>
-                <!-- Más contenido de la galería -->
-            </div>
-            <div class="column">
-                <h2>Seguridad en el área de juegos</h2>
-                <p>Supervisión Activa:
-
-Vigilancia Constante: Supervisa a los niños durante el juego para prevenir accidentes y asegurar que estén usando el equipo de manera segura.
-Equipamiento de Juego:
-
-Revisión Regular: Inspecciona el equipo de juego regularmente para detectar posibles daños o desgaste.
-Mantenimiento Adecuado: Reemplaza o repara el equipo dañado de inmediato.
-Superficies de Juego:
-
-Suelo Acolchado: Asegúrate de que el área de juego tenga una superficie blanda, como caucho o arena, para amortiguar las caídas.</p>
-                <!-- Más contenido de la biblioteca -->
-            </div>
-        </section>
-
-        <section id="ludoteca" class="section two-column">
-            <div class="column">
-                <h2>Prevencion de accidentes en agua</h2>
-                <p>Supervisión Ininterrumpida:
-
-Presencia Constante: Nunca dejes a un niño solo en el agua, incluso si está en una bañera o piscina inflable.
-Uso de Flotadores:
-
-Dispositivos de Seguridad: Utiliza flotadores y otros dispositivos de seguridad adecuados, pero no sustituyen la supervisión activa.
-Enseñanza de Habilidades Acuáticas:
-
-Clases de Natación: Considera inscribir a los niños en clases de natación adecuadas para su edad.</p>
-                <!-- Más contenido de la ludoteca -->
-            </div>
-            <div class="column">
-                <h2>Educación y conciencia</h2>
-                <p>Enseñanza de Seguridad Básica:
-
-Reglas de Seguridad: Educa a los niños sobre las reglas básicas de seguridad, como no tocar objetos calientes o afilados.
-Simulacros: Realiza simulacros de emergencias y enséñales cómo actuar en caso de incendio o terremoto.</p>
-                <!-- Más contenido de materiales -->
-            </div>
-        </section>
-           <section id="carousel" class="section">
-    <div class="carousel-container">
-        <div class="carousel-slide">
-            <img src="carrusel1.jpg" alt="Imagen 1">
-            <img src="carrusel2.jpg" alt="Imagen 2">
-            <img src="carrusel3.jpg" alt="Imagen 3">
-            <!-- Añade más imágenes según sea necesario -->
+            <a class="carousel-prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="carousel-next" onclick="moveSlide(1)">&#10095;</a>
         </div>
-           <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-    </div>
-</section>
-
-        <section id="contact" class="section">
-            <div class="contact-form">
-                <h2>Contacto</h2>
-                <form>
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </section>
+        <div class="section">
+            <h2>Sobre Nosotros</h2>
+            <p>Descubre más sobre nuestra misión y visión.</p>
+        </div>
+        <div class="contact-form">
+            <h2>Contacto</h2>
+            <form>
+                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <textarea name="message" placeholder="Tu Mensaje" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </main>
- 
-
     <footer>
-        <p>&copy; 2024 Página de Preescolar. Todos los derechos reservados.</p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://www.youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        </div>
+        <p>&copy; 2024 Preescolar. Todos los derechos reservados.</p>
     </footer>
-
     <script>
+        let slideIndex = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelector('.carousel-container');
-    const prevButton = document.querySelector('.carousel-prev');
-    const nextButton = document.querySelector('.carousel-next');
-    const images = document.querySelectorAll('.carousel-slide img');
+        function showSlides() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            if (slides.length > 0) {
+                slides.forEach((slide, index) => {
+                    slide.style.display = 'none';  
+                });
+                slideIndex = (slideIndex + slides.length) % slides.length;
+                slides[slideIndex].style.display = 'block';
+            }
+        }
 
-    let index = 0; // Índice de la diapositiva actual
-    const totalSlides = images.length;
-    const slideWidth = 100; // El ancho de cada diapositiva en porcentaje
+        function moveSlide(n) {
+            const slides = document.querySelectorAll('.carousel-slide');
+            if (slides.length > 0) {
+                slideIndex = (slideIndex + n + slides.length) % slides.length;
+                showSlides();
+            }
+        }
 
-    function updateCarousel() {
-        const offset = -index * slideWidth; // Desplazamiento en porcentaje
-        slides.style.transform = `translateX(${offset}%)`;
-    }
+        showSlides();
+        setInterval(() => moveSlide(1), 3000);
 
-    nextButton.addEventListener('click', () => {
-        index = (index + 1) % totalSlides;
-        updateCarousel();
-    });
-
-    prevButton.addEventListener('click', () => {
-        index = (index - 1 + totalSlides) % totalSlides;
-        updateCarousel();
-    });
-
-    // Inicializa la posición del carrusel
-    updateCarousel();
-});
-
-document.getElementById('hamburger').addEventListener('click', () => {
-    document.querySelector('.navbar-collapse').classList.toggle('active');
-});
-
-</script>
-
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('show');
+        });
     </script>
-    
 </body>
 </html>
