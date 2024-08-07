@@ -3,11 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ludoteca</title>
+    <title>Ludoteca - Página de Preescolar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="icon" href="imagenes/crayolas.ico" type="image/x-icon">
+     <link rel="icon" href="imagenes/ludo.ico" type="image/x-icon">
     <style>
-        /* General Styles */
+    footer {
+    background-color: #ffeb3b;
+    padding: 20px;
+    text-align: center;
+    border-top: 5px solid #00796b;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    color: #00796b;
+    font-size: 1em;
+}
+
+footer .social-icons {
+    margin: 10px 0;
+}
+
+footer .social-icons a {
+    color: #00796b;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #004d40;
+    transform: scale(1.1);
+}
+
+/* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.9em;
+    }
+
+    footer .social-icons a {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    footer p {
+        font-size: 0.8em;
+    }
+
+    footer .social-icons a {
+        font-size: 1.1em;
+        margin: 0 5px;
+    }
+}
+
+
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
@@ -20,7 +82,6 @@
             flex-direction: column;
             min-height: 100vh;
             overflow: auto;
-            transition: transform 1s ease;
         }
 
         header {
@@ -137,25 +198,19 @@
             flex: 1;
             padding: 20px;
             margin-bottom: 80px;
-            transition: transform 1s ease;
+            box-sizing: border-box;
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.6);
             border-radius: 15px;
             padding: 20px;
             margin: 20px auto;
-            max-width: 800px;
+            max-width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
         }
 
         .section h2 {
@@ -164,26 +219,88 @@
             margin-bottom: 20px;
         }
 
-        .image-container {
+
+        .game-container {
             display: flex;
-            justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 20px;
+            justify-content: center;
         }
 
-        .image-container img {
-            max-width: 100%;
-            height: auto;
+        .game-box {
+            width: calc(50% - 20px);
+            box-sizing: border-box;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
             border-radius: 15px;
-            border: 5px solid #00796b;
-            transition: transform 0.3s, box-shadow 0.3s;
-            max-width: 200px;
         }
 
-        .image-container img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        .game-box:nth-child(1) {
+            background-color: rgba(255, 182, 193, 0.8); /* Light Pink */
+        }
+
+        .game-box:nth-child(2) {
+            background-color: rgba(255, 255, 204, 0.8); /* Light Yellow */
+        }
+
+        .game-box:nth-child(3) {
+            background-color: rgba(204, 255, 204, 0.8); /* Light Green */
+        }
+
+        .game-box:nth-child(4) {
+            background-color: rgba(204, 229, 255, 0.8); /* Light Blue */
+        }
+
+        .game-box:nth-child(5) {
+            background-color: rgba(255, 204, 178, 0.8); /* Light Orange */
+        }
+
+        .game-box img {
+            width: auto;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .game-box h3 {
+            color: #00796b;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .game-box a {
+            display: inline-block;
+            color: #00796b;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Hover styles for different age groups */
+        .game-box:nth-child(1) a:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        .game-box:nth-child(2) a:hover {
+            background-color: blue;
+            color: #fff;
+        }
+
+        .game-box:nth-child(3) a:hover {
+            background-color: yellow;
+            color: #fff;
+        }
+
+        .game-box:nth-child(4) a:hover {
+            background-color: purple;
+            color: #fff;
         }
 
         .contact-form {
@@ -245,102 +362,83 @@
 
         footer {
             background-color: #ffeb3b;
-            padding: 20px;
+            color: #00796b;
             text-align: center;
+            padding: 20px;
             border-top: 5px solid #00796b;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         footer p {
             margin: 0;
-            color: #00796b;
-            font-size: 1em;
         }
 
         footer .social-icons {
-            margin: 10px 0;
+            margin-top: 10px;
         }
 
         footer .social-icons a {
             color: #00796b;
             margin: 0 10px;
+            text-decoration: none;
             font-size: 1.5em;
-            transition: color 0.3s, transform 0.3s;
+            transition: color 0.3s;
         }
 
         footer .social-icons a:hover {
-            color: #333;
-            transform: scale(1.2);
+            color: #004d40;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Ludoteca</h1>
+        <i class="fa fa-cube"></i>Ludoteca
     </header>
     <nav>
-        <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
-        <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
-        <a href="ludoteca.html"><i class="fas fa-puzzle-piece"></i>Ludoteca</a>
-        <a href="materiales.html"><i class="fas fa-paint-brush"></i>Materiales</a>
-        <a href="galeria.html"><i class="fas fa-images"></i>Galería</a>
+        <a href="index.html"><i class="fa fa-home"></i>Inicio</a>
+        <a href="biblioteca.html"><i class="fa fa-book"></i>Biblioteca</a>
+        <a href="ludoteca.html"><i class="fa fa-puzzle-piece"></i>Ludoteca</a>
+        <a href="materiales.html"><i class="fa fa-box"></i>Materiales</a>
+        <a href="galeria.html"><i class="fa fa-images"></i>Galería</a>
     </nav>
     <main>
-        <section class="section">
-            <h2>0 a 6 meses</h2>
-            <div class="image-container">
-                <img src="imagenes/ludoteca_0_6meses.jpg" alt="0 a 6 meses">
+        <section id="ludoteca" class="section">
+            <h2>Ludoteca</h2>
+            <div class="section-content">
+                <div class="game-container">
+                    <div class="game-box">
+                        <img src="imagenes/mamila.png" alt="0 a 6 meses">
+                        <h3>0 a 6 meses</h3>
+                        <a href="https://www.juegosinfantiles.es/juegos-para-bebes/" target="_blank">Ver Juegos</a>
+                    </div>
+                    <div class="game-box">
+                        <img src="imagenes/andadera.png" alt="6 meses a 18 meses">
+                        <h3>6 meses a 18 meses</h3>
+                        <a href="https://www.ludoteca.org/6-meses-18-meses/" target="_blank">Ver Juegos</a>
+                    </div>
+                </div>
+                <div class="game-container">
+                    <div class="game-box">
+                        <img src="imagenes/bebe.png" alt="18 meses a 36 meses">
+                        <h3>18 meses a 36 meses</h3>
+                        <a href="https://www.airea.es/recursos/juegos-educativos-18-meses-36-meses/" target="_blank">Ver Juegos</a>
+                    </div>
+                    <div class="game-box">
+                        <img src="imagenes/jugando.png" alt="3 años a 6 años">
+                        <h3>3 años a 6 años</h3>
+                        <a href="https://www.elsuperheroe.com/juegos-para-ninos-3-a-6-anos/" target="_blank">Ver Juegos</a>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="section">
-            <h2>6 meses a 18 meses</h2>
-            <div class="image-container">
-                <img src="imagenes/ludoteca_6_18meses.jpg" alt="6 meses a 18 meses">
-            </div>
-        </section>
-        <section class="section">
-            <h2>18 meses a 36 meses</h2>
-            <div class="image-container">
-                <img src="imagenes/ludoteca_18_36meses.jpg" alt="18 meses a 36 meses">
-            </div>
-        </section>
-        <section class="section">
-            <h2>3 años a 6 años</h2>
-            <div class="image-container">
-                <img src="imagenes/ludoteca_3_6anos.jpg" alt="3 años a 6 años">
-            </div>
-        </section>
-        <section class="section contact-form">
-            <h2>Contacto</h2>
-            <form action="contact.php" method="POST">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Correo electrónico</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
+        <!-- Secciones de Materiales y Galería aquí -->
     </main>
     <footer>
-        <div class="container">
-            <p>&copy; 2023 Mi Ludoteca. Todos los derechos reservados.</p>
-            <div class="social-icons">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
+        <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
         </div>
     </footer>
 </body>
