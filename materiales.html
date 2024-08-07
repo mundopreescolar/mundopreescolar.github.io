@@ -186,9 +186,22 @@
             box-sizing: border-box;
         }
 
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
         .section h2 {
             color: #00796b;
             font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #555;
+            font-size: 1.1em;
             margin-bottom: 20px;
         }
 
@@ -203,45 +216,56 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
         }
 
         .material-list li a {
             text-decoration: none;
             color: #00796b;
             font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .material-list li a:hover {
+            color: #004d40;
+        }
+
+        .material-list li p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .download-button {
             display: inline-block;
-            flex: 1;
-        }
-
-        .material-list li button {
-            background-color: #00796b;
+            padding: 10px 20px;
+            font-size: 1.1em;
             color: white;
+            background-color: #00796b;
             border: none;
-            border-radius: 5px;
-            padding: 8px 12px;
-            font-size: 1em;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 10px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-            margin-left: 10px;
-            display: flex;
-            align-items: center;
         }
 
-        .material-list li button i {
-            margin-right: 5px;
-        }
-
-        .material-list li button:hover {
+        .download-button:hover {
             background-color: #004d40;
             transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
-        .material-list li button:focus {
-            outline: none;
+        .description-section {
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
         }
 
         footer {
@@ -270,7 +294,6 @@
             font-size: 1.5em;
             margin: 0 10px;
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         .social-icons a:hover {
@@ -283,46 +306,52 @@
         Ludoteca Preescolar
     </header>
     <nav>
-        <a href="inicio.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
         <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
         <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
         <a href="materiales.html"><i class="fas fa-box"></i> Materiales</a>
-        <a href="galeria.html"><i class="fas fa-image"></i> Galería</a>
+        <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
     </nav>
     <main>
-        <section id="materiales" class="section">
-            <h2>Materiales para Descargar</h2>
+        <section class="description-section">
+            <h2>Descripción de la Página de Materiales</h2>
+            <p>En esta página, encontrarás una variedad de materiales educativos diseñados para apoyar el desarrollo y aprendizaje de los niños en edad preescolar. Explora nuestras secciones para descargar recursos, conocer las herramientas disponibles y obtener información adicional sobre cada uno de ellos.</p>
+        </section>
+        
+        <section class="section">
+            <img src="imagenes/portada_material_1.jpg" alt="Portada Material 1">
+            <h2>Material 1</h2>
             <ul class="material-list">
                 <li>
-                    <a href="materiales/hoja-trabajo1.pdf" download>Hoja de Trabajo 1</a>
-                    <button><i class="fas fa-download"></i> Descargar</button>
+                    <a href="descargar_material_1.pdf">Descargar Material 1</a>
+                    <p>Descripción breve del material 1.</p>
+                    <a href="descargar_material_1.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
                 </li>
-                <li>
-                    <a href="materiales/actividad-colores.pdf" download>Actividad de Colores</a>
-                    <button><i class="fas fa-download"></i> Descargar</button>
-                </li>
-                <li>
-                    <a href="materiales/juego-numeros.pdf" download>Juego de Números</a>
-                    <button><i class="fas fa-download"></i> Descargar</button>
-                </li>
-                <li>
-                    <a href="materiales/cuento-infantil.pdf" download>Cuento Infantil</a>
-                    <button><i class="fas fa-download"></i> Descargar</button>
-                </li>
-                <li>
-                    <a href="materiales/guia-padres.pdf" download>Guía para Padres</a>
-                    <button><i class="fas fa-download"></i> Descargar</button>
-                </li>
+                <!-- Más elementos de la lista aquí -->
             </ul>
         </section>
+
+        <section class="section">
+            <img src="imagenes/portada_material_2.jpg" alt="Portada Material 2">
+            <h2>Material 2</h2>
+            <ul class="material-list">
+                <li>
+                    <a href="descargar_material_2.pdf">Descargar Material 2</a>
+                    <p>Descripción breve del material 2.</p>
+                    <a href="descargar_material_2.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
+                </li>
+                <!-- Más elementos de la lista aquí -->
+            </ul>
+        </section>
+
+        <!-- Más secciones aquí -->
     </main>
     <footer>
-        <p>&copy; 2024 Ludoteca Preescolar</p>
+        <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
         <div class="social-icons">
-            <a href="https://facebook.com/tu-pagina" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/tu-cuenta" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com/tu-perfil" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://youtube.com/tu-canal" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
 </body>
