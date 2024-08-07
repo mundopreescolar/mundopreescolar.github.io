@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="imagenes/ludo.ico" type="image/x-icon">
     <style>
+        /* Estilos generales y de la página aquí */
+
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
@@ -210,6 +212,7 @@
             margin-bottom: 20px;
             border-radius: 15px;
             cursor: pointer;
+            background-color: rgba(255, 182, 193, 0.8); /* Light Pink */
         }
 
         .game-box img {
@@ -241,30 +244,6 @@
             border: 2px solid #00796b;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
-        }
-
-        .game-box:nth-child(1) {
-            background-color: rgba(255, 182, 193, 0.8); /* Light Pink */
-        }
-
-        .game-box:nth-child(2) {
-            background-color: rgba(255, 255, 204, 0.8); /* Light Yellow */
-        }
-
-        .game-box:nth-child(3) {
-            background-color: rgba(204, 255, 204, 0.8); /* Light Green */
-        }
-
-        .game-box:nth-child(4) {
-            background-color: rgba(204, 229, 255, 0.8); /* Light Blue */
-        }
-
-        .game-box:nth-child(5) {
-            background-color: rgba(255, 204, 178, 0.8); /* Light Orange */
-        }
-
-        .game-box:nth-child(6) {
-            background-color: rgba(0, 255, 255, 0.8); /* Aqua */
         }
 
         .game-box a:hover {
@@ -364,7 +343,7 @@
     <main>
         <div id="ludoteca" class="section">
             <h2>Ludoteca</h2>
-             <div class="game-container">
+            <div class="game-container">
                 <div class="game-box" data-popup="popup-safety-land">
                     <img src="game1.png" alt="Safety Land">
                     <h3>Safety Land</h3>
@@ -373,16 +352,15 @@
                 <div id="popup-safety-land" class="popup">
                     <div class="popup-content">
                         <span class="popup-close">&times;</span>
-                        <img src="game1.png alt="Safety Land">
+                        <img src="game1.png" alt="Safety Land">
                         <p>Un juego interactivo que enseña a los niños sobre seguridad en el hogar mediante mini-juegos y desafíos.</p>
                         <a href="https://beinternetawesome.withgoogle.com/es-419_all/interland" class="popup-button">
                             <i class="fas fa-gamepad"></i> Jugar Ahora
                         </a>
                     </div>
                 </div>
-                
-
-      
+                <!-- Puedes duplicar la estructura para más juegos aquí -->
+            </div>
         </div>
     </main>
     <footer>
@@ -390,36 +368,40 @@
     </footer>
     <script>
         // Función para abrir el popup
-        function openPopup(imageSrc, description, link) {
-            document.getElementById('popup-image').src = imageSrc;
-            document.getElementById('popup-description').textContent = description;
-            document.getElementById('popup-link').href = link;
-            document.getElementById('popup').style.display = 'flex';
+        function openPopup(popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.style.display = 'flex';
+            }
         }
 
         // Función para cerrar el popup
         function closePopup() {
-            document.getElementById('popup').style.display = 'none';
+            document.querySelectorAll('.popup').forEach(popup => {
+                popup.style.display = 'none';
+            });
         }
 
-        // Asignar eventos de click a las imágenes de los juegos
-        document.querySelectorAll('.game-box img').forEach(img => {
-            img.addEventListener('click', function() {
-                const gameBox = this.parentElement;
-                const description = gameBox.querySelector('p').textContent;
-                const link = gameBox.querySelector('a').href;
-                openPopup(this.src, description, link);
+        // Asignar eventos de click a las cajas de los juegos
+        document.querySelectorAll('.game-box').forEach(box => {
+            box.addEventListener('click', function() {
+                const popupId = this.getAttribute('data-popup');
+                openPopup(popupId);
             });
         });
 
         // Asignar evento de click al botón de cerrar el popup
-        document.querySelector('.popup-close').addEventListener('click', closePopup);
+        document.querySelectorAll('.popup-close').forEach(closeButton => {
+            closeButton.addEventListener('click', closePopup);
+        });
 
         // Cerrar el popup cuando se hace clic fuera del contenido
-        document.getElementById('popup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closePopup();
-            }
+        document.querySelectorAll('.popup').forEach(popup => {
+            popup.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePopup();
+                }
+            });
         });
     </script>
 </body>
