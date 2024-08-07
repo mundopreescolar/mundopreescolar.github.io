@@ -131,7 +131,6 @@
             transform-origin: bottom left;
         }
 
-        /* Ajustes responsivos */
         @media (max-width: 768px) {
             header {
                 font-size: 2em;
@@ -232,6 +231,10 @@
             background-color: rgba(255, 204, 178, 0.8); /* Light Orange */
         }
 
+        .game-box:nth-child(6) {
+            background-color: rgba(0, 255, 255, 0.8); /* Aqua */
+        }
+
         .game-box img {
             width: auto;
             height: 180px;
@@ -279,123 +282,102 @@
 
         footer {
             background-color: #ffeb3b;
-            color: #00796b;
+            padding: 20px;
             text-align: center;
-            padding: 10px 0;
             border-top: 5px solid #00796b;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
             bottom: 0;
             width: 100%;
-            box-sizing: border-box;
-        }
-
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         footer p {
             margin: 0;
+            font-size: 1.2em;
             color: #00796b;
-            font-size: 1em;
-        }
-
-        footer .social-icons {
-            margin: 10px 0;
-        }
-
-        footer .social-icons a {
-            color: #00796b;
-            margin: 0 10px;
-            font-size: 1.5em;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        footer .social-icons a:hover {
-            color: #004d40;
-            transform: scale(1.1);
-        }
-
-        /* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
-        @media (max-width: 768px) {
-            footer p {
-                font-size: 0.9em;
-            }
-
-            footer .social-icons a {
-                font-size: 1.3em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            footer p {
-                font-size: 0.8em;
-            }
-
-            footer .social-icons a {
-                font-size: 1.1em;
-                margin: 0 5px;
-            }
         }
     </style>
 </head>
 <body>
     <header>
-        Ludoteca Infantil
+        Ludoteca de Seguridad
     </header>
     <nav>
-        <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
-        <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
-        <a href="ludoteca.html"><i class="fas fa-gamepad"></i>Ludoteca</a>
-        <a href="materiales.html"><i class="fas fa-paint-brush"></i>Materiales</a>
-        <a href="galeria.html"><i class="fas fa-image"></i>Galería</a>
+        <a href="#inicio"><i class="fas fa-home"></i>Inicio</a>
+        <a href="#biblioteca"><i class="fas fa-book"></i>Biblioteca</a>
+        <a href="#ludoteca"><i class="fas fa-gamepad"></i>Ludoteca</a>
+        <a href="#materiales"><i class="fas fa-pencil-alt"></i>Materiales</a>
+        <a href="#galeria"><i class="fas fa-images"></i>Galería</a>
     </nav>
     <main>
-        <section class="section">
-            <h2>Juegos para Preescolar</h2>
+        <section class="section" id="ludoteca">
+            <h2>Juegos de Seguridad</h2>
             <div class="game-container">
                 <div class="game-box">
-                    <img src="imagenes/juego1.jpg" alt="Juego 1">
-                    <h3>Juego 1</h3>
-                    <a href="#">Jugar</a>
+                    <img src="imagenes/safety_land.jpg" alt="Safety Land">
+                    <h3>Safety Land</h3>
+                    <p>Un juego interactivo que enseña a los niños sobre seguridad en el hogar mediante mini-juegos y desafíos.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
                 <div class="game-box">
-                    <img src="imagenes/juego2.jpg" alt="Juego 2">
-                    <h3>Juego 2</h3>
-                    <a href="#">Jugar</a>
+                    <img src="imagenes/the_safety_show.jpg" alt="The Safety Show">
+                    <h3>The Safety Show</h3>
+                    <p>Permite a los niños explorar un entorno virtual y completar misiones relacionadas con la seguridad en diferentes contextos.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
                 <div class="game-box">
-                    <img src="imagenes/juego3.jpg" alt="Juego 3">
-                    <h3>Juego 3</h3>
-                    <a href="#">Jugar</a>
+                    <img src="imagenes/safe_side_super_chick.jpg" alt="Safe Side Super Chick">
+                    <h3>Safe Side Super Chick</h3>
+                    <p>Un juego que ayuda a los niños a aprender sobre seguridad personal y cómo actuar en situaciones de riesgo.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
                 <div class="game-box">
-                    <img src="imagenes/juego4.jpg" alt="Juego 4">
-                    <h3>Juego 4</h3>
-                    <a href="#">Jugar</a>
+                    <img src="imagenes/dr_safety.jpg" alt="Dr. Safety">
+                    <h3>Dr. Safety</h3>
+                    <p>Enfocado en enseñar primeros auxilios y cómo responder a emergencias a través de diversos escenarios interactivos.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
                 <div class="game-box">
-                    <img src="imagenes/juego5.jpg" alt="Juego 5">
-                    <h3>Juego 5</h3>
-                    <a href="#">Jugar</a>
+                    <img src="imagenes/be_safe_kids.jpg" alt="Be Safe Kids">
+                    <h3>Be Safe Kids</h3>
+                    <p>Incluye juegos educativos que abordan la seguridad en el hogar y en la calle, como el cruce seguro de calles.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
                 <div class="game-box">
-                    <img src="imagenes/juego5.jpg" alt="Juego 6">
-                    <h3>Juego 6</h3>
-                    <a href="#">Jugar</a>
+                    <img src="imagenes/emergency_game.jpg" alt="Emergency! The Game">
+                    <h3>Emergency! The Game</h3>
+                    <p>Un juego en el que los niños pueden simular ser paramédicos, bomberos o policías, aprendiendo sobre las respuestas a emergencias y cómo mantenerse seguros.</p>
+                    <a href="#">Jugar Ahora</a>
+                </div>
+                <div class="game-box">
+                    <img src="imagenes/kid_safety_online.jpg" alt="Kid Safety Online">
+                    <h3>Kid Safety Online</h3>
+                    <p>Un sitio web con juegos y actividades diseñados para enseñar a los niños sobre la seguridad en línea y cómo protegerse mientras navegan por Internet.</p>
+                    <a href="#">Jugar Ahora</a>
+                </div>
+                <div class="game-box">
+                    <img src="imagenes/fire_safety_simulator.jpg" alt="Fire Safety Simulator">
+                    <h3>Fire Safety Simulator</h3>
+                    <p>Un juego que simula situaciones de incendio, ayudando a los niños a aprender cómo reaccionar ante un incendio y cómo prevenirlo en el hogar.</p>
+                    <a href="#">Jugar Ahora</a>
+                </div>
+                <div class="game-box">
+                    <img src="imagenes/safety_town.jpg" alt="Safety Town">
+                    <h3>Safety Town</h3>
+                    <p>Un juego que educa a los niños sobre la seguridad vial y las reglas de tránsito mediante simulaciones y escenarios interactivos.</p>
+                    <a href="#">Jugar Ahora</a>
+                </div>
+                <div class="game-box">
+                    <img src="imagenes/healthy_safe_kids.jpg" alt="Healthy and Safe Kids">
+                    <h3>Healthy and Safe Kids</h3>
+                    <p>Ofrece juegos educativos sobre salud y seguridad, cubriendo temas como el cuidado personal, la seguridad alimentaria y la prevención de accidentes.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
-        <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-        </div>
+        <p>Derechos reservados &copy; 2024 Ludoteca de Seguridad</p>
     </footer>
 </body>
 </html>
