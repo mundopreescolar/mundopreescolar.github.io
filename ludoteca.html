@@ -230,8 +230,6 @@
 
         .game-box:nth-child(5) {
             background-color: rgba(255, 204, 178, 0.8); /* Light Orange */
-        .game-box:nth-child(5) {
-            background-color: rgba(0, 255, 255, 0.8); /* aqua */
         }
 
         .game-box img {
@@ -279,7 +277,6 @@
             color: #fff;
         }
 
-        
         footer {
             background-color: #ffeb3b;
             color: #00796b;
@@ -287,69 +284,61 @@
             padding: 10px 0;
             border-top: 5px solid #00796b;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
-                footer {
-    background-color: #ffeb3b;
-    padding: 20px;
-    text-align: center;
-    border-top: 5px solid #00796b;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
 
-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-footer p {
-    margin: 0;
-    color: #00796b;
-    font-size: 1em;
-}
+        footer p {
+            margin: 0;
+            color: #00796b;
+            font-size: 1em;
+        }
 
-footer .social-icons {
-    margin: 10px 0;
-}
+        footer .social-icons {
+            margin: 10px 0;
+        }
 
-footer .social-icons a {
-    color: #00796b;
-    margin: 0 10px;
-    font-size: 1.5em;
-    transition: color 0.3s, transform 0.3s;
-}
+        footer .social-icons a {
+            color: #00796b;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s, transform 0.3s;
+        }
 
-footer .social-icons a:hover {
-    color: #004d40;
-    transform: scale(1.1);
-}
+        footer .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
 
-/* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
-@media (max-width: 768px) {
-    footer p {
-        font-size: 0.9em;
-    }
+        /* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
+        @media (max-width: 768px) {
+            footer p {
+                font-size: 0.9em;
+            }
 
-    footer .social-icons a {
-        font-size: 1.3em;
-    }
-}
+            footer .social-icons a {
+                font-size: 1.3em;
+            }
+        }
 
-@media (max-width: 480px) {
-    footer p {
-        font-size: 0.8em;
-    }
+        @media (max-width: 480px) {
+            footer p {
+                font-size: 0.8em;
+            }
 
-    footer .social-icons a {
-        font-size: 1.1em;
-        margin: 0 5px;
-    }
-}
-
+            footer .social-icons a {
+                font-size: 1.1em;
+                margin: 0 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -392,15 +381,13 @@ footer .social-icons a:hover {
                     <h3>Juego 5</h3>
                     <a href="#">Jugar</a>
                 </div>
-                   <div class="game-box">
+                <div class="game-box">
                     <img src="imagenes/juego5.jpg" alt="Juego 6">
-                    <h3>Juego 5</h3>
+                    <h3>Juego 6</h3>
                     <a href="#">Jugar</a>
                 </div>
             </div>
         </section>
-
-
     </main>
     <footer>
         <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
