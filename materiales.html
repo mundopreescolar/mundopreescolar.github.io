@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="imagenes/ludo.ico" type="image/x-icon">
     <style>
+        @font-face {
+            font-family: 'B-SQUARES AROUND';
+            src: url('fonts/bsquares-around.woff2') format('woff2'),
+                 url('fonts/bsquares-around.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'B-SQUARES AROUND', sans-serif;
             margin: 0;
             padding: 0;
             background: url('background.jpg') no-repeat center center fixed;
@@ -269,9 +277,8 @@
         }
 
         .download-btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 20px;
+            display: inline-block;
+            padding: 12px 24px;
             margin-top: 10px;
             font-size: 1em;
             color: #00796b;
@@ -283,13 +290,9 @@
             text-decoration: none;
         }
 
-        .download-btn i {
-            margin-right: 8px;
-        }
-
         .download-btn:hover {
             background: #00796b;
-            color: #fff;
+            color: white;
             transform: scale(1.05);
         }
 
