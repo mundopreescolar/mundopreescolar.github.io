@@ -358,6 +358,14 @@
     overflow-y: auto; /* Asegura que el contenido se pueda desplazar si es necesario */
 }
 
+/* Estilo para las imágenes dentro del popup */
+.popup-content img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor del popup */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    margin-bottom: 10px;
+}
+
 /* Ajustes para pantallas menores de 768px */
 @media (max-width: 768px) {
     .popup-content {
