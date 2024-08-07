@@ -329,7 +329,8 @@
                 margin: 0 5px;
             }
         }
-   .popup {
+/* Estilo general para popups */
+.popup {
     display: none;
     position: fixed;
     left: 0;
@@ -348,26 +349,28 @@
 .popup-content {
     background: #fff;
     border-radius: 10px;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
+    padding: 15px; /* Ajuste del padding para pantallas pequeñas */
+    width: 90%;
+    max-width: 500px; /* Reducción del tamaño máximo del popup */
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     overflow-y: auto; /* Asegura que el contenido se pueda desplazar si es necesario */
 }
 
-/* Ajustes para pantallas pequeñas */
+/* Ajustes para pantallas menores de 768px */
 @media (max-width: 768px) {
     .popup-content {
-        width: 90%;
-        padding: 15px;
+        width: 85%;
+        max-width: 400px; /* Reducción adicional del tamaño máximo */
+        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .popup-content {
-        width: 95%;
+        width: 90%;
+        max-width: 350px; /* Tamaño máximo reducido para pantallas muy pequeñas */
         padding: 10px;
     }
 
@@ -381,12 +384,12 @@
     }
 
     .popup-content p {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     .popup-content .joystick-button {
         font-size: 1em;
-        padding: 8px 15px;
+        padding: 8px 12px;
     }
 }
         .close-btn {
