@@ -174,7 +174,7 @@
             box-sizing: border-box;
         }
 
-        .description-section {
+        .section {
             border-radius: 15px;
             padding: 20px;
             margin: 20px auto;
@@ -184,90 +184,78 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
+            position: relative;
         }
 
-        .description-section h2 {
+        .section img {
+            width: 100%;
+            border-radius: 15px 15px 0 0;
+            height: auto;
+        }
+
+        .section-content {
+            padding: 15px;
+        }
+
+        .section h2 {
             color: #00796b;
             font-size: 2em;
             margin-bottom: 20px;
         }
 
-        .description-section p {
-            color: #555;
-            font-size: 1.1em;
-        }
-
-        .material-grid {
+        .material-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            list-style-type: none;
+            padding: 0;
             justify-content: center;
         }
 
-        .material-card {
-            flex: 1 1 calc(33.333% - 40px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            text-align: center;
-            max-width: 300px;
+        .material-list li {
+            flex: 0 0 30%;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
 
-        .material-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            margin-bottom: 15px;
-        }
-
-        .material-card h2 {
+        .material-list li a {
+            text-decoration: none;
             color: #00796b;
-            font-size: 1.5em;
-            margin-bottom: 10px;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
         }
 
-        .material-card p {
+        .material-list li a:hover {
+            color: #004d40;
+        }
+
+        .material-list li p {
+            margin: 0;
+            font-size: 0.9em;
             color: #555;
-            font-size: 1em;
-            margin-bottom: 10px;
         }
 
-        .download-button {
+        .download-btn {
             display: inline-block;
             padding: 10px 20px;
+            margin-top: 10px;
             font-size: 1em;
-            color: white;
-            background-color: #00796b;
+            color: #fff;
+            background: #ff4081;
             border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-            margin-top: auto;
+            border-radius: 5px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        .download-button:hover {
-            background-color: #004d40;
+        .download-btn:hover {
+            background: #e91e63;
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        @media (max-width: 1024px) {
-            .material-card {
-                flex: 1 1 calc(50% - 40px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .material-card {
-                flex: 1 1 100%;
-            }
         }
 
         footer {
@@ -293,8 +281,10 @@
 
         .social-icons a {
             color: #00796b;
+            font-size: 1.5em;
             margin: 0 10px;
             text-decoration: none;
+            transition: color 0.3s;
         }
 
         .social-icons a:hover {
@@ -307,49 +297,46 @@
         Ludoteca Preescolar
     </header>
     <nav>
-        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="inicio.html"><i class="fas fa-home"></i> Inicio</a>
         <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
         <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="materiales.html"><i class="fas fa-box"></i> Materiales</a>
+        <a href="materiales.html"><i class="fas fa-puzzle-piece"></i> Materiales</a>
         <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
     </nav>
     <main>
-        <section class="description-section">
-            <h2>Descripción de la Página de Materiales</h2>
-            <p>En esta página, encontrarás una variedad de materiales educativos diseñados para apoyar el desarrollo y aprendizaje de los niños en edad preescolar. Explora nuestras secciones para descargar recursos, conocer las herramientas disponibles y obtener información adicional sobre cada uno de ellos.</p>
-        </section>
-
-        <div class="material-grid">
-            <div class="material-card">
-                <img src="imagenes/portada_material_1.jpg" alt="Portada Material 1">
-                <h2>Material 1</h2>
-                <p>Descripción breve del material 1.</p>
-                <a href="descargar_material_1.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
+        <div class="section">
+            <img src="portada.jpg" alt="Portada de Materiales">
+            <div class="section-content">
+                <h2>Materiales Educativos</h2>
+                <p>En esta sección encontrarás una variedad de materiales educativos diseñados para apoyar el aprendizaje de los niños en edad preescolar. Explora y descarga los recursos que mejor se adapten a tus necesidades.</p>
             </div>
-            
-            <div class="material-card">
-                <img src="imagenes/portada_material_2.jpg" alt="Portada Material 2">
-                <h2>Material 2</h2>
-                <p>Descripción breve del material 2.</p>
-                <a href="descargar_material_2.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
-            </div>
-            
-            <div class="material-card">
-                <img src="imagenes/portada_material_3.jpg" alt="Portada Material 3">
-                <h2>Material 3</h2>
-                <p>Descripción breve del material 3.</p>
-                <a href="descargar_material_3.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
-            </div>
-
-            <!-- Añadir más tarjetas de materiales aquí -->
         </div>
+        <ul class="material-list">
+            <li>
+                <a href="material1.pdf" download="Material1.pdf">Material 1</a>
+                <p>Descripción breve del Material 1</p>
+                <a class="download-btn" href="material1.pdf" download="Material1.pdf">Descargar</a>
+            </li>
+            <li>
+                <a href="material2.pdf" download="Material2.pdf">Material 2</a>
+                <p>Descripción breve del Material 2</p>
+                <a class="download-btn" href="material2.pdf" download="Material2.pdf">Descargar</a>
+            </li>
+            <li>
+                <a href="material3.pdf" download="Material3.pdf">Material 3</a>
+                <p>Descripción breve del Material 3</p>
+                <a class="download-btn" href="material3.pdf" download="Material3.pdf">Descargar</a>
+            </li>
+            <!-- Añade más materiales según sea necesario -->
+        </ul>
     </main>
     <footer>
         <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
 </body>
