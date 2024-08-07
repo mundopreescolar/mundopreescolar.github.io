@@ -165,16 +165,6 @@
                 transform: none;
                 box-shadow: none;
             }
-
-            .section {
-                padding: 10px;
-                margin: 10px auto;
-            }
-
-            .material-list li {
-                flex: 0 0 100%;
-                margin: 10px 0;
-            }
         }
 
         main {
@@ -193,6 +183,7 @@
             text-align: center;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
             position: relative;
         }
 
@@ -212,6 +203,11 @@
             margin-bottom: 20px;
         }
 
+        .section p {
+            font-size: 1em;
+            color: #555;
+        }
+
         .material-list {
             display: flex;
             flex-wrap: wrap;
@@ -229,6 +225,7 @@
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             position: relative;
+            text-align: center;
         }
 
         .material-list li a {
@@ -255,15 +252,16 @@
             margin-top: 10px;
             font-size: 1em;
             color: #fff;
-            background: #ff4081;
+            background: #00796b;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
         }
 
         .download-btn:hover {
-            background: #e91e63;
+            background: #004d40;
             transform: scale(1.05);
         }
 
@@ -299,53 +297,74 @@
         .social-icons a:hover {
             color: #004d40;
         }
+
+        @media (max-width: 768px) {
+            .section {
+                margin: 10px;
+            }
+
+            .material-list li {
+                flex: 0 0 45%;
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                margin: 5px;
+            }
+
+            .material-list li {
+                flex: 0 0 90%;
+                margin: 5px auto;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        Ludoteca Preescolar
+        Materiales
     </header>
     <nav>
-        <a href="inicio.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
         <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
-        <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="materiales.html"><i class="fas fa-puzzle-piece"></i> Materiales</a>
+        <a href="ludoteca.html"><i class="fas fa-puzzle-piece"></i> Ludoteca</a>
+        <a href="materiales.html"><i class="fas fa-cogs"></i> Materiales</a>
         <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
     </nav>
     <main>
         <div class="section">
-            <img src="portada.jpg" alt="Portada de Materiales">
+            <img src="imagenes/portada-materiales.jpg" alt="Portada de Materiales">
             <div class="section-content">
                 <h2>Materiales Educativos</h2>
-                <p>En esta sección encontrarás una variedad de materiales educativos diseñados para apoyar el aprendizaje de los niños en edad preescolar. Explora y descarga los recursos que mejor se adapten a tus necesidades.</p>
+                <p>Descubre nuestros recursos educativos diseñados para ayudar a los niños a aprender y disfrutar mientras juegan.</p>
+                <ul class="material-list">
+                    <li>
+                        <a href="material1.html">Material 1</a>
+                        <p>Descripción breve del material 1.</p>
+                        <a href="material1.pdf" class="download-btn" download>Descargar</a>
+                    </li>
+                    <li>
+                        <a href="material2.html">Material 2</a>
+                        <p>Descripción breve del material 2.</p>
+                        <a href="material2.pdf" class="download-btn" download>Descargar</a>
+                    </li>
+                    <li>
+                        <a href="material3.html">Material 3</a>
+                        <p>Descripción breve del material 3.</p>
+                        <a href="material3.pdf" class="download-btn" download>Descargar</a>
+                    </li>
+                    <!-- Agregar más elementos de la lista según sea necesario -->
+                </ul>
             </div>
         </div>
-        <ul class="material-list">
-            <li>
-                <a href="material1.pdf" download="Material1.pdf">Material 1</a>
-                <p>Descripción breve del Material 1</p>
-                <a class="download-btn" href="material1.pdf" download="Material1.pdf">Descargar</a>
-            </li>
-            <li>
-                <a href="material2.pdf" download="Material2.pdf">Material 2</a>
-                <p>Descripción breve del Material 2</p>
-                <a class="download-btn" href="material2.pdf" download="Material2.pdf">Descargar</a>
-            </li>
-            <li>
-                <a href="material3.pdf" download="Material3.pdf">Material 3</a>
-                <p>Descripción breve del Material 3</p>
-                <a class="download-btn" href="material3.pdf" download="Material3.pdf">Descargar</a>
-            </li>
-            <!-- Añade más materiales según sea necesario -->
-        </ul>
     </main>
     <footer>
         <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
         <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
 </body>
