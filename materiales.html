@@ -239,21 +239,23 @@
 
         .download-button {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 10px 30px;
             font-size: 1.1em;
             color: white;
-            background-color: #00796b;
+            background: linear-gradient(45deg, #ff4081, #ffeb3b);
             border: none;
-            border-radius: 10px;
+            border-radius: 20px;
             text-decoration: none;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
             margin-top: 10px;
             cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .download-button:hover {
-            background-color: #004d40;
+            background: linear-gradient(45deg, #ffeb3b, #ff4081);
             transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .description-section {
@@ -291,7 +293,6 @@
 
         .social-icons a {
             color: #00796b;
-            font-size: 1.5em;
             margin: 0 10px;
             text-decoration: none;
         }
