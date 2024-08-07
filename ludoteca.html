@@ -200,11 +200,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: center; /* Centra los elementos en el contenedor */
 }
 
 .game-box {
-    width: calc(33.33% - 20px); /* Asegura que se alineen tres por fila */
+    width: calc(25% - 20px); /* Ajusta el ancho para que se alineen bien, con espacio para el gap */
     box-sizing: border-box;
     padding: 15px;
     text-align: center;
@@ -215,7 +215,7 @@
     transition: background-color 0.3s;
 }
 
- .game-box img {
+.game-box img {
     width: 100%;
     height: auto;
     max-height: 180px;
@@ -223,7 +223,7 @@
     border-radius: 10px;
     margin-bottom: 10px;
 }
-        
+
 /* Colores diferentes para cada game-box */
 .game-box:nth-child(1) {
     background-color: #ffeb3b; /* Amarillo */
@@ -256,7 +256,7 @@
 .game-box:nth-child(8) {
     background-color: #ffc107; /* Amarillo oscuro */
 }
-        .game-box h3 {
+ .game-box h3 {
             color: #00796b;
             font-size: 1.5em;
             margin-bottom: 10px;
