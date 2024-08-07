@@ -270,96 +270,106 @@
             color: #fff;
         }
 
+        @media (max-width: 768px) {
+            .game-box {
+                width: 100%;
+            }
+        }
+
         footer {
             background-color: #ffeb3b;
-            padding: 20px;
+            padding: 10px;
             text-align: center;
+            font-size: 1em;
+            color: #00796b;
             border-top: 5px solid #00796b;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            bottom: 0;
-            width: 100%;
         }
 
         footer p {
             margin: 0;
-            font-size: 1.2em;
-            color: #00796b;
+            padding: 0;
+        }
+
+        @media (max-width: 480px) {
+            footer {
+                font-size: 0.8em;
+                padding: 5px;
+            }
         }
 
         .popup {
             display: none;
             position: fixed;
-            left: 0;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
-            z-index: 1000;
-            overflow: auto;
-            box-sizing: border-box;
+            align-items: center;
+            z-index: 999;
         }
 
         .popup-content {
-            background: #fff;
-            border-radius: 10px;
+            background: white;
             padding: 20px;
-            width: 80%;
-            max-width: 600px;
+            border-radius: 10px;
+            text-align: center;
             position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            box-sizing: border-box;
+            max-width: 90%;
+            max-height: 80%;
+            overflow: auto;
         }
 
         .popup-content img {
             width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 15px;
         }
 
         .popup-content h3 {
             color: #00796b;
-            margin-bottom: 15px;
+            margin-top: 20px;
+            font-size: 2em;
         }
 
         .popup-content p {
+            font-size: 1em;
             color: #555;
-            margin-bottom: 15px;
+            margin: 10px 0;
         }
 
-        .popup-content .close {
+        .close-btn {
             position: absolute;
             top: 10px;
             right: 10px;
-            font-size: 1.5em;
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
             cursor: pointer;
-            color: #333;
+            font-size: 1em;
         }
 
-        .popup-content .close:hover {
-            color: #ff4081;
-        }
-
-        .popup-content .joystick-button {
+        .joystick-btn {
             display: inline-block;
+            color: white;
+            background-color: #ffeb3b;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: 2px solid #00796b;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .joystick-btn:hover {
             background-color: #00796b;
             color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s;
-        }
-
-        .popup-content .joystick-button:hover {
-            background-color: #004d40;
-        }
-
-        .popup-content .joystick-button i {
-            margin-right: 10px;
         }
     </style>
 </head>
@@ -368,120 +378,130 @@
         Ludoteca Preescolar
     </header>
     <nav>
-        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#biblioteca"><i class="fas fa-book"></i> Biblioteca</a>
-        <a href="#ludoteca"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="#materiales"><i class="fas fa-box"></i> Materiales</a>
-        <a href="#galeria"><i class="fas fa-image"></i> Galería</a>
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
+        <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
+        <a href="materiales.html"><i class="fas fa-pencil-alt"></i> Materiales</a>
+        <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
     </nav>
     <main>
-        <section id="ludoteca" class="section">
-            <h2>Juegos para Preescolares</h2>
+        <div class="section">
+            <h2>Juegos Interactivos</h2>
             <div class="game-container">
-                <div class="game-box" onclick="openPopup('popup1')">
+                <div class="game-box" data-game="game1">
                     <img src="game1.png" alt="Safety Land">
                     <h3>Safety Land</h3>
-                    <p>Un juego interactivo que enseña a los niños sobre seguridad en el hogar.</p>
-                    <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
+                    <p>Un juego interactivo que enseña a los niños sobre seguridad en el hogar mediante mini-juegos y desafíos.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
-                <div class="game-box" onclick="openPopup('popup2')">
+                <div class="game-box" data-game="game2">
                     <img src="game2.png" alt="The Safety Show">
                     <h3>The Safety Show</h3>
-                    <p>Explora un entorno virtual y completa misiones relacionadas con la seguridad.</p>
-                    <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
+                    <p>Permite a los niños explorar un entorno virtual y completar misiones relacionadas con la seguridad en diferentes contextos.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
-                <div class="game-box" onclick="openPopup('popup3')">
+                <div class="game-box" data-game="game3">
                     <img src="game3.png" alt="Safe Side Super Chick">
                     <h3>Safe Side Super Chick</h3>
-                    <p>Aprende sobre seguridad personal y cómo actuar en situaciones de riesgo.</p>
-                    <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
+                    <p>Un juego que ayuda a los niños a aprender sobre seguridad personal y cómo actuar en situaciones de riesgo.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
-                <div class="game-box" onclick="openPopup('popup4')">
+                <div class="game-box" data-game="game4">
                     <img src="game4.png" alt="Dr. Safety">
                     <h3>Dr. Safety</h3>
-                    <p>Enseña primeros auxilios y cómo responder a emergencias mediante escenarios interactivos.</p>
-                    <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
+                    <p>Enfocado en enseñar primeros auxilios y cómo responder a emergencias a través de diversos escenarios interactivos.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
-                <div class="game-box" onclick="openPopup('popup5')">
+                <div class="game-box" data-game="game5">
                     <img src="game5.png" alt="Be Safe Kids">
                     <h3>Be Safe Kids</h3>
-                    <p>Juegos educativos sobre la seguridad en el hogar y en la calle.</p>
-                    <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
+                    <p>Incluye juegos educativos que abordan la seguridad en el hogar y en la calle, como el cruce seguro de calles.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
-                <div class="game-box" onclick="openPopup('popup6')">
+                <div class="game-box" data-game="game6">
                     <img src="game6.png" alt="Emergency! The Game">
                     <h3>Emergency! The Game</h3>
-                    <p>Simula ser paramédico, bombero o policía, aprendiendo sobre las respuestas a emergencias.</p>
-                    <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
+                    <p>Un juego en el que los niños pueden simular ser paramédicos, bomberos o policías, aprendiendo sobre las respuestas a emergencias y cómo mantenerse seguros.</p>
+                    <a href="#">Jugar Ahora</a>
                 </div>
-            </div>
-        </section>
-        <!-- Popups -->
-        <div id="popup1" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup1')">&times;</span>
-                <img src="game1.png" alt="Safety Land">
-                <h3>Safety Land</h3>
-                <p>Un juego interactivo que enseña a los niños sobre seguridad en el hogar mediante mini-juegos y desafíos.</p>
-                <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
-            </div>
-        </div>
-        <div id="popup2" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup2')">&times;</span>
-                <img src="game2.png" alt="The Safety Show">
-                <h3>The Safety Show</h3>
-                <p>Permite a los niños explorar un entorno virtual y completar misiones relacionadas con la seguridad en diferentes contextos.</p>
-                <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
-            </div>
-        </div>
-        <div id="popup3" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup3')">&times;</span>
-                <img src="game3.png" alt="Safe Side Super Chick">
-                <h3>Safe Side Super Chick</h3>
-                <p>Un juego que ayuda a los niños a aprender sobre seguridad personal y cómo actuar en situaciones de riesgo.</p>
-                <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
-            </div>
-        </div>
-        <div id="popup4" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup4')">&times;</span>
-                <img src="game4.png" alt="Dr. Safety">
-                <h3>Dr. Safety</h3>
-                <p>Enfocado en enseñar primeros auxilios y cómo responder a emergencias a través de diversos escenarios interactivos.</p>
-                <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
-            </div>
-        </div>
-        <div id="popup5" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup5')">&times;</span>
-                <img src="game5.png" alt="Be Safe Kids">
-                <h3>Be Safe Kids</h3>
-                <p>Incluye juegos educativos que abordan la seguridad en el hogar y en la calle.</p>
-                <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
-            </div>
-        </div>
-        <div id="popup6" class="popup">
-            <div class="popup-content">
-                <span class="close" onclick="closePopup('popup6')">&times;</span>
-                <img src="game6.png" alt="Emergency! The Game">
-                <h3>Emergency! The Game</h3>
-                <p>Un juego en el que los niños pueden simular ser paramédicos, bomberos o policías, aprendiendo sobre las respuestas a emergencias y cómo mantenerse seguros.</p>
-                <a href="#" class="joystick-button"><i class="fas fa-gamepad"></i> Jugar</a>
             </div>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Ludoteca Preescolar</p>
+        <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
     </footer>
-    <script>
-        function openPopup(id) {
-            document.getElementById(id).style.display = 'flex';
-        }
 
-        function closePopup(id) {
-            document.getElementById(id).style.display = 'none';
+    <!-- Popups -->
+    <div class="popup" id="popup1">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup1')">&times;</button>
+            <img src="game1.png" alt="Safety Land">
+            <h3>Safety Land</h3>
+            <p>Un juego interactivo que enseña a los niños sobre seguridad en el hogar mediante mini-juegos y desafíos.</p>
+            <a href="#" class="joystick-btn">Jugar Ahora</a>
+        </div>
+    </div>
+
+    <div class="popup" id="popup2">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup2')">&times;</button>
+            <img src="game2.png" alt="The Safety Show">
+            <h3>The Safety Show</h3>
+            <p>Permite a los niños explorar un entorno virtual y completar misiones relacionadas con la seguridad en diferentes contextos.</p>
+            <a href="#" class="joystick-btn">Jugar Ahora</a>
+        </div>
+    </div>
+
+    <div class="popup" id="popup3">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup3')">&times;</button>
+            <img src="game3.png" alt="Safe Side Super Chick">
+            <h3>Safe Side Super Chick</h3>
+            <p>Un juego que ayuda a los niños a aprender sobre seguridad personal y cómo actuar en situaciones de riesgo.</p>
+            <a href="#" class="joystick-btn">Jugar Ahora</a>
+        </div>
+    </div>
+
+    <div class="popup" id="popup4">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup4')">&times;</button>
+            <img src="game4.png" alt="Dr. Safety">
+            <h3>Dr. Safety</h3>
+            <p>Enfocado en enseñar primeros auxilios y cómo responder a emergencias a través de diversos escenarios interactivos.</p>
+            <a href="#" class="joystick-btn">Jugar Ahora</a>
+        </div>
+    </div>
+
+    <div class="popup" id="popup5">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup5')">&times;</button>
+            <img src="game5.png" alt="Be Safe Kids">
+            <h3>Be Safe Kids</h3>
+            <p>Incluye juegos educativos que abordan la seguridad en el hogar y en la calle, como el cruce seguro de calles.</p>
+            <a href="#" class="joystick-btn">Jugar Ahora</a>
+        </div>
+    </div>
+
+    <div class="popup" id="popup6">
+        <div class="popup-content">
+            <button class="close-btn" onclick="closePopup('popup6')">&times;</button>
+            <img src="game6.png" alt="Emergency! The Game">
+            <h3>Emergency! The Game</h3>
+            <p>Un juego en el que los niños pueden simular ser paramédicos, bomberos o policías, aprendiendo sobre las respuestas a emergencias y cómo mantenerse seguros.</p>
+            <a href="#" class="joystick-btn">Jugar Ahora</a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.game-box').forEach(box => {
+            box.addEventListener('click', () => {
+                const game = box.getAttribute('data-game');
+                document.getElementById('popup' + game[game.length - 1]).style.display = 'flex';
+            });
+        });
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).style.display = 'none';
         }
     </script>
 </body>
