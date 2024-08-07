@@ -203,24 +203,45 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .material-list li a {
             text-decoration: none;
             color: #00796b;
             font-size: 1.1em;
-            display: block;
-            margin-bottom: 5px;
+            display: inline-block;
+            flex: 1;
         }
 
-        .material-list li a:hover {
-            color: #004d40;
+        .material-list li button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
         }
 
-        .material-list li p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #555;
+        .material-list li button i {
+            margin-right: 5px;
+        }
+
+        .material-list li button:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .material-list li button:focus {
+            outline: none;
         }
 
         footer {
@@ -273,24 +294,24 @@
             <h2>Materiales para Descargar</h2>
             <ul class="material-list">
                 <li>
-                    <a href="movie1.mp4" download>Hoja de Trabajo 1</a>
-                    <button onclick="window.location.href='movie1.mp4'"><i class="fas fa-download"></i> Descargar</button>
+                    <a href="materiales/hoja-trabajo1.pdf" download>Hoja de Trabajo 1</a>
+                    <button><i class="fas fa-download"></i> Descargar</button>
                 </li>
                 <li>
                     <a href="materiales/actividad-colores.pdf" download>Actividad de Colores</a>
-                    <button onclick="window.location.href='materiales/actividad-colores.pdf'"><i class="fas fa-download"></i> Descargar</button>
+                    <button><i class="fas fa-download"></i> Descargar</button>
                 </li>
                 <li>
                     <a href="materiales/juego-numeros.pdf" download>Juego de Números</a>
-                    <button onclick="window.location.href='materiales/juego-numeros.pdf'"><i class="fas fa-download"></i> Descargar</button>
+                    <button><i class="fas fa-download"></i> Descargar</button>
                 </li>
                 <li>
                     <a href="materiales/cuento-infantil.pdf" download>Cuento Infantil</a>
-                    <button onclick="window.location.href='materiales/cuento-infantil.pdf'"><i class="fas fa-download"></i> Descargar</button>
+                    <button><i class="fas fa-download"></i> Descargar</button>
                 </li>
                 <li>
                     <a href="materiales/guia-padres.pdf" download>Guía para Padres</a>
-                    <button onclick="window.location.href='materiales/guia-padres.pdf'"><i class="fas fa-download"></i> Descargar</button>
+                    <button><i class="fas fa-download"></i> Descargar</button>
                 </li>
             </ul>
         </section>
