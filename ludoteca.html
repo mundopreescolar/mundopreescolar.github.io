@@ -196,34 +196,66 @@
             margin-bottom: 20px;
         }
 
-        .game-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
 
-        .game-box {
-            width: calc(50% - 20px);
-            box-sizing: border-box;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            border-radius: 15px;
-            cursor: pointer;
-            background-color: rgba(255, 182, 193, 0.8); /* Light Pink */
-        }
+.game-box {
+    width: calc(33.33% - 20px); /* Asegura que se alineen tres por fila */
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: rgba(255, 182, 193, 0.8); /* Light Pink */
+    transition: background-color 0.3s;
+}
 
-        .game-box img {
-            width: 100%;
-            height: auto;
-            max-height: 180px;
-            object-fit: contain;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
+ .game-box img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+        
+/* Colores diferentes para cada game-box */
+.game-box:nth-child(1) {
+    background-color: #ffeb3b; /* Amarillo */
+}
 
+.game-box:nth-child(2) {
+    background-color: #4caf50; /* Verde */
+}
+
+.game-box:nth-child(3) {
+    background-color: #2196f3; /* Azul */
+}
+
+.game-box:nth-child(4) {
+    background-color: #ff5722; /* Naranja */
+}
+
+.game-box:nth-child(5) {
+    background-color: #ff4081; /* Rosa */
+}
+
+.game-box:nth-child(6) {
+    background-color: #9e9e9e; /* Gris */
+}
+
+.game-box:nth-child(7) {
+    background-color: #00bcd4; /* Cyan */
+}
+
+.game-box:nth-child(8) {
+    background-color: #ffc107; /* Amarillo oscuro */
+}
         .game-box h3 {
             color: #00796b;
             font-size: 1.5em;
@@ -392,21 +424,21 @@
         </div>
     </div>
 
-    <div class="game-box" data-popup="popup-dr-safety">
+<div class="game-box" data-popup="popup-dr-safety">
+    <img src="game4.png" alt="Dr. Safety">
+    <h3>El reto de la seguridad</h3>
+</div>
+<div id="popup-dr-safety" class="popup">
+    <div class="popup-content">
+        <span class="popup-close">&times;</span>
         <img src="game4.png" alt="Dr. Safety">
-        <h3>El reto de la seguridad</h3>
+        <p>Reto de Riesgo Publico es un desafío interactivo con mecánica de juego Multinivel, diseñado para ofrecer una experiencia envolvente y educativa para jugadores de todas las edades. Desde desafíos de resolución de problemas hasta actividades creativas, este juego ofrece una amplia variedad de actividades para mantener a los jugadores comprometidos y entretenidos.</p>
+        <a href="https://mobbyt.com/videojuego/educativo/play.php?Id=297327" class="popup-button">
+            <i class="fas fa-gamepad"></i> Jugar Ahora
+        </a>
     </div>
-    <div id="popup-safe-side-super-chick" class="popup">
-        <div class="popup-content">
-            <span class="popup-close">&times;</span>
-            <img src="game4.png" alt="Safe Side Super Chick">
-            <p>Reto de Riesgo Publico es un desafío interactivo con mecánica de juego Multinivel, diseñado para ofrecer una experiencia envolvente y educativa para jugadores de todas las edades. Desde desafíos de resolución de problemas hasta actividades creativas, este juego ofrece una amplia variedad de actividades para mantener a los jugadores comprometidos y entretenidos.</p>
+</div>
 
-            <a href="https://mobbyt.com/videojuego/educativo/play.php?Id=297327" class="popup-button">
-                <i class="fas fa-gamepad"></i> Jugar Ahora
-            </a>
-        </div>
-    </div>
 
  
 
