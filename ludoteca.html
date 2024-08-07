@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="imagenes/ludo.ico" type="image/x-icon">
     <style>
-  /* Estilos generales y de la página aquí */
+/* Estilos generales y de la página aquí */
 body {
     font-family: 'Comic Sans MS', cursive, sans-serif;
     margin: 0;
@@ -203,7 +203,7 @@ main {
 }
 
 .game-box {
-    width: calc(50% - 20px); /* Ancho ajustable para diferentes tamaños de pantalla */
+    flex: 1 1 calc(25% - 20px); /* Ajuste automático con margen */
     box-sizing: border-box;
     padding: 15px;
     text-align: center;
@@ -211,6 +211,7 @@ main {
     border-radius: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
+    max-width: calc(25% - 20px); /* Limita el ancho máximo */
 }
 
 .game-box img {
@@ -257,13 +258,15 @@ main {
 
 @media (max-width: 768px) {
     .game-box {
-        width: calc(50% - 20px); /* Dos columnas en pantallas medianas */
+        flex: 1 1 calc(50% - 20px); /* Dos columnas en pantallas medianas */
+        max-width: calc(50% - 20px); /* Limita el ancho máximo */
     }
 }
 
 @media (max-width: 480px) {
     .game-box {
-        width: 100%; /* Una columna en pantallas pequeñas */
+        flex: 1 1 100%; /* Una columna en pantallas pequeñas */
+        max-width: 100%; /* Limita el ancho máximo */
     }
 }
 
@@ -318,15 +321,21 @@ footer p {
 .popup-close {
     position: absolute;
     top: 10px;
-    right: 20px;
-    font-size: 1.5em;
+    right: 10px;
+    background: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
+    font-size: 1.2em;
+}
+
+.popup-close:hover {
+    background: #e64a19;
 }
 
 .popup-button {
-    display: inline-block;
-    padding: 10px 15px;
-    font-size: 1.2em;
     background-color: #ff5722;
     color: white;
     border: none;
