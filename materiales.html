@@ -7,16 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="imagenes/ludo.ico" type="image/x-icon">
     <style>
-        @font-face {
-            font-family: 'B-SQUARES AROUND';
-            src: url('fonts/bsquares-around.woff2') format('woff2'),
-                 url('fonts/bsquares-around.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
         body {
-            font-family: 'B-SQUARES AROUND', sans-serif;
+            font-family: Monaco, monospace; /* Fuente Monaco aplicada */
             margin: 0;
             padding: 0;
             background: url('background.jpg') no-repeat center center fixed;
@@ -99,44 +91,6 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        nav a:nth-child(1) {
-            background-color: #ff4081;
-        }
-
-        nav a:nth-child(2) {
-            background-color: #ffeb3b;
-        }
-
-        nav a:nth-child(3) {
-            background-color: #4caf50;
-        }
-
-        nav a:nth-child(4) {
-            background-color: #2196f3;
-        }
-
-        nav a:nth-child(5) {
-            background-color: #ff5722;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #ff5722, #ff9800);
-            transition: transform 0.3s ease;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-        }
-
-        nav a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
         @media (max-width: 768px) {
             header {
                 font-size: 2em;
@@ -146,17 +100,6 @@
             nav a {
                 font-size: 1em;
                 padding: 10px 15px;
-            }
-
-            .section {
-                margin: 10px auto;
-                padding: 15px;
-                width: 90%;
-            }
-
-            .material-list li {
-                flex: 0 0 45%;
-                margin: 10px auto;
             }
         }
 
@@ -183,17 +126,6 @@
             nav a:hover {
                 transform: none;
                 box-shadow: none;
-            }
-
-            .section {
-                margin: 5px auto;
-                padding: 10px;
-                width: 95%;
-            }
-
-            .material-list li {
-                flex: 0 0 90%;
-                margin: 5px auto;
             }
         }
 
@@ -327,6 +259,30 @@
 
         .social-icons a:hover {
             color: #004d40;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                margin: 10px;
+            }
+
+            .material-list li {
+                flex: 0 0 45%;
+                margin: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                margin: 5px auto;
+                padding: 10px;
+                width: 95%;
+            }
+
+            .material-list li {
+                flex: 0 0 90%;
+                margin: 5px auto;
+            }
         }
     </style>
 </head>
