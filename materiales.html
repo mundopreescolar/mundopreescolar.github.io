@@ -174,90 +174,6 @@
             box-sizing: border-box;
         }
 
-        .section {
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        .section img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            margin-bottom: 15px;
-        }
-
-        .section h2 {
-            color: #00796b;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-
-        .section p {
-            color: #555;
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-
-        .material-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .material-list li {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-        }
-
-        .material-list li a {
-            text-decoration: none;
-            color: #00796b;
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .material-list li a:hover {
-            color: #004d40;
-        }
-
-        .material-list li p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        .download-button {
-            display: inline-block;
-            padding: 10px 30px;
-            font-size: 1.1em;
-            color: white;
-            background-color: #00796b;
-            border: none;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-            margin-top: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .download-button:hover {
-            background-color: #004d40;
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
         .description-section {
             border-radius: 15px;
             padding: 20px;
@@ -268,6 +184,90 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
+        }
+
+        .description-section h2 {
+            color: #00796b;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .description-section p {
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        .material-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .material-card {
+            flex: 1 1 calc(33.333% - 40px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            max-width: 300px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .material-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .material-card h2 {
+            color: #00796b;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .material-card p {
+            color: #555;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background-color: #00796b;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            margin-top: auto;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-button:hover {
+            background-color: #004d40;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .material-card {
+                flex: 1 1 calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .material-card {
+                flex: 1 1 100%;
+            }
         }
 
         footer {
@@ -318,34 +318,31 @@
             <h2>Descripción de la Página de Materiales</h2>
             <p>En esta página, encontrarás una variedad de materiales educativos diseñados para apoyar el desarrollo y aprendizaje de los niños en edad preescolar. Explora nuestras secciones para descargar recursos, conocer las herramientas disponibles y obtener información adicional sobre cada uno de ellos.</p>
         </section>
-        
-        <section class="section">
-            <img src="imagenes/portada_material_1.jpg" alt="Portada Material 1">
-            <h2>Material 1</h2>
-            <ul class="material-list">
-                <li>
-                    <a href="descargar_material_1.pdf">Descargar Material 1</a>
-                    <p>Descripción breve del material 1.</p>
-                    <a href="descargar_material_1.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
-                </li>
-                <!-- Más elementos de la lista aquí -->
-            </ul>
-        </section>
 
-        <section class="section">
-            <img src="imagenes/portada_material_2.jpg" alt="Portada Material 2">
-            <h2>Material 2</h2>
-            <ul class="material-list">
-                <li>
-                    <a href="descargar_material_2.pdf">Descargar Material 2</a>
-                    <p>Descripción breve del material 2.</p>
-                    <a href="descargar_material_2.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
-                </li>
-                <!-- Más elementos de la lista aquí -->
-            </ul>
-        </section>
+        <div class="material-grid">
+            <div class="material-card">
+                <img src="imagenes/portada_material_1.jpg" alt="Portada Material 1">
+                <h2>Material 1</h2>
+                <p>Descripción breve del material 1.</p>
+                <a href="descargar_material_1.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
+            </div>
+            
+            <div class="material-card">
+                <img src="imagenes/portada_material_2.jpg" alt="Portada Material 2">
+                <h2>Material 2</h2>
+                <p>Descripción breve del material 2.</p>
+                <a href="descargar_material_2.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
+            </div>
+            
+            <div class="material-card">
+                <img src="imagenes/portada_material_3.jpg" alt="Portada Material 3">
+                <h2>Material 3</h2>
+                <p>Descripción breve del material 3.</p>
+                <a href="descargar_material_3.pdf" class="download-button">Descargar <i class="fas fa-download"></i></a>
+            </div>
 
-        <!-- Más secciones aquí -->
+            <!-- Añadir más tarjetas de materiales aquí -->
+        </div>
     </main>
     <footer>
         <p>&copy; 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
