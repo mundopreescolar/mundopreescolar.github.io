@@ -209,6 +209,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
             border-radius: 15px;
+            cursor: pointer;
         }
 
         .game-box img {
@@ -224,6 +225,11 @@
             color: #00796b;
             font-size: 1.5em;
             margin-bottom: 10px;
+        }
+
+        .game-box p {
+            font-size: 1em;
+            color: #555;
         }
 
         .game-box a {
@@ -282,88 +288,193 @@
             font-size: 1.2em;
             color: #00796b;
         }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .popup img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .popup-button {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #00796b;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .popup-button i {
+            margin-right: 8px;
+        }
+
+        .popup-button:hover {
+            background-color: #005b4f;
+        }
     </style>
 </head>
 <body>
     <header>
-        Ludoteca para Preescolar
+        Ludoteca Preescolar
     </header>
     <nav>
-        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
-        <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
-        <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="materiales.html"><i class="fas fa-box"></i> Materiales</a>
-        <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
+        <a href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#biblioteca"><i class="fas fa-book"></i> Biblioteca</a>
+        <a href="#ludoteca"><i class="fas fa-gamepad"></i> Ludoteca</a>
+        <a href="#materiales"><i class="fas fa-cogs"></i> Materiales</a>
+        <a href="#galeria"><i class="fas fa-image"></i> Galería</a>
     </nav>
     <main>
-        <section class="section">
-            <h2>Juegos de Seguridad</h2>
+        <div id="ludoteca" class="section">
+            <h2>Ludoteca</h2>
             <div class="game-container">
                 <div class="game-box">
-                    <img src="game1.png" alt="Safety Land">
+                    <img src="game1" alt="Safety Land">
                     <h3>interland</h3>
-                    <p style="text-align: justify;"> Interland es un juego educativo en línea creado por Google para enseñar a los niños sobre la seguridad en línea de manera interactiva y divertida. A través de una serie de mini-juegos y desafíos, los jugadores aprenden sobre temas como la protección de datos personales, la identificación de comportamientos en línea seguros y la comprensión de la privacidad en Internet. El objetivo es fomentar un comportamiento seguro y responsable en la web mientras los niños se divierten explorando y resolviendo problemas en un entorno virtual.</p>
-                    <a href="https://beinternetawesome.withgoogle.com/en_us/interland">Jugar Ahora</a>
+                    <p>Un juego interactivo que enseña a los niños sobre seguridad en el hogar mediante mini-juegos y desafíos.</p>
+                    <a href="safety-land.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/w6AVPpK9kpP1cuRtz5u3ow44PU2NOeU1OgfrhLr9tsEcz4iFyo0l0FLB0XzB9i9wSQ" alt="The Safety Show">
+                    <img src="imagenes/safety-show.jpg" alt="The Safety Show">
                     <h3>The Safety Show</h3>
                     <p>Permite a los niños explorar un entorno virtual y completar misiones relacionadas con la seguridad en diferentes contextos.</p>
-                    <a href="https://www.safetyshow.com">Jugar Ahora</a>
+                    <a href="safety-show.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/JnJX4tn0Mk5FC_j2ZZe0J2zvI2sE4n2cfM6A_yPxpETrwoQ6BfzUz5j4xBSuSrl4QdL2" alt="Safe Side Super Chick">
+                    <img src="imagenes/safe-side-super-chick.jpg" alt="Safe Side Super Chick">
                     <h3>Safe Side Super Chick</h3>
                     <p>Un juego que ayuda a los niños a aprender sobre seguridad personal y cómo actuar en situaciones de riesgo.</p>
-                    <a href="https://www.safeside.com/superchick">Jugar Ahora</a>
+                    <a href="safe-side-super-chick.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/h3VW9_v6A5P1ARLxMAWvWawRk0I63Vbt5CSXsmjOYeJvkh5nvZAmqjZZzMG6QMeHz0go" alt="Dr. Safety">
+                    <img src="imagenes/dr-safety.jpg" alt="Dr. Safety">
                     <h3>Dr. Safety</h3>
                     <p>Enfocado en enseñar primeros auxilios y cómo responder a emergencias a través de diversos escenarios interactivos.</p>
-                    <a href="https://www.drsafety.com">Jugar Ahora</a>
+                    <a href="dr-safety.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/JQW9oxey0t7d9sKjdZ3nPpW3irA0I2vO9_qZLp5GfkM2gZ_5xPZ6y7pzzBL7M_e_MkxO" alt="Be Safe Kids">
+                    <img src="imagenes/be-safe-kids.jpg" alt="Be Safe Kids">
                     <h3>Be Safe Kids</h3>
                     <p>Incluye juegos educativos que abordan la seguridad en el hogar y en la calle, como el cruce seguro de calles.</p>
-                    <a href="https://www.besafekids.org">Jugar Ahora</a>
+                    <a href="be-safe-kids.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/sK_57nQop6D4ULtONKnv3YrP1zxTl6csN_2a9Zr24iR4S0e74y1OqcbZ1CMm7zv5xJ6z" alt="Emergency! The Game">
+                    <img src="imagenes/emergency.jpg" alt="Emergency! The Game">
                     <h3>Emergency! The Game</h3>
                     <p>Un juego en el que los niños pueden simular ser paramédicos, bomberos o policías, aprendiendo sobre las respuestas a emergencias y cómo mantenerse seguros.</p>
-                    <a href="https://www.emergencythegame.com">Jugar Ahora</a>
+                    <a href="emergency.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/RHssYXYs4xn1rxF8HfPGCQvC3W-pbf5Sqr3pWjP5eDvlbrJwLxEfwtaKa1xgZ6BWT_4I" alt="Kid Safety Online">
+                    <img src="imagenes/kid-safety-online.jpg" alt="Kid Safety Online">
                     <h3>Kid Safety Online</h3>
                     <p>Un sitio web con juegos y actividades diseñados para enseñar a los niños sobre la seguridad en línea y cómo protegerse mientras navegan por Internet.</p>
-                    <a href="https://www.kidsafetyonline.org">Jugar Ahora</a>
+                    <a href="kid-safety-online.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/EzUl7EBDHn5BEmiX1rNcnD4tRt5RuvFfl3TevPl7p7WlE3sf7qJWywJ9FjWGGZZqA9gD" alt="Fire Safety Simulator">
+                    <img src="imagenes/fire-safety-simulator.jpg" alt="Fire Safety Simulator">
                     <h3>Fire Safety Simulator</h3>
                     <p>Un juego que simula situaciones de incendio, ayudando a los niños a aprender cómo reaccionar ante un incendio y cómo prevenirlo en el hogar.</p>
-                    <a href="https://www.firesafetysimulator.com">Jugar Ahora</a>
+                    <a href="fire-safety-simulator.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/4V6cm0phY1n4PIkPEysZXzT9EkEujZ8Zh_U4rQ4Bq6K08J6OYrW3xO4xGibzCNK2AMHE" alt="Safety Town">
+                    <img src="imagenes/safety-town.jpg" alt="Safety Town">
                     <h3>Safety Town</h3>
                     <p>Un juego que educa a los niños sobre la seguridad vial y las reglas de tránsito mediante simulaciones y escenarios interactivos.</p>
-                    <a href="https://www.safetytown.org">Jugar Ahora</a>
+                    <a href="safety-town.html">Más información</a>
                 </div>
                 <div class="game-box">
-                    <img src="https://play-lh.googleusercontent.com/Ou8WqDijw2kP_tjGffF3mN3p4PHvij5sX0le5DnvWiUS2-wNjd8LMxGfY5OeN53iCE8" alt="Healthy and Safe Kids">
+                    <img src="imagenes/healthy-safe-kids.jpg" alt="Healthy and Safe Kids">
                     <h3>Healthy and Safe Kids</h3>
                     <p>Ofrece juegos educativos sobre salud y seguridad, cubriendo temas como el cuidado personal, la seguridad alimentaria y la prevención de accidentes.</p>
-                    <a href="https://www.healthyandsafekids.org">Jugar Ahora</a>
+                    <a href="healthy-and-safe-kids.html">Más información</a>
                 </div>
             </div>
-        </section>
+        </div>
+        <!-- Popup Container -->
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="popup-close">&times;</span>
+                <img id="popup-image" src="" alt="Game Image">
+                <p id="popup-description"></p>
+                <a id="popup-link" href="#" class="popup-button">
+                    <i class="fas fa-gamepad"></i> Jugar Ahora
+                </a>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>&copy; 2024 Ludoteca Infantil</p>
+        <p>© 2024 Ludoteca Preescolar. Todos los derechos reservados.</p>
     </footer>
+    <script>
+        // Función para abrir el popup
+        function openPopup(imageSrc, description, link) {
+            document.getElementById('popup-image').src = imageSrc;
+            document.getElementById('popup-description').textContent = description;
+            document.getElementById('popup-link').href = link;
+            document.getElementById('popup').style.display = 'flex';
+        }
+
+        // Función para cerrar el popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Asignar eventos de click a las imágenes de los juegos
+        document.querySelectorAll('.game-box img').forEach(img => {
+            img.addEventListener('click', function() {
+                const gameBox = this.parentElement;
+                const description = gameBox.querySelector('p').textContent;
+                const link = gameBox.querySelector('a').href;
+                openPopup(this.src, description, link);
+            });
+        });
+
+        // Asignar evento de click al botón de cerrar el popup
+        document.querySelector('.popup-close').addEventListener('click', closePopup);
+
+        // Cerrar el popup cuando se hace clic fuera del contenido
+        document.getElementById('popup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePopup();
+            }
+        });
+    </script>
 </body>
 </html>
