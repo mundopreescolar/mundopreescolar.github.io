@@ -329,77 +329,78 @@
                 margin: 0 5px;
             }
         }
-/* Estilo general para popups */
-.popup {
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    overflow: auto;
-    box-sizing: border-box;
-}
-
-/* Estilo para el contenido del popup */
-.popup-content {
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px; /* Ajuste del padding para pantallas pequeñas */
-    width: 90%;
-    max-width: 500px; /* Reducción del tamaño máximo del popup */
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    overflow-y: auto; /* Asegura que el contenido se pueda desplazar si es necesario */
-}
-
-/* Estilo para las imágenes dentro del popup */
-.popup-content img {
-    width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor del popup */
-    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
-    height: auto; /* Mantiene la relación de aspecto de la imagen */
-    margin-bottom: 10px;
-}
-
-/* Ajustes para pantallas menores de 768px */
-@media (max-width: 768px) {
-    .popup-content {
-        width: 85%;
-        max-width: 400px; /* Reducción adicional del tamaño máximo */
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .popup-content {
-        width: 90%;
-        max-width: 350px; /* Tamaño máximo reducido para pantallas muy pequeñas */
-        padding: 10px;
-    }
-
-    .popup-content img {
+    /* Estilo general para popups */
+    .popup {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
         width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+
+    /* Estilo para el contenido del popup */
+    .popup-content {
+        background: #fff;
+        border-radius: 10px;
+        padding: 15px;
+        width: 90%;
+        max-width: 600px; /* Tamaño máximo aumentado para pantallas grandes */
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        overflow-y: auto; /* Asegura que el contenido se pueda desplazar si es necesario */
+    }
+
+    /* Ajustes para la imagen dentro del popup */
+    .popup-content img {
+        width: 100%; /* Asegura que la imagen no sobrepase el ancho del popup */
         height: auto;
+        max-height: 300px; /* Limita la altura máxima de la imagen */
+        object-fit: contain;
+        border-radius: 5px;
     }
 
-    .popup-content h3 {
-        font-size: 1.2em;
+    /* Ajustes para pantallas menores de 768px */
+    @media (max-width: 768px) {
+        .popup-content {
+            width: 85%;
+            max-width: 500px; /* Reducción adicional del tamaño máximo */
+            padding: 10px;
+        }
     }
 
-    .popup-content p {
-        font-size: 0.9em;
-    }
+    @media (max-width: 480px) {
+        .popup-content {
+            width: 90%;
+            max-width: 350px; /* Tamaño máximo reducido para pantallas muy pequeñas */
+            padding: 10px;
+        }
 
-    .popup-content .joystick-button {
-        font-size: 1em;
-        padding: 8px 12px;
+        .popup-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .popup-content h3 {
+            font-size: 1.2em;
+        }
+
+        .popup-content p {
+            font-size: 0.9em;
+        }
+
+        .popup-content .joystick-btn {
+            font-size: 1em;
+            padding: 8px 12px;
+        }
     }
-}
         .close-btn {
             position: absolute;
             top: 10px;
