@@ -139,6 +139,17 @@
                 font-size: 1em;
                 padding: 10px 15px;
             }
+
+            .section {
+                margin: 10px auto;
+                padding: 15px;
+                width: 90%;
+            }
+
+            .material-list li {
+                flex: 0 0 45%;
+                margin: 10px auto;
+            }
         }
 
         @media (max-width: 480px) {
@@ -164,6 +175,17 @@
             nav a:hover {
                 transform: none;
                 box-shadow: none;
+            }
+
+            .section {
+                margin: 5px auto;
+                padding: 10px;
+                width: 95%;
+            }
+
+            .material-list li {
+                flex: 0 0 90%;
+                margin: 5px auto;
             }
         }
 
@@ -247,21 +269,27 @@
         }
 
         .download-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             padding: 10px 20px;
             margin-top: 10px;
             font-size: 1em;
-            color: #fff;
-            background: #00796b;
-            border: none;
+            color: #00796b;
+            background: transparent;
+            border: 2px solid #00796b;
             border-radius: 5px;
             cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
             text-decoration: none;
         }
 
+        .download-btn i {
+            margin-right: 8px;
+        }
+
         .download-btn:hover {
-            background: #004d40;
+            background: #00796b;
+            color: #fff;
             transform: scale(1.05);
         }
 
@@ -297,28 +325,6 @@
         .social-icons a:hover {
             color: #004d40;
         }
-
-        @media (max-width: 768px) {
-            .section {
-                margin: 10px;
-            }
-
-            .material-list li {
-                flex: 0 0 45%;
-                margin: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .section {
-                margin: 5px;
-            }
-
-            .material-list li {
-                flex: 0 0 90%;
-                margin: 5px auto;
-            }
-        }
     </style>
 </head>
 <body>
@@ -342,17 +348,17 @@
                     <li>
                         <a href="material1.html">Material 1</a>
                         <p>Descripción breve del material 1.</p>
-                        <a href="material1.pdf" class="download-btn" download>Descargar</a>
+                        <a href="material1.pdf" class="download-btn" download><i class="fas fa-download"></i> Descargar</a>
                     </li>
                     <li>
                         <a href="material2.html">Material 2</a>
                         <p>Descripción breve del material 2.</p>
-                        <a href="material2.pdf" class="download-btn" download>Descargar</a>
+                        <a href="material2.pdf" class="download-btn" download><i class="fas fa-download"></i> Descargar</a>
                     </li>
                     <li>
                         <a href="material3.html">Material 3</a>
                         <p>Descripción breve del material 3.</p>
-                        <a href="material3.pdf" class="download-btn" download>Descargar</a>
+                        <a href="material3.pdf" class="download-btn" download><i class="fas fa-download"></i> Descargar</a>
                     </li>
                     <!-- Agregar más elementos de la lista según sea necesario -->
                 </ul>
