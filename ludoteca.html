@@ -230,6 +230,8 @@
 
         .game-box:nth-child(5) {
             background-color: rgba(255, 204, 178, 0.8); /* Light Orange */
+        .game-box:nth-child(5) {
+            background-color: rgba(0, 255, 255, 0.8); /* aqua */
         }
 
         .game-box img {
@@ -277,64 +279,7 @@
             color: #fff;
         }
 
-        .contact-form {
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: 3px solid #00796b;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            background: linear-gradient(135deg, #ff5722, #ff9800, #ffc107, #ffeb3b);
-            background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .contact-form h2 {
-            color: #00796b;
-            margin-bottom: 20px;
-        }
-
-        .contact-form label {
-            display: block;
-            color: #00796b;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 2px solid #00796b;
-            border-radius: 10px;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-
-        .contact-form button {
-            padding: 10px 20px;
-            color: white;
-            background-color: #00796b;
-            border: none;
-            border-radius: 10px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .contact-form button:hover {
-            background-color: #004d40;
-        }
-
+        
         footer {
             background-color: #ffeb3b;
             color: #00796b;
@@ -350,11 +295,11 @@
         Ludoteca Infantil
     </header>
     <nav>
-        <a href="#"><i class="fas fa-home"></i>Inicio</a>
-        <a href="#"><i class="fas fa-book"></i>Biblioteca</a>
-        <a href="#"><i class="fas fa-gamepad"></i>Ludoteca</a>
-        <a href="#"><i class="fas fa-paint-brush"></i>Materiales</a>
-        <a href="#"><i class="fas fa-image"></i>Galería</a>
+        <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
+        <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
+        <a href="ludoteca.html"><i class="fas fa-gamepad"></i>Ludoteca</a>
+        <a href="materiales.html"><i class="fas fa-paint-brush"></i>Materiales</a>
+        <a href="galeria.html"><i class="fas fa-image"></i>Galería</a>
     </nav>
     <main>
         <section class="section">
@@ -385,24 +330,15 @@
                     <h3>Juego 5</h3>
                     <a href="#">Jugar</a>
                 </div>
+                   <div class="game-box">
+                    <img src="imagenes/juego5.jpg" alt="Juego 6">
+                    <h3>Juego 5</h3>
+                    <a href="#">Jugar</a>
+                </div>
             </div>
         </section>
 
-        <section class="section contact-form">
-            <h2>Contacto</h2>
-            <form action="#" method="post">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Mensaje</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
     </main>
     <footer>
         &copy; 2024 Ludoteca Infantil. Todos los derechos reservados.
