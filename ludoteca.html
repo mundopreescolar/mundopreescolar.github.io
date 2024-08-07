@@ -7,12 +7,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
      <link rel="icon" href="imagenes/ludo.ico" type="image/x-icon">
     <style>
-        /* General Styles */
+    footer {
+    background-color: #ffeb3b;
+    padding: 20px;
+    text-align: center;
+    border-top: 5px solid #00796b;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    color: #00796b;
+    font-size: 1em;
+}
+
+footer .social-icons {
+    margin: 10px 0;
+}
+
+footer .social-icons a {
+    color: #00796b;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s, transform 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #004d40;
+    transform: scale(1.1);
+}
+
+/* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.9em;
+    }
+
+    footer .social-icons a {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    footer p {
+        font-size: 0.8em;
+    }
+
+    footer .social-icons a {
+        font-size: 1.1em;
+        margin: 0 5px;
+    }
+}
+
+
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('imagenes/background.jpg') no-repeat center center fixed;
+            background: url('background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
             line-height: 1.6;
@@ -20,7 +82,6 @@
             flex-direction: column;
             min-height: 100vh;
             overflow: auto;
-            transition: transform 1s ease;
         }
 
         header {
@@ -29,36 +90,9 @@
             padding: 20px;
             text-align: center;
             font-size: 2.5em;
-            font-weight: bold;
             border-bottom: 5px solid #00796b;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 1s ease;
-        }
-
-        header i {
-            margin-right: 10px;
-        }
-
-        header:hover {
-            animation: bannerAnimation 1s forwards;
-        }
-
-        @keyframes bannerAnimation {
-            0% {
-                transform: scale(1);
-                background-color: #ffeb3b;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
-            50% {
-                transform: scale(1.1);
-                background-color: #fff176; /* Light Yellow */
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-            }
-            100% {
-                transform: scale(1);
-                background-color: #ffeb3b;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            }
         }
 
         nav {
@@ -122,25 +156,24 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
-        /* Button Colors */
         nav a:nth-child(1) {
-            background-color: #ff4081; /* Pink */
+            background-color: #ff4081;
         }
 
         nav a:nth-child(2) {
-            background-color: #ffeb3b; /* Yellow */
+            background-color: #ffeb3b;
         }
 
         nav a:nth-child(3) {
-            background-color: #4caf50; /* Green */
+            background-color: #4caf50;
         }
 
         nav a:nth-child(4) {
-            background-color: #2196f3; /* Blue */
+            background-color: #2196f3;
         }
 
         nav a:nth-child(5) {
-            background-color: #ff5722; /* Orange */
+            background-color: #ff5722;
         }
 
         nav a::after {
@@ -165,24 +198,19 @@
             flex: 1;
             padding: 20px;
             margin-bottom: 80px;
-            transition: transform 1s ease;
+            box-sizing: border-box;
         }
 
         .section {
             border-radius: 15px;
             padding: 20px;
             margin: 20px auto;
-            max-width: 1000px;
+            max-width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
         }
 
         .section h2 {
@@ -190,6 +218,7 @@
             font-size: 2em;
             margin-bottom: 20px;
         }
+
 
         .game-container {
             display: flex;
