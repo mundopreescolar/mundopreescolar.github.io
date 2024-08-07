@@ -20,6 +20,14 @@ body {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    box-sizing: border-box; /* Asegura que padding y border no afecten el ancho total */
+}
+
+header, nav, footer {
+    width: 100%; /* Asegura que el ancho de estos elementos sea del 100% */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el cálculo del ancho */
+    margin: 0; /* Elimina márgenes no deseados */
+    padding: 0; /* Elimina padding no deseado */
 }
 
 header {
@@ -300,18 +308,19 @@ main {
 
 footer {
     background-color: #ffeb3b;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     border-top: 5px solid #00796b;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho disponible */
+    box-sizing: border-box;
 }
 
 footer p {
     margin: 0;
-    font-size: 1em;
+    font-size: 1.2em;
     color: #00796b;
 }
 
