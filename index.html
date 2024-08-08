@@ -426,11 +426,30 @@ footer .social-icons a:hover {
         width: 80%; /* Reduce aún más el tamaño en pantallas más pequeñas */
     }
 }
+        
+header {
+    position: relative;
+    width: 100%;
+}
 
+.banner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: auto; /* Ajusta la altura de la imagen automáticamente para mantener la proporción */
+    display: block; /* Evita el espacio blanco debajo de la imagen */
+}
    </style>
 </head>
 <body>
-    <header>Página de Preescolar</header>
+     <header>
+        <div class="banner">
+            <img src="banner.jpeg" alt="Banner">
+        </div>
+    </header>
     <nav>
         <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
         <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
