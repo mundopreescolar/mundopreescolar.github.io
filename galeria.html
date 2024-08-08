@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería - Ludoteca</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Galería de Imágenes</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -29,105 +28,6 @@
             border-bottom: 5px solid #00796b;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 1s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
-            background-size: 500% 500%;
-            animation: gradientAnimation 15s ease infinite;
-            padding: 10px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 1s ease;
-        }
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        nav a {
-            color: white;
-            padding: 15px 25px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.2em;
-            border-radius: 10px;
-            margin: 5px;
-            transition: color 0.3s, transform 0.3s, background-color 0.3s;
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-
-        nav a i {
-            margin-right: 8px;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 200%;
-            height: 2px;
-            background: #ffeb3b;
-            transition: transform 0.3s ease;
-            transform: translateX(-50%) scaleX(0);
-        }
-
-        nav a:hover::before {
-            transform: translateX(-50%) scaleX(1);
-        }
-
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.6);
-            transform: scale(1.1);
-            color: #333;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        nav a:nth-child(1) {
-            background-color: #ff4081;
-        }
-
-        nav a:nth-child(2) {
-            background-color: #ffeb3b;
-        }
-
-        nav a:nth-child(3) {
-            background-color: #4caf50;
-        }
-
-        nav a:nth-child(4) {
-            background-color: #2196f3;
-        }
-
-        nav a:nth-child(5) {
-            background-color: #ff5722;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #ff5722, #ff9800);
-            transition: transform 0.3s ease;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-        }
-
-        nav a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
         }
 
         main {
@@ -183,42 +83,12 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .image-box h3 {
-            color: #00796b;
-            font-size: 1.4em;
-            margin-bottom: 10px;
-        }
-
-        .image-box p {
-            font-size: 1em;
-            color: #555;
-            margin-bottom: 10px;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .button-container a {
-            display: inline-block;
-            color: #00796b;
-            text-decoration: none;
-            font-size: 1.1em;
-            padding: 10px;
-            border: 2px solid #00796b;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .button-container a:hover {
-            background-color: #00796b;
-            color: #fff;
+        .image-box img:hover {
+            transform: scale(1.05);
         }
 
         /* Popup Styles */
@@ -229,7 +99,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -239,51 +109,19 @@
             background: #fff;
             padding: 20px;
             border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
+            max-width: 90%;
+            max-height: 90%;
+            overflow: hidden;
         }
 
-        .popup img {
+        .popup-content img {
             width: 100%;
             height: auto;
-            max-height: 300px;
             object-fit: contain;
-        }
-
-        .popup button {
-            background: #ff4081;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        .popup button:hover {
-            background: #e91e63;
         }
 
         /* Media Queries */
         @media (max-width: 768px) {
-            header {
-                font-size: 2em;
-            }
-
-            nav {
-                flex-direction: column;
-                padding: 0;
-            }
-
-            nav a {
-                padding: 10px;
-                margin: 5px 0;
-                font-size: 1.1em;
-            }
-
             .section {
                 padding: 15px;
                 margin: 15px auto;
@@ -314,158 +152,77 @@
     <header>
         Galería de Imágenes
     </header>
-    <nav>
-        <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-image"></i> Galería</a>
-        <a href="#"><i class="fas fa-info-circle"></i> Sobre Nosotros</a>
-        <a href="#"><i class="fas fa-phone"></i> Contacto</a>
-    </nav>
     <main>
         <div class="section">
             <h2>Galería de Imágenes</h2>
             <div class="image-container">
                 <!-- Imágenes 1 a 15 -->
                 <div class="image-box">
-                    <img src="image1.jpg" alt="Imagen 1">
-                    <h3>Imagen 1</h3>
-                    <p>Descripción de la imagen 1.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image1.jpg', 'Descripción de la imagen 1')">Ver Más</a>
-                    </div>
+                    <img src="image1.jpg" alt="Imagen 1" onclick="showPopup('image1.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image2.jpg" alt="Imagen 2">
-                    <h3>Imagen 2</h3>
-                    <p>Descripción de la imagen 2.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image2.jpg', 'Descripción de la imagen 2')">Ver Más</a>
-                    </div>
+                    <img src="image2.jpg" alt="Imagen 2" onclick="showPopup('image2.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image3.jpg" alt="Imagen 3">
-                    <h3>Imagen 3</h3>
-                    <p>Descripción de la imagen 3.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image3.jpg', 'Descripción de la imagen 3')">Ver Más</a>
-                    </div>
+                    <img src="image3.jpg" alt="Imagen 3" onclick="showPopup('image3.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image4.jpg" alt="Imagen 4">
-                    <h3>Imagen 4</h3>
-                    <p>Descripción de la imagen 4.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image4.jpg', 'Descripción de la imagen 4')">Ver Más</a>
-                    </div>
+                    <img src="image4.jpg" alt="Imagen 4" onclick="showPopup('image4.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image5.jpg" alt="Imagen 5">
-                    <h3>Imagen 5</h3>
-                    <p>Descripción de la imagen 5.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image5.jpg', 'Descripción de la imagen 5')">Ver Más</a>
-                    </div>
+                    <img src="image5.jpg" alt="Imagen 5" onclick="showPopup('image5.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image6.jpg" alt="Imagen 6">
-                    <h3>Imagen 6</h3>
-                    <p>Descripción de la imagen 6.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image6.jpg', 'Descripción de la imagen 6')">Ver Más</a>
-                    </div>
+                    <img src="image6.jpg" alt="Imagen 6" onclick="showPopup('image6.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image7.jpg" alt="Imagen 7">
-                    <h3>Imagen 7</h3>
-                    <p>Descripción de la imagen 7.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image7.jpg', 'Descripción de la imagen 7')">Ver Más</a>
-                    </div>
+                    <img src="image7.jpg" alt="Imagen 7" onclick="showPopup('image7.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image8.jpg" alt="Imagen 8">
-                    <h3>Imagen 8</h3>
-                    <p>Descripción de la imagen 8.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image8.jpg', 'Descripción de la imagen 8')">Ver Más</a>
-                    </div>
+                    <img src="image8.jpg" alt="Imagen 8" onclick="showPopup('image8.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image9.jpg" alt="Imagen 9">
-                    <h3>Imagen 9</h3>
-                    <p>Descripción de la imagen 9.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image9.jpg', 'Descripción de la imagen 9')">Ver Más</a>
-                    </div>
+                    <img src="image9.jpg" alt="Imagen 9" onclick="showPopup('image9.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image10.jpg" alt="Imagen 10">
-                    <h3>Imagen 10</h3>
-                    <p>Descripción de la imagen 10.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image10.jpg', 'Descripción de la imagen 10')">Ver Más</a>
-                    </div>
+                    <img src="image10.jpg" alt="Imagen 10" onclick="showPopup('image10.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image11.jpg" alt="Imagen 11">
-                    <h3>Imagen 11</h3>
-                    <p>Descripción de la imagen 11.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image11.jpg', 'Descripción de la imagen 11')">Ver Más</a>
-                    </div>
+                    <img src="image11.jpg" alt="Imagen 11" onclick="showPopup('image11.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image12.jpg" alt="Imagen 12">
-                    <h3>Imagen 12</h3>
-                    <p>Descripción de la imagen 12.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image12.jpg', 'Descripción de la imagen 12')">Ver Más</a>
-                    </div>
+                    <img src="image12.jpg" alt="Imagen 12" onclick="showPopup('image12.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image13.jpg" alt="Imagen 13">
-                    <h3>Imagen 13</h3>
-                    <p>Descripción de la imagen 13.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image13.jpg', 'Descripción de la imagen 13')">Ver Más</a>
-                    </div>
+                    <img src="image13.jpg" alt="Imagen 13" onclick="showPopup('image13.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image14.jpg" alt="Imagen 14">
-                    <h3>Imagen 14</h3>
-                    <p>Descripción de la imagen 14.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image14.jpg', 'Descripción de la imagen 14')">Ver Más</a>
-                    </div>
+                    <img src="image14.jpg" alt="Imagen 14" onclick="showPopup('image14.jpg')">
                 </div>
                 <div class="image-box">
-                    <img src="image15.jpg" alt="Imagen 15">
-                    <h3>Imagen 15</h3>
-                    <p>Descripción de la imagen 15.</p>
-                    <div class="button-container">
-                        <a href="#" onclick="showPopup('image15.jpg', 'Descripción de la imagen 15')">Ver Más</a>
-                    </div>
+                    <img src="image15.jpg" alt="Imagen 15" onclick="showPopup('image15.jpg')">
                 </div>
-                <!-- Agrega más imágenes aquí si es necesario -->
             </div>
         </div>
     </main>
-    <div class="popup" id="popup">
+
+    <div class="popup" id="popup" onclick="closePopup(event)">
         <div class="popup-content">
             <img id="popup-image" src="" alt="Imagen Popup">
-            <p id="popup-description"></p>
-            <button onclick="closePopup()">Cerrar</button>
         </div>
     </div>
 
     <script>
-        function showPopup(imageSrc, description) {
+        function showPopup(imageSrc) {
             document.getElementById('popup-image').src = imageSrc;
-            document.getElementById('popup-description').textContent = description;
             document.getElementById('popup').style.display = 'flex';
         }
 
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
+        function closePopup(event) {
+            // Close the popup only if the click is outside the image
+            if (event.target === event.currentTarget) {
+                document.getElementById('popup').style.display = 'none';
+            }
         }
     </script>
 </body>
