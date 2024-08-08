@@ -1,12 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria</title>
+    <title>Galería</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-               .banner {
+        .banner {
             width: 100%;
             height: auto; /* Mantiene la proporción de la imagen */
             position: relative;
@@ -18,71 +19,70 @@
             height: auto; /* Mantiene la proporción de la imagen */
             display: block;
         }
-  footer {
-    background-color: #ffeb3b;
-    padding: 20px;
-    text-align: center;
-    border-top: 5px solid #00796b;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
+        
+        footer {
+            background-color: #ffeb3b;
+            padding: 20px;
+            text-align: center;
+            border-top: 5px solid #00796b;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
 
-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-footer p {
-    margin: 0;
-    color: #00796b;
-    font-size: 1em;
-}
+        footer p {
+            margin: 0;
+            color: #00796b;
+            font-size: 1em;
+        }
 
-footer .social-icons {
-    margin: 10px 0;
-}
+        footer .social-icons {
+            margin: 10px 0;
+        }
 
-footer .social-icons a {
-    color: #00796b;
-    margin: 0 10px;
-    font-size: 1.5em;
-    transition: color 0.3s, transform 0.3s;
-}
+        footer .social-icons a {
+            color: #00796b;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s, transform 0.3s;
+        }
 
-footer .social-icons a:hover {
-    color: #004d40;
-    transform: scale(1.1);
-}
+        footer .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
 
-/* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
-@media (max-width: 768px) {
-    footer p {
-        font-size: 0.9em;
-    }
+        @media (max-width: 768px) {
+            footer p {
+                font-size: 0.9em;
+            }
 
-    footer .social-icons a {
-        font-size: 1.3em;
-    }
-}
+            footer .social-icons a {
+                font-size: 1.3em;
+            }
+        }
 
-@media (max-width: 480px) {
-    footer p {
-        font-size: 0.8em;
-    }
+        @media (max-width: 480px) {
+            footer p {
+                font-size: 0.8em;
+            }
 
-    footer .social-icons a {
-        font-size: 1.1em;
-        margin: 0 5px;
-    }
-}
-
+            footer .social-icons a {
+                font-size: 1.1em;
+                margin: 0 5px;
+            }
+        }
 
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
+            font-family: 'Comic Sans MS', sans-serif;
             margin: 0;
             padding: 0;
             background: url('background.jpg') no-repeat center center fixed;
@@ -230,11 +230,30 @@ footer .social-icons a:hover {
             margin-bottom: 20px;
         }
 
-        .book-container {
+        .gallery-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 10px; /* Espacio entre las imágenes */
             justify-content: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 auto; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
+            max-width: 100%; /* Asegura que el contenedor no se haga más grande que la imagen */
+            box-sizing: border-box;
+            display: flex; /* Usa flexbox para centrar la imagen */
+            justify-content: center; /* Centra la imagen horizontalmente */
+            align-items: center; /* Centra la imagen verticalmente */
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 300px; /* Limita la altura máxima para mantener el formato landscape */
+            width: auto;
+            height: auto;
+            object-fit: contain; /* Mantiene la proporción de la imagen y evita distorsión */
+            border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para darle un efecto de profundidad */
         }
 
         .book-box {
@@ -242,10 +261,10 @@ footer .social-icons a:hover {
             box-sizing: border-box;
             padding: 15px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
             border-radius: 15px;
             background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -259,46 +278,95 @@ footer .social-icons a:hover {
             height: 150px;
             object-fit: contain;
             border-radius: 10px;
-            margin-bottom: 10px;
         }
 
-        .book-box h3 {
+        .book-title {
+            font-size: 1.2em;
+            margin: 10px 0;
             color: #00796b;
-            font-size: 1.4em;
-            margin-bottom: 10px;
         }
 
-        .book-box p {
-            font-size: 1em;
+        .book-author {
             color: #555;
-            margin-bottom: 10px;
         }
 
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 10px;
+        .game-box {
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .button-container a {
-            display: inline-block;
+        .game-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-box img {
+            width: auto;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .game-title {
+            font-size: 1.2em;
+            margin: 10px 0;
             color: #00796b;
-            text-decoration: none;
-            font-size: 1.1em;
-            padding: 10px;
-            border: 2px solid #00796b;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
         }
 
-        .button-container a:hover {
-            background-color: #00796b;
+        .game-description {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .popup-content {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .popup-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .popup-content .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5722;
             color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
         }
 
-        /* Popup Styles */
-        .popup {
+        .popup-content .close-btn:hover {
+            background: #e64a19;
+        }
+
+        .popup-overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -306,252 +374,59 @@ footer .social-icons a:hover {
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .popup-content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .popup img {
-            width: 100%;
-            height: auto;
-            max-height: 300px;
-            object-fit: contain;
-        }
-
-        .popup audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .popup button {
-            background: #ff4081;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
-            transition: background 0.3s;
-        }
-
-        .popup button:hover {
-            background: #e91e63;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            header {
-                font-size: 2em;
-            }
-
-            nav {
-                flex-direction: column;
-                padding: 0;
-            }
-
-            nav a {
-                padding: 10px;
-                margin: 5px 0;
-                font-size: 1.1em;
-            }
-
-            .section {
-                padding: 15px;
-                margin: 15px auto;
-            }
-
-            .section h2 {
-                font-size: 1.8em;
-            }
-
-            .book-box {
-                width: calc(50% - 20px);
-            }
-
-            .popup-content {
-                width: 90%;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                font-size: 1.8em;
-                padding: 15px;
-            }
-
-            .book-box {
-                width: calc(100% - 20px);
-            }
-
-            .book-box img {
-                height: 120px;
-            }
-
-            .section h2 {
-                font-size: 1.6em;
-            }
-
-            .popup-content {
-                width: 95%;
-                padding: 10px;
-            }
-
-            nav a {
-                padding: 8px;
-                margin: 3px 0;
-                font-size: 1em;
-            }
+            z-index: 999;
         }
     </style>
 </head>
 <body>
     <header>
-    <div class="banner">
-        <img src="banner.jpeg" alt="Banner">
-    </div>
+        <div class="banner">
+            <img src="banner.jpeg" alt="Banner">
+        </div>
+        <h1>Mi Sitio Web</h1>
     </header>
+
     <nav>
-        <a href="index.html"><i class="fa fa-home"></i>Inicio</a>
-        <a href="biblioteca.html"><i class="fa fa-book"></i>Biblioteca</a>
-        <a href="ludoteca.html"><i class="fa fa-puzzle-piece"></i>Ludoteca</a>
-        <a href="materiales.html"><i class="fa fa-cogs"></i>Materiales</a>
-        <a href="galeria.html"><i class="fa fa-images"></i>Galería</a>
+        <a href="#inicio"><i class="fas fa-home"></i>Inicio</a>
+        <a href="#biblioteca"><i class="fas fa-book"></i>Biblioteca</a>
+        <a href="#ludoteca"><i class="fas fa-gamepad"></i>Ludoteca</a>
+        <a href="#materiales"><i class="fas fa-box"></i>Materiales</a>
+        <a href="#galeria"><i class="fas fa-images"></i>Galería</a>
     </nav>
+
     <main>
-         <!-- Sección de Biblioteca -->
-        <section class="section">
-            <h2>Biblioteca</h2>
-            <div class="book-container">
-                <!-- Primer Libro -->
-                <div class="book-box" onclick="openPopup('book1')">
-                    <img src="libro1.jpg" alt="El lobo y los siete cabritos">
-                    <h3>El lobo y los siete cabritos</h3>
-                    <p>Una historia clásica llena de aventuras.</p>
-                </div>
-                <!-- Segundo Libro -->
-                <div class="book-box" onclick="openPopup('book2')">
-                    <img src="libro2.jpg" alt="Los tres cerditos">
-                    <h3>Los tres cerditos</h3>
-                    <p>Una divertida fábula sobre la perseverancia.</p>
-                </div>
-                <!-- Tercer Libro -->
-                <div class="book-box" onclick="openPopup('book3')">
-                    <img src="libro3.jpg" alt="Caperucita Roja">
-                    <h3>Caperucita Roja</h3>
-                    <p>Una clásica historia de valentía y astucia.</p>
-                </div>
-                <!-- Cuarto Libro -->
-                <div class="book-box" onclick="openPopup('book4')">
-                    <img src="libro4.jpg" alt="El patito feo">
-                    <h3>El patito feo</h3>
-                    <p>Una conmovedora historia sobre la belleza interior.</p>
-                </div>
-                <!-- Quinto Libro -->
-                <div class="book-box" onclick="openPopup('book5')">
-                    <img src="libro5.jpg" alt="Blancanieves y los siete enanitos">
-                    <h3>Blancanieves y los siete enanitos</h3>
-                    <p>Un cuento mágico de amistad y valentía.</p>
-                </div>
-                <!-- Sexto Libro -->
-                <div class="book-box" onclick="openPopup('book6')">
-                    <img src="libro6.jpg" alt="Ricitos de Oro y los tres osos">
-                    <h3>Ricitos de Oro y los tres osos</h3>
-                    <p>Una historia encantadora sobre curiosidad y respeto.</p>
-                </div>
+        <div class="section gallery">
+            <h2>Galería</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="image1.jpg" alt="Imagen 1"></div>
+                <div class="gallery-item"><img src="image2.jpg" alt="Imagen 2"></div>
+                <div class="gallery-item"><img src="image3.jpg" alt="Imagen 3"></div>
+                <div class="gallery-item"><img src="image4.jpg" alt="Imagen 4"></div>
+                <div class="gallery-item"><img src="image5.jpg" alt="Imagen 5"></div>
+                <div class="gallery-item"><img src="image6.jpg" alt="Imagen 6"></div>
+                <div class="gallery-item"><img src="image7.jpg" alt="Imagen 7"></div>
+                <div class="gallery-item"><img src="image8.jpg" alt="Imagen 8"></div>
+                <div class="gallery-item"><img src="image9.jpg" alt="Imagen 9"></div>
+                <div class="gallery-item"><img src="image10.jpg" alt="Imagen 10"></div>
+                <div class="gallery-item"><img src="image11.jpg" alt="Imagen 11"></div>
+                <div class="gallery-item"><img src="image12.jpg" alt="Imagen 12"></div>
+                <div class="gallery-item"><img src="image13.jpg" alt="Imagen 13"></div>
+                <div class="gallery-item"><img src="image14.jpg" alt="Imagen 14"></div>
+                <div class="gallery-item"><img src="image15.jpg" alt="Imagen 15"></div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <!-- Popups -->
-    <div id="book1" class="popup" onclick="closePopup('book1')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <img src="libro1.jpg" alt="El lobo y los siete cabritos">
-            <audio id="popup-audio-book1" controls>
-                <source src="cuento1.mp3" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <button onclick="closePopup('book1')">Cerrar</button>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mi Sitio Web</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
-    </div>
-
-    <div id="book2" class="popup" onclick="closePopup('book2')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <img src="libro2.jpg" alt="Los tres cerditos">
-            <audio id="popup-audio-book2" controls>
-                <source src="cuento2.mp3" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <button onclick="closePopup('book2')">Cerrar</button>
-        </div>
-    </div>
-
-    <div id="book3" class="popup" onclick="closePopup('book3')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <img src="libro3.jpg" alt="Caperucita Roja">
-            <audio id="popup-audio-book3" controls>
-                <source src="cuento3.mp3" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <button onclick="closePopup('book3')">Cerrar</button>
-        </div>
-    </div>
-
-    <div id="book4" class="popup" onclick="closePopup('book4')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <img src="libro4.jpg" alt="El patito feo">
-            <audio id="popup-audio-book4" controls>
-                <source src="cuento4.mp3" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <button onclick="closePopup('book4')">Cerrar</button>
-        </div>
-    </div>
-
-    <div id="book5" class="popup" onclick="closePopup('book5')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <img src="libro5.jpg" alt="Blancanieves y los siete enanitos">
-            <audio id="popup-audio-book5" controls>
-                <source src="cuento5.mp3" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <button onclick="closePopup('book5')">Cerrar</button>
-        </div>
-    </div>
-
-    <div id="book6" class="popup" onclick="closePopup('book6')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <img src="libro6.jpg" alt="Ricitos de Oro y los tres osos">
-            <audio id="popup-audio-book6" controls>
-                <source src="cuento6n.mp3" type="audio/mp3">
-                Tu navegador no soporta el elemento de audio.
-            </audio>
-            <button onclick="closePopup('book6')">Cerrar</button>
-        </div>
-    </div>
-
-  <footer>
-    <div class="container">
-        <p>© 2023 Biblioteca Infantil. Todos los derechos reservados.</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-    </div>
-</footer>
-
-    </body>
-
+    </footer>
+</body>
 </html>
