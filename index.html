@@ -438,17 +438,15 @@ header {
 
 header {
     width: 100%;
-    display: flex;
-    background-color: #f4f4f4; /* Color de fondo opcional */
-    padding: 10px 0; /* Espacio opcional alrededor de la imagen */
+    height: 300px; /* Altura del header, ajusta según necesites */
+    overflow: hidden; /* Esconde cualquier desbordamiento */
 }
 
 header img {
     width: 100%;
-    max-width: 1200px; /* Ajusta el tamaño máximo de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el área del contenedor */
-    display: block; /* Elimina el espacio debajo de la imagen */
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el header */
+    display: block;
 }
 
 /* Opcional: Media Queries para pantallas más pequeñas */
