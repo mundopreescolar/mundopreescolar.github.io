@@ -105,105 +105,69 @@
             transition: transform 1s ease;
         }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
-            background-size: 500% 500%;
-            animation: gradientAnimation 15s ease infinite;
-            padding: 10px 0;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 1s ease;
-        }
+      nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
+    background-size: 500% 500%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 1s ease;
+}
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
+/* Estilo para los enlaces de la navbar */
+nav a {
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: 10px;
+    margin: 5px;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    background-color: rgba(255, 255, 255, 0.3);
+    flex: 1; /* Los enlaces se expanden para llenar el espacio disponible */
+    max-width: 200px; /* Limita el tamaño máximo de cada enlace */
+}
 
-        nav a {
-            color: white;
-            padding: 15px 25px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.2em;
-            border-radius: 10px;
-            margin: 5px;
-            transition: color 0.3s, transform 0.3s, background-color 0.3s;
-            position: relative;
-            display: inline-block;
-            overflow: hidden;
-            font-weight: bold;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
+/* Animación del fondo de la navbar */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
 
-        nav a i {
-            margin-right: 8px;
-        }
+/* Hover en los enlaces de la navbar */
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: scale(1.1);
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
 
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 200%;
-            height: 2px;
-            background: #ffeb3b;
-            transition: transform 0.3s ease;
-            transform: translateX(-50%) scaleX(0);
-        }
+/* Estilo responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
 
-        nav a:hover::before {
-            transform: translateX(-50%) scaleX(1);
-        }
+    nav a {
+        font-size: 1em;
+        padding: 10px;
+        max-width: none; /* Elimina el límite de ancho en pantallas pequeñas */
+        margin: 2px 0; /* Reduce el margen entre los enlaces */
+    }
+}
 
-        nav a:hover {
-            background-color: rgba(255, 255, 255, 0.6);
-            transform: scale(1.1);
-            color: #333;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        nav a:nth-child(1) {
-            background-color: #ff4081;
-        }
-
-        nav a:nth-child(2) {
-            background-color: #ffeb3b;
-        }
-
-        nav a:nth-child(3) {
-            background-color: #4caf50;
-        }
-
-        nav a:nth-child(4) {
-            background-color: #2196f3;
-        }
-
-        nav a:nth-child(5) {
-            background-color: #ff5722;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #ff5722, #ff9800);
-            transition: transform 0.3s ease;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-        }
-
-        nav a:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
+/* Estilo responsive para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
         main {
             flex: 1;
             padding: 20px;
@@ -280,9 +244,6 @@
         <a href="#"><i class="fas fa-image"></i> Galería</a>
     </nav>
 
-    <div class="banner">
-        <img src="banner.jpg" alt="Banner">
-    </div>
 
     <main>
         <div class="gallery-grid">
