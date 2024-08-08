@@ -428,24 +428,17 @@ footer .social-icons a:hover {
 }
 
 
-        header {
+        .banner {
             width: 100%;
-            height: auto; /* Ajusta automáticamente la altura basada en el contenido */
+            height: auto; /* Mantiene la proporción de la imagen */
             position: relative;
             overflow: hidden;
         }
 
-        .banner {
-            position: relative;
-            width: 100%;
-            height: 100%; /* Utiliza el 100% de la altura del contenedor header */
-        }
-
         .banner img {
             width: 100%;
-            height: 100%;
-            object-fit: contain; /* Ajusta la imagen para que se vea completa sin distorsión */
-            display: block; /* Elimina el espacio extra debajo de la imagen */
+            height: auto; /* Mantiene la proporción de la imagen */
+            display: block;
         }
    </style>
 </head>
