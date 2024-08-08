@@ -105,110 +105,84 @@
             transition: transform 1s ease;
         }
 
-/* Estilo de la navbar */
-nav {
+/* Estilos base para la Navbar */
+.navbar {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
-    background-size: 500% 500%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff6f61, #ffde59, #6bf178, #3bafda);
+    background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    padding: 10px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 1s ease;
-}
-
-/* Animación de gradiente */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
-/* Estilo para los enlaces de la navbar */
-nav a {
-    color: white;
-    padding: 15px 25px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.2em;
-    border-radius: 10px;
-    margin: 5px;
-    transition: color 0.3s, transform 0.3s, background-color 0.3s;
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    font-weight: bold;
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-nav a i {
-    margin-right: 8px;
-}
-
-/* Efecto al pasar el cursor sobre los enlaces */
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.6);
-    transform: scale(1.1);
-    color: #333;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Colores específicos para cada botón */
-nav a:nth-child(1) {
-    background-color: #ff4081;
-}
-
-nav a:nth-child(2) {
-    background-color: #ffeb3b;
-}
-
-nav a:nth-child(3) {
-    background-color: #4caf50;
-}
-
-nav a:nth-child(4) {
-    background-color: #2196f3;
-}
-
-nav a:nth-child(5) {
-    background-color: #ff5722;
-}
-
-/* Línea inferior animada en los botones */
-nav a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 200%;
-    height: 2px;
-    background: #ffeb3b;
-    transition: transform 0.3s ease;
-    transform: translateX(-50%) scaleX(0);
-}
-
-nav a:hover::before {
-    transform: translateX(-50%) scaleX(1);
-}
-
-/* Efecto de cambio de color y escala en la barra inferior */
-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: fixed;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #ff5722, #ff9800);
-    transition: transform 0.3s ease;
-    transform: scaleX(0);
-    transform-origin: bottom right;
+    top: 0;
+    z-index: 1000;
 }
 
-nav a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+/* Efecto de gradiente animado */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Estilos para los enlaces de la Navbar */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Botones de colores en la Navbar */
+.navbar a:nth-child(1) { background-color: #ff6f61; }
+.navbar a:nth-child(2) { background-color: #ffde59; }
+.navbar a:nth-child(3) { background-color: #6bf178; }
+.navbar a:nth-child(4) { background-color: #3bafda; }
+.navbar a:nth-child(5) { background-color: #ff9a76; }
+
+/* Hover en los botones */
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+/* Navbar responsiva para pantallas medianas y pequeñas */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+}
+
+/* Navbar responsiva para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 5px;
+    }
+
+    .navbar a {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
 }
 
 
@@ -218,40 +192,42 @@ nav a:hover::after {
         }
 
        /* Estilo para la sección de galería */
-.gallery-grid {
+/* Estilo de la galería */
+.gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
+    grid-gap: 10px;
     padding: 20px;
 }
 
-/* Estilo para los elementos de la galería */
+/* Estilo para cada elemento de la galería */
 .gallery-item {
+    position: relative;
     overflow: hidden;
     border-radius: 10px;
-    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
+/* Imágenes en la galería */
 .gallery-item img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
-/* Efecto hover para las imágenes */
+/* Hover sobre el contenedor para ampliar la imagen */
 .gallery-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.2); /* Ajusta el valor para más o menos zoom */
+    transition: transform 0.3s ease;
 }
 
-/* Ajustes para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
+/* Efecto de sombra en el hover */
+.gallery-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
-
     </style>
 </head>
 <body>
