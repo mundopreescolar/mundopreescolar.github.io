@@ -438,19 +438,18 @@ body, html {
 /* Estilo del Header */
 header {
     width: 100%;
-    height: auto; /* Elimina la altura fija para que se ajuste automáticamente */
+    height: 100vh; /* La altura del header se ajusta a la altura de la ventana */
     position: relative;
-    overflow: hidden; /* Evita que la imagen se salga del contenedor */
+    overflow: hidden; /* Evita que el contenido del header se salga */
 }
 
 /* Estilo de la Imagen */
 header img {
-    width: 100%; /* Ocupa el 100% del ancho del header */
-    height: auto; /* Ajusta la altura automáticamente */
-    display: block; /* Evita que se añadan espacios blancos alrededor de la imagen */
-    object-fit: cover; /* Cubre el header manteniendo la proporción */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen cubre completamente el header manteniendo la proporción */
+    display: block; /* Elimina los espacios alrededor de la imagen */
 }
-
 
 /* Opcional: Media Queries para pantallas más pequeñas */
 @media (max-width: 768px) {
