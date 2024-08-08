@@ -6,6 +6,18 @@
     <title>Biblioteca - Ludoteca</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+               .banner {
+            width: 100%;
+            height: auto; /* Mantiene la proporción de la imagen */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto; /* Mantiene la proporción de la imagen */
+            display: block;
+        }
   footer {
     background-color: #ffeb3b;
     padding: 20px;
@@ -405,7 +417,9 @@ footer .social-icons a:hover {
 </head>
 <body>
     <header>
-        <i class="fa fa-book"></i> Biblioteca
+    <div class="banner">
+        <img src="banner.jpeg" alt="Banner">
+    </div>
     </header>
     <nav>
         <a href="index.html"><i class="fa fa-home"></i>Inicio</a>
