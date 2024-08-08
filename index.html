@@ -430,17 +430,25 @@ footer .social-icons a:hover {
 header {
     position: relative;
     width: 100%;
+    overflow: hidden;
 }
 
 .banner {
     width: 100%;
-    overflow: hidden;
 }
 
 .banner img {
     width: 100%;
-    height: auto; /* Ajusta la altura de la imagen automáticamente para mantener la proporción */
-    display: block; /* Evita el espacio blanco debajo de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina el espacio debajo de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área del contenedor */
+}
+
+/* Opcional: Media Queries para ajustes específicos */
+@media (max-width: 768px) {
+    .banner img {
+        /* Ajustes adicionales para pantallas pequeñas, si es necesario */
+    }
 }
    </style>
 </head>
