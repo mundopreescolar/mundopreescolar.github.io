@@ -217,59 +217,40 @@ nav a:hover::after {
             padding: 20px;
         }
 
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-        }
+       /* Estilo para la sección de galería */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
 
-        .gallery-item {
-            flex: 1 1 auto; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
-            max-width: 100%; /* Asegura que el contenedor no se haga más grande que la imagen */
-            box-sizing: border-box;
-            display: flex; /* Usa flexbox para centrar la imagen */
-            justify-content: center; /* Centra la imagen horizontalmente */
-            align-items: center; /* Centra la imagen verticalmente */
-            overflow: hidden; /* Oculta el contenido que se desborda */
-            position: relative; /* Permite el posicionamiento absoluto del overlay */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
-        }
+/* Estilo para los elementos de la galería */
+.gallery-item {
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
 
-        .gallery-item img {
-            max-width: 100%;
-            max-height: 300px; /* Limita la altura máxima para mantener el formato landscape */
-            width: auto;
-            height: auto;
-            object-fit: cover; /* Mantiene la proporción de la imagen y evita distorsión */
-            border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
-            transition: transform 0.3s ease; /* Transición para el efecto de hover */
-        }
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .gallery-item:hover img {
-            transform: scale(1.1); /* Escala la imagen al pasar el cursor */
-            filter: brightness(1.2); /* Aumenta el brillo al pasar el cursor */
-        }
+/* Efecto hover para las imágenes */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
 
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semi-transparente */
-            opacity: 0;
-            transition: opacity 0.3s ease; /* Transición para el overlay */
-        }
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
 
-        .gallery-item:hover::after {
-            opacity: 1; /* Muestra el overlay oscuro al pasar el cursor */
-        }
-
-        .gallery-item:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el cursor */
-            transform: scale(1.05); /* Escala el contenedor ligeramente al pasar el cursor */
-        }
 
     </style>
 </head>
