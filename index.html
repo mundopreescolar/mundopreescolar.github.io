@@ -32,7 +32,7 @@
             background-color: #ffeb3b;
             color: #00796b;
             padding: 20px;
-            
+            text-align: center;
             font-size: 2.5em;
             border-bottom: 5px solid #00796b;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -443,19 +443,20 @@ body, html {
         /* Estilo del Header */
         header {
             width: 100%;
-            height: 100vh; /* O ajusta la altura como necesites */
-            position: relative; /* Para posicionar el contenido dentro del header */
+            height: 60vh; /* Ajusta la altura del header según tus necesidades */
+            position: relative;
+            overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
         }
 
         /* Estilo de la Imagen en el Header */
         header img {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50%;
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Ajusta la imagen para que esté completamente visible */
-            object-position: center; /* Centra la imagen */
+            object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
+            transform: translate(-50%, -50%); /* Centra la imagen en el contenedor */
         }
 
 /* Opcional: Media Queries para pantallas más pequeñas */
