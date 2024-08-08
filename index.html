@@ -431,25 +431,30 @@ footer .social-icons a:hover {
         width: 80%; /* Reduce aún más el tamaño en pantallas más pequeñas */
     }
 }
+           body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         header {
             width: 100%;
-            height: 400px; /* Ajusta la altura según la imagen y el diseño */
-            overflow: hidden; /* Asegura que no haya desbordamiento */
+            height: auto; /* Ajusta automáticamente la altura basada en el contenido */
             position: relative;
+            overflow: hidden;
         }
 
         .banner {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative;
             width: 100%;
-            height: 100%;
+            height: 100%; /* Utiliza el 100% de la altura del contenedor header */
         }
 
         .banner img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ajusta la imagen para cubrir el área del contenedor sin distorsionar */
+            object-fit: contain; /* Ajusta la imagen para que se vea completa sin distorsión */
             display: block; /* Elimina el espacio extra debajo de la imagen */
         }
    </style>
