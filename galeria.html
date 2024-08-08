@@ -297,34 +297,39 @@
             color: #004d40;
         }
 
-        .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-.gallery-item {
-    flex: 1 1 auto;
-    max-width: 100%;
-    box-sizing: border-box;
+   /* Ajusta el contenedor de la galería para que se adapte a la pantalla */
+.gallery-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Asegura que no se desborde el zoom */
-    transition: transform 0.3s ease; /* Transición suave para el zoom */
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre las imágenes */
+    justify-content: center; /* Centra el contenido dentro del contenedor */
+    max-width: 100%; /* Evita que el contenedor se expanda más allá del ancho de la pantalla */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del contenedor */
+    padding: 10px; /* Espacio interior del contenedor para evitar que las imágenes toquen los bordes */
 }
 
+/* Ajusta cada ítem de la galería */
+.gallery-item {
+    flex: 1 1 calc(33.333% - 20px); /* Permite que los elementos se ajusten al ancho del contenedor */
+    max-width: calc(33.333% - 20px); /* Establece el ancho máximo de cada ítem */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+    display: flex; /* Usa flexbox para centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    overflow: hidden; /* Asegura que las imágenes no desborden el contenedor */
+}
+
+/* Ajusta las imágenes dentro de los ítems de la galería */
 .gallery-item img {
-    max-width: 100%;
-    max-height: 300px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    transition: transform 0.3s ease; /* Transición suave para el zoom */
+    width: 100%; /* Asegura que la imagen ocupe el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    object-fit: cover; /* Cubre el contenedor mientras mantiene la proporción de la imagen */
+    border-radius: 10px; /* Redondea las esquinas de las imágenes */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
 }
 
+/* Efecto de zoom al pasar el mouse */
 .gallery-item:hover img {
     transform: scale(1.1); /* Escala la imagen al 110% */
 }
