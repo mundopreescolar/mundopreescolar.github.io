@@ -21,6 +21,9 @@
             min-height: 100vh;
             overflow: auto;
             transition: transform 1s ease;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Opcional: Asegura que el body ocupe toda la altura de la ventana */
         }
 
         header {
@@ -430,11 +433,22 @@ footer .social-icons a:hover {
 header {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .banner {
     width: 100%;
+    max-width: 1200px; /* Ajusta este valor según el tamaño máximo deseado para el banner */
 }
 
 .banner img {
@@ -446,7 +460,7 @@ header {
 
 /* Opcional: Media Queries para ajustes específicos */
 @media (max-width: 768px) {
-    .banner img {
+    .banner-container {
         /* Ajustes adicionales para pantallas pequeñas, si es necesario */
     }
 }
