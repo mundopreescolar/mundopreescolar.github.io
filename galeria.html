@@ -388,6 +388,32 @@
             font-size: 1.2em;
             color: #00796b;
         }
+        .gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre las imágenes */
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 auto; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
+    max-width: 100%; /* Asegura que el contenedor no se haga más grande que la imagen */
+    box-sizing: border-box;
+    display: flex; /* Usa flexbox para centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.gallery-item img {
+    max-width: 100%;
+    max-height: 300px; /* Limita la altura máxima para mantener el formato landscape */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Mantiene la proporción de la imagen y evita distorsión */
+    border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para darle un efecto de profundidad */
+}
+
     </style>
 </head>
 <body>
@@ -404,7 +430,26 @@
         <a href="galeria.html"><i class="fas fa-images"></i>Galería</a>
     </nav>
     <main>
-        <!-- Contenido de la página -->
+       <div class="section gallery">
+    <h2>Galería</h2>
+    <div class="gallery-grid">
+        <div class="gallery-item"><img src="image1.jpeg" alt="Imagen 1"></div>
+        <div class="gallery-item"><img src="image2.jpeg" alt="Imagen 2"></div>
+        <div class="gallery-item"><img src="image3.jpeg" alt="Imagen 3"></div>
+        <div class="gallery-item"><img src="image4.jpeg" alt="Imagen 4"></div>
+        <div class="gallery-item"><img src="image5.jpeg" alt="Imagen 5"></div>
+        <div class="gallery-item"><img src="image6.jpeg" alt="Imagen 6"></div>
+        <div class="gallery-item"><img src="image7.jpeg" alt="Imagen 7"></div>
+        <div class="gallery-item"><img src="image8.jpeg" alt="Imagen 8"></div>
+        <div class="gallery-item"><img src="image9.jpeg" alt="Imagen 9"></div>
+        <div class="gallery-item"><img src="image10.jpeg" alt="Imagen 10"></div>
+        <div class="gallery-item"><img src="image11.jpeg" alt="Imagen 11"></div>
+        <div class="gallery-item"><img src="image12.jpeg" alt="Imagen 12"></div>
+        <div class="gallery-item"><img src="image13.jpeg" alt="Imagen 13"></div>
+        <div class="gallery-item"><img src="image14.jpeg" alt="Imagen 14"></div>
+        <div class="gallery-item"><img src="image15.jpeg" alt="Imagen 15"></div>
+    </div>
+</div>
     </main>
     <footer>
         <p>&copy; 2024 Biblioteca y Ludoteca</p>
@@ -415,6 +460,43 @@
         </div>
     </footer>
 
- 
+ <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const popupOverlay = document.createElement('div');
+    const popupContent = document.createElement('div');
+    const closeButton = document.createElement('button');
+
+    popupOverlay.className = 'popup-overlay';
+    popupContent.className = 'popup-content';
+    closeButton.className = 'close-btn';
+    closeButton.textContent = 'X';
+
+    popupContent.appendChild(closeButton);
+    popupOverlay.appendChild(popupContent);
+    document.body.appendChild(popupOverlay);
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const img = document.createElement('img');
+            img.src = this.src;
+            popupContent.appendChild(img);
+            popupOverlay.style.display = 'block';
+        });
+    });
+
+    closeButton.addEventListener('click', function() {
+        popupOverlay.style.display = 'none';
+        popupContent.querySelector('img').remove();
+    });
+
+    popupOverlay.addEventListener('click', function(event) {
+        if (event.target === popupOverlay) {
+            popupOverlay.style.display = 'none';
+            popupContent.querySelector('img').remove();
+        }
+    });
+});
+ </script>
 </body>
 </html>
