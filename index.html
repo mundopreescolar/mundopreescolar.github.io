@@ -23,6 +23,16 @@
             transition: transform 1s ease;
         }
 
+        header {
+            background-color: #ffeb3b;
+            color: #00796b;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5em;
+            border-bottom: 5px solid #00796b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 1s ease;
+        }
 
         nav {
             display: flex;
@@ -295,7 +305,11 @@ footer .social-icons a:hover {
     }
 }
 
-
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header {
+                font-size: 2em;
+            }
 
             nav {
                 flex-direction: column;
@@ -323,7 +337,11 @@ footer .social-icons a:hover {
             }
         }
 
- 
+        @media (max-width: 480px) {
+            header {
+                font-size: 1.5em;
+                padding: 15px;
+            }
 
             nav a {
                 font-size: 1em;
@@ -408,52 +426,11 @@ footer .social-icons a:hover {
         width: 80%; /* Reduce aún más el tamaño en pantallas más pequeñas */
     }
 }
-header {
-    position: relative;
-    background-color: #ffeb3b;
-    color: #00796b;
-    padding: 0;
-    text-align: center;
-    font-size: 2.5em;
-    border-bottom: 5px solid #00796b;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 1s ease;
-}
 
-.header-img-container {
-    width: 100%;
-    height: auto; /* Se ajustará automáticamente basado en la imagen */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
-}
-
-.header-img-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    header {
-        font-size: 2em;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        font-size: 1.5em;
-        padding: 15px;
-    }
-}
    </style>
 </head>
 <body>
-    <header>
-    <div class="header-img-container">
-        <img src="banner.jpeg" alt="banner">
-    </div>
-    Página de Preescolar
-</header>
+    <header><img src="banner.jpeg" alt="banner">Página de Preescolar</header>
     <nav>
         <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
         <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
@@ -567,7 +544,7 @@ En la conducción: Uso del cinturón de seguridad, respetar los límites de velo
             else if (n < 0) index = totalSlides - 1;
             else index = n;
 
-            carouselWrapper.style.transform = `translateX(-${index * 100}%)`;
+            carouselWrapper.style.transform = translateX(-${index * 100}%);
         }
 
         function nextSlide() {
