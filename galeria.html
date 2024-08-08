@@ -38,14 +38,10 @@
         }
 
         .section {
-            border-radius: 15px;
             padding: 20px;
             margin: 20px auto;
             max-width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
             box-sizing: border-box;
         }
 
@@ -70,7 +66,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
             border-radius: 15px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -103,13 +99,15 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            overflow: auto;
         }
 
         .popup-content {
             background: #fff;
             padding: 20px;
             border-radius: 10px;
-            max-width: 90%;
+            width: 90%;
+            max-width: 800px;
             max-height: 90%;
             overflow: hidden;
         }
@@ -219,7 +217,6 @@
         }
 
         function closePopup(event) {
-            // Close the popup only if the click is outside the image
             if (event.target === event.currentTarget) {
                 document.getElementById('popup').style.display = 'none';
             }
