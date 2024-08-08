@@ -29,6 +29,104 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 1s ease;
         }
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
+            background-size: 500% 500%;
+            animation: gradientAnimation 15s ease infinite;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 1s ease;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 10px;
+            margin: 5px;
+            transition: color 0.3s, transform 0.3s, background-color 0.3s;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        nav a i {
+            margin-right: 8px;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200%;
+            height: 2px;
+            background: #ffeb3b;
+            transition: transform 0.3s ease;
+            transform: translateX(-50%) scaleX(0);
+        }
+
+        nav a:hover::before {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a:nth-child(1) {
+            background-color: #ff4081;
+        }
+
+        nav a:nth-child(2) {
+            background-color: #ffeb3b;
+        }
+
+        nav a:nth-child(3) {
+            background-color: #4caf50;
+        }
+
+        nav a:nth-child(4) {
+            background-color: #2196f3;
+        }
+
+        nav a:nth-child(5) {
+            background-color: #ff5722;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff5722, #ff9800);
+            transition: transform 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
         main {
             flex: 1;
@@ -36,6 +134,7 @@
             margin-bottom: 80px;
             box-sizing: border-box;
         }
+
 
         .section {
             padding: 20px;
@@ -150,6 +249,13 @@
     <header>
         Galería de Imágenes
     </header>
+        <nav>
+        <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
+        <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
+        <a href="ludoteca.html"><i class="fas fa-puzzle-piece"></i>Ludoteca</a>
+        <a href="materiales.html"><i class="fas fa-cubes"></i>Materiales</a>
+        <a href="galeria.html"><i class="fas fa-images"></i>Galería</a>
+    </nav>
     <main>
         <div class="section">
             <h2>Galería de Imágenes</h2>
