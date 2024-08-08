@@ -208,43 +208,54 @@
             padding: 20px;
         }
 
-       /* Estilo para la sección de galería */
-/* Estilo de la galería */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 10px;
-    padding: 20px;
-}
-
-/* Estilo para cada elemento de la galería */
 .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    flex: 1 1 auto; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
+    max-width: 100%; /* Asegura que el contenedor no se haga más grande que la imagen */
+    box-sizing: border-box;
+    display: flex; /* Usa flexbox para centrar la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    position: relative; /* Permite el posicionamiento absoluto del overlay */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
 }
 
-/* Imágenes en la galería */
 .gallery-item img {
-    width: 100%;
+    max-width: 100%;
+    max-height: 300px; /* Limita la altura máxima para mantener el formato landscape */
+    width: auto;
     height: auto;
-    transition: transform 0.3s ease;
-    object-fit: cover;
-    border-radius: 10px;
+    object-fit: cover; /* Mantiene la proporción de la imagen y evita distorsión */
+    border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
+    transition: transform 0.3s ease; /* Transición para el efecto de hover */
 }
 
-/* Hover sobre el contenedor para ampliar la imagen */
 .gallery-item:hover img {
-    transform: scale(1.2); /* Ajusta el valor para más o menos zoom */
-    transition: transform 0.3s ease;
+    transform: scale(1.1); /* Escala la imagen al pasar el cursor */
+    filter: brightness(1.2); /* Aumenta el brillo al pasar el cursor */
 }
 
-/* Efecto de sombra en el hover */
-.gallery-item:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semi-transparente */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transición para el overlay */
 }
+
+.gallery-item:hover::after {
+    opacity: 1; /* Muestra el overlay oscuro al pasar el cursor */
+}
+
+.gallery-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el cursor */
+    transform: scale(1.05); /* Escala el contenedor ligeramente al pasar el cursor */
+}
+
     </style>
 </head>
 <body>
