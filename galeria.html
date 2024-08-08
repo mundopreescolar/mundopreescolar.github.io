@@ -81,7 +81,7 @@
         }
 
         body {
-            font-family: 'Comic Sans MS', sans-serif;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
             padding: 0;
             background: url('background.jpg') no-repeat center center fixed;
@@ -207,33 +207,12 @@
         main {
             flex: 1;
             padding: 20px;
-            margin-bottom: 80px;
-            box-sizing: border-box;
-        }
-
-        .section {
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 100%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            box-sizing: border-box;
-        }
-
-        .section h2 {
-            color: #00796b;
-            font-size: 2em;
-            margin-bottom: 20px;
         }
 
         .gallery-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px; /* Espacio entre las imágenes */
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
         }
 
         .gallery-item {
@@ -243,6 +222,9 @@
             display: flex; /* Usa flexbox para centrar la imagen */
             justify-content: center; /* Centra la imagen horizontalmente */
             align-items: center; /* Centra la imagen verticalmente */
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            position: relative; /* Permite el posicionamiento absoluto del overlay */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
         }
 
         .gallery-item img {
@@ -250,180 +232,115 @@
             max-height: 300px; /* Limita la altura máxima para mantener el formato landscape */
             width: auto;
             height: auto;
-            object-fit: contain; /* Mantiene la proporción de la imagen y evita distorsión */
+            object-fit: cover; /* Mantiene la proporción de la imagen y evita distorsión */
             border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para darle un efecto de profundidad */
+            transition: transform 0.3s ease; /* Transición para el efecto de hover */
         }
 
-        .book-box {
-            width: calc(33.333% - 20px);
-            box-sizing: border-box;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .gallery-item:hover img {
+            transform: scale(1.1); /* Escala la imagen al pasar el cursor */
+            filter: brightness(1.2); /* Aumenta el brillo al pasar el cursor */
         }
 
-        .book-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .book-box img {
-            width: auto;
-            height: 150px;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .book-title {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: #00796b;
-        }
-
-        .book-author {
-            color: #555;
-        }
-
-        .game-box {
-            width: calc(33.333% - 20px);
-            box-sizing: border-box;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .game-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .game-box img {
-            width: auto;
-            height: 100px;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .game-title {
-            font-size: 1.2em;
-            margin: 10px 0;
-            color: #00796b;
-        }
-
-        .game-description {
-            color: #555;
-            font-size: 0.9em;
-        }
-
-        .popup-content {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 600px;
-            background: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-
-        .popup-content img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .popup-content .close-btn {
+        .gallery-item::after {
+            content: '';
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff5722;
-            color: #fff;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .popup-content .close-btn:hover {
-            background: #e64a19;
-        }
-
-        .popup-overlay {
-            display: none;
-            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+            background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semi-transparente */
+            opacity: 0;
+            transition: opacity 0.3s ease; /* Transición para el overlay */
         }
+
+        .gallery-item:hover::after {
+            opacity: 1; /* Muestra el overlay oscuro al pasar el cursor */
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el cursor */
+            transform: scale(1.05); /* Escala el contenedor ligeramente al pasar el cursor */
+        }
+
     </style>
 </head>
 <body>
     <header>
-        <div class="banner">
-            <img src="banner.jpeg" alt="Banner">
-        </div>
-        <h1>Mi Sitio Web</h1>
+      <div class="banner">
+        <img src="banner.jpeg" alt="Banner">
+    </div>
     </header>
 
     <nav>
-        <a href="#inicio"><i class="fas fa-home"></i>Inicio</a>
-        <a href="#biblioteca"><i class="fas fa-book"></i>Biblioteca</a>
-        <a href="#ludoteca"><i class="fas fa-gamepad"></i>Ludoteca</a>
-        <a href="#materiales"><i class="fas fa-box"></i>Materiales</a>
-        <a href="#galeria"><i class="fas fa-images"></i>Galería</a>
+        <a href="#"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#"><i class="fas fa-book"></i> Biblioteca</a>
+        <a href="#"><i class="fas fa-gamepad"></i> Ludoteca</a>
+        <a href="#"><i class="fas fa-paint-brush"></i> Materiales</a>
+        <a href="#"><i class="fas fa-image"></i> Galería</a>
     </nav>
 
+    <div class="banner">
+        <img src="banner.jpg" alt="Banner">
+    </div>
+
     <main>
-        <div class="section gallery">
-            <h2>Galería</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="image1.jpg" alt="Imagen 1"></div>
-                <div class="gallery-item"><img src="image2.jpg" alt="Imagen 2"></div>
-                <div class="gallery-item"><img src="image3.jpg" alt="Imagen 3"></div>
-                <div class="gallery-item"><img src="image4.jpg" alt="Imagen 4"></div>
-                <div class="gallery-item"><img src="image5.jpg" alt="Imagen 5"></div>
-                <div class="gallery-item"><img src="image6.jpg" alt="Imagen 6"></div>
-                <div class="gallery-item"><img src="image7.jpg" alt="Imagen 7"></div>
-                <div class="gallery-item"><img src="image8.jpg" alt="Imagen 8"></div>
-                <div class="gallery-item"><img src="image9.jpg" alt="Imagen 9"></div>
-                <div class="gallery-item"><img src="image10.jpg" alt="Imagen 10"></div>
-                <div class="gallery-item"><img src="image11.jpg" alt="Imagen 11"></div>
-                <div class="gallery-item"><img src="image12.jpg" alt="Imagen 12"></div>
-                <div class="gallery-item"><img src="image13.jpg" alt="Imagen 13"></div>
-                <div class="gallery-item"><img src="image14.jpg" alt="Imagen 14"></div>
-                <div class="gallery-item"><img src="image15.jpg" alt="Imagen 15"></div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="image1.jpg" alt="Imagen 1">
+            </div>
+            <div class="gallery-item">
+                <img src="image2.jpg" alt="Imagen 2">
+            </div>
+            <div class="gallery-item">
+                <img src="image3.jpg" alt="Imagen 3">
+            </div>
+            <div class="gallery-item">
+                <img src="image4.jpg" alt="Imagen 4">
+            </div>
+            <div class="gallery-item">
+                <img src="image5.jpg" alt="Imagen 5">
+            </div>
+            <div class="gallery-item">
+                <img src="image6.jpg" alt="Imagen 6">
+            </div>
+            <div class="gallery-item">
+                <img src="image7.jpg" alt="Imagen 7">
+            </div>
+            <div class="gallery-item">
+                <img src="image8.jpg" alt="Imagen 8">
+            </div>
+            <div class="gallery-item">
+                <img src="image9.jpg" alt="Imagen 9">
+            </div>
+            <div class="gallery-item">
+                <img src="image10.jpg" alt="Imagen 10">
+            </div>
+            <div class="gallery-item">
+                <img src="image11.jpg" alt="Imagen 11">
+            </div>
+            <div class="gallery-item">
+                <img src="image12.jpg" alt="Imagen 12">
+            </div>
+            <div class="gallery-item">
+                <img src="image13.jpg" alt="Imagen 13">
+            </div>
+            <div class="gallery-item">
+                <img src="image14.jpg" alt="Imagen 14">
+            </div>
+            <div class="gallery-item">
+                <img src="image15.jpg" alt="Imagen 15">
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Mi Sitio Web</p>
+            <p>&copy; 2024 Mi Proyecto de Galería</p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
