@@ -6,81 +6,6 @@
     <title>Galería</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .banner {
-            width: 100%;
-            height: auto; /* Mantiene la proporción de la imagen */
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner img {
-            width: 100%;
-            height: auto; /* Mantiene la proporción de la imagen */
-            display: block;
-        }
-        
-        footer {
-            background-color: #ffeb3b;
-            padding: 20px;
-            text-align: center;
-            border-top: 5px solid #00796b;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        footer p {
-            margin: 0;
-            color: #00796b;
-            font-size: 1em;
-        }
-
-        footer .social-icons {
-            margin: 10px 0;
-        }
-
-        footer .social-icons a {
-            color: #00796b;
-            margin: 0 10px;
-            font-size: 1.5em;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        footer .social-icons a:hover {
-            color: #004d40;
-            transform: scale(1.1);
-        }
-
-        /* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
-        @media (max-width: 768px) {
-            footer p {
-                font-size: 0.9em;
-            }
-
-            footer .social-icons a {
-                font-size: 1.3em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            footer p {
-                font-size: 0.8em;
-            }
-
-            footer .social-icons a {
-                font-size: 1.1em;
-                margin: 0 5px;
-            }
-        }
-
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
@@ -104,6 +29,19 @@
             border-bottom: 5px solid #00796b;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 1s ease;
+        }
+
+        .banner {
+            width: 100%;
+            height: auto; /* Mantiene la proporción de la imagen */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: auto; /* Mantiene la proporción de la imagen */
+            display: block;
         }
 
         nav {
@@ -238,91 +176,113 @@
         }
 
         .gallery-item {
-            flex: 1 1 200px; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
-            max-width: 200px; /* Tamaño máximo del contenedor para las imágenes */
+            display: inline-block;
             box-sizing: border-box;
-            overflow: hidden; /* Oculta el desbordamiento de la imagen */
-        }
-
-        .gallery-item img {
-            width: 100%; /* Ajusta el ancho de la imagen al ancho del contenedor */
-            height: auto; /* Mantiene la proporción de la imagen */
-            object-fit: cover; /* Cubre el contenedor mientras mantiene la proporción */
-            border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para darle un efecto de profundidad */
-        }
-
-        .book-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .book-box {
-            width: calc(33.333% - 20px);
-            box-sizing: border-box;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 20px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.8);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .book-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .book-box img {
+        .gallery-item img {
             width: 100%;
             height: auto;
             border-radius: 10px;
+            display: block;
         }
 
-        .book-box h3 {
-            margin: 10px 0;
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            background-color: #ffeb3b;
+            padding: 20px;
+            text-align: center;
+            border-top: 5px solid #00796b;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer p {
+            margin: 0;
             color: #00796b;
+            font-size: 1em;
         }
 
-        .book-box p {
-            color: #333;
+        footer .social-icons {
+            margin: 10px 0;
         }
 
-        .book-box a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #00796b;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        footer .social-icons a {
+            color: #00796b;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s, transform 0.3s;
         }
 
-        .book-box a:hover {
-            background-color: #004d40;
+        footer .social-icons a:hover {
+            color: #004d40;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+
+            footer p {
+                font-size: 0.9em;
+            }
+
+            footer .social-icons a {
+                font-size: 1.3em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            footer p {
+                font-size: 0.8em;
+            }
+
+            footer .social-icons a {
+                font-size: 1.1em;
+                margin: 0 5px;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Mi Biblioteca</h1>
+        <div class="banner">
+            <img src="banner.jpeg" alt="Banner">
+        </div>
     </header>
+
     <nav>
-        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
-        <a href="biblioteca.html"><i class="fas fa-book"></i> Biblioteca</a>
-        <a href="ludoteca.html"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="materiales.html"><i class="fas fa-cogs"></i> Materiales</a>
-        <a href="galeria.html"><i class="fas fa-images"></i> Galería</a>
+        <a href="inicio.html"><i class="fas fa-home"></i>Inicio</a>
+        <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
+        <a href="ludoteca.html"><i class="fas fa-gamepad"></i>Ludoteca</a>
+        <a href="materiales.html"><i class="fas fa-box"></i>Materiales</a>
+        <a href="galeria.html"><i class="fas fa-images"></i>Galería</a>
     </nav>
+
     <main>
-        <section class="section">
+        <div class="section gallery">
             <h2>Galería</h2>
             <div class="gallery-grid">
-                <!-- Aquí van las imágenes de la galería -->
                 <div class="gallery-item"><img src="image1.jpg" alt="Imagen 1"></div>
                 <div class="gallery-item"><img src="image2.jpg" alt="Imagen 2"></div>
                 <div class="gallery-item"><img src="image3.jpg" alt="Imagen 3"></div>
@@ -339,16 +299,17 @@
                 <div class="gallery-item"><img src="image14.jpg" alt="Imagen 14"></div>
                 <div class="gallery-item"><img src="image15.jpg" alt="Imagen 15"></div>
             </div>
-        </section>
+        </div>
     </main>
+
     <footer>
         <div class="container">
-            <p>© 2024 Mi Biblioteca. Todos los derechos reservados.</p>
+            <p>&copy; 2024 Tu Sitio Web</p>
             <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </footer>
