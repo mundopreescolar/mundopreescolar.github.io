@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria</title>
+    <title>Galería</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
     <style>
-
-
-
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
             margin: 0;
@@ -227,7 +223,7 @@
         }
 
         /* Popup Styles */
-        .popup {
+        .popup-overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -247,21 +243,17 @@
             width: 80%;
             max-width: 600px;
             text-align: center;
+            position: relative;
         }
 
-        .popup img {
+        .popup-content img {
             width: 100%;
             height: auto;
             max-height: 300px;
             object-fit: contain;
         }
 
-        .popup audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .popup button {
+        .popup-content button {
             background: #ff4081;
             color: #fff;
             border: none;
@@ -273,8 +265,62 @@
             transition: background 0.3s;
         }
 
-        .popup button:hover {
+        .popup-content button:hover {
             background: #e91e63;
+        }
+
+        footer {
+            background-color: #ffeb3b;
+            padding: 20px;
+            text-align: center;
+            border-top: 5px solid #00796b;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #00796b;
+        }
+
+        .social-icons a {
+            color: #00796b;
+            font-size: 1.5em;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            color: #004d40;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 auto;
+            max-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-item img {
+            max-width: 100%;
+            max-height: 300px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Media Queries */
@@ -303,24 +349,6 @@
                 font-size: 1.8em;
             }
 
-            .contact-form {
-                padding: 15px;
-                margin: 15px auto;
-            }
-
-            .contact-form h2 {
-                font-size: 1.8em;
-            }
-
-            .contact-form label, .contact-form input, .contact-form textarea {
-                font-size: 1em;
-            }
-
-            .contact-form button {
-                font-size: 1em;
-                padding: 8px 15px;
-            }
-
             .book-box {
                 width: calc(50% - 20px);
             }
@@ -345,7 +373,7 @@
                 height: 120px;
             }
 
-            .section h2, .contact-form h2 {
+            .section h2 {
                 font-size: 1.6em;
             }
 
@@ -360,68 +388,14 @@
                 font-size: 1em;
             }
         }
-                .banner {
-            width: 100%;
-            height: auto; /* Mantiene la proporción de la imagen */
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner img {
-            width: 100%;
-            height: auto; /* Mantiene la proporción de la imagen */
-            display: block;
-        }
-                footer {
-            background-color: #ffeb3b;
-            padding: 20px;
-            text-align: center;
-            border-top: 5px solid #00796b;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1.2em;
-            color: #00796b;
-        }
-        .gallery-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px; /* Espacio entre las imágenes */
-    justify-content: center;
-}
-
-.gallery-item {
-    flex: 1 1 auto; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
-    max-width: 100%; /* Asegura que el contenedor no se haga más grande que la imagen */
-    box-sizing: border-box;
-    display: flex; /* Usa flexbox para centrar la imagen */
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-}
-
-.gallery-item img {
-    max-width: 100%;
-    max-height: 300px; /* Limita la altura máxima para mantener el formato landscape */
-    width: auto;
-    height: auto;
-    object-fit: contain; /* Mantiene la proporción de la imagen y evita distorsión */
-    border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para darle un efecto de profundidad */
-}
-
     </style>
 </head>
 <body>
-       <header>
-           <div class="banner">
-        <img src="banner.jpeg" alt="Banner">
-    </div>
-       </header>
+    <header>
+        <div class="banner">
+            <img src="banner.jpeg" alt="Banner">
+        </div>
+    </header>
     <nav>
         <a href="index.html"><i class="fas fa-home"></i>Inicio</a>
         <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
@@ -430,65 +404,65 @@
         <a href="galeria.html"><i class="fas fa-images"></i>Galería</a>
     </nav>
     <main>
-       <div class="section gallery">
-    <h2>Galería</h2>
-    <div class="gallery-grid">
-        <div class="gallery-item"><img src="image1.jpg" alt="Imagen 1"></div>
-        <div class="gallery-item"><img src="image2.jpg" alt="Imagen 2"></div>
-        <div class="gallery-item"><img src="image3.jpg" alt="Imagen 3"></div>
-        <div class="gallery-item"><img src="image4.jpg" alt="Imagen 4"></div>
-        <div class="gallery-item"><img src="image5.jpg" alt="Imagen 5"></div>
-        <div class="gallery-item"><img src="image6.jpg" alt="Imagen 6"></div>
-        <div class="gallery-item"><img src="image7.jpg" alt="Imagen 7"></div>
-        <div class="gallery-item"><img src="image8.jpg" alt="Imagen 8"></div>
-        <div class="gallery-item"><img src="image9.jpg" alt="Imagen 9"></div>
-        <div class="gallery-item"><img src="image10.jpg" alt="Imagen 10"></div>
-        <div class="gallery-item"><img src="image11.jpg" alt="Imagen 11"></div>
-        <div class="gallery-item"><img src="image12.jpg" alt="Imagen 12"></div>
-        <div class="gallery-item"><img src="image13.jpg" alt="Imagen 13"></div>
-        <div class="gallery-item"><img src="image14.jpg" alt="Imagen 14"></div>
-        <div class="gallery-item"><img src="image15.jpg" alt="Imagen 15"></div>
-    </div>
-</div>
+        <div class="section gallery">
+            <h2>Galería</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="image1.jpg" alt="Imagen 1"></div>
+                <div class="gallery-item"><img src="image2.jpg" alt="Imagen 2"></div>
+                <div class="gallery-item"><img src="image3.jpg" alt="Imagen 3"></div>
+                <div class="gallery-item"><img src="image4.jpg" alt="Imagen 4"></div>
+                <div class="gallery-item"><img src="image5.jpg" alt="Imagen 5"></div>
+                <div class="gallery-item"><img src="image6.jpg" alt="Imagen 6"></div>
+                <div class="gallery-item"><img src="image7.jpg" alt="Imagen 7"></div>
+                <div class="gallery-item"><img src="image8.jpg" alt="Imagen 8"></div>
+                <div class="gallery-item"><img src="image9.jpg" alt="Imagen 9"></div>
+                <div class="gallery-item"><img src="image10.jpg" alt="Imagen 10"></div>
+                <div class="gallery-item"><img src="image11.jpg" alt="Imagen 11"></div>
+                <div class="gallery-item"><img src="image12.jpg" alt="Imagen 12"></div>
+                <div class="gallery-item"><img src="image13.jpg" alt="Imagen 13"></div>
+                <div class="gallery-item"><img src="image14.jpg" alt="Imagen 14"></div>
+                <div class="gallery-item"><img src="image15.jpg" alt="Imagen 15"></div>
+            </div>
+        </div>
     </main>
     <script>
-     document.addEventListener('DOMContentLoaded', function() {
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    const popupOverlay = document.createElement('div');
-    const popupContent = document.createElement('div');
-    const closeButton = document.createElement('button');
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const popupOverlay = document.createElement('div');
+            const popupContent = document.createElement('div');
+            const closeButton = document.createElement('button');
 
-    popupOverlay.className = 'popup-overlay';
-    popupContent.className = 'popup-content';
-    closeButton.className = 'close-btn';
-    closeButton.textContent = 'X';
+            popupOverlay.className = 'popup-overlay';
+            popupContent.className = 'popup-content';
+            closeButton.className = 'close-btn';
+            closeButton.textContent = 'X';
 
-    popupContent.appendChild(closeButton);
-    popupOverlay.appendChild(popupContent);
-    document.body.appendChild(popupOverlay);
+            popupContent.appendChild(closeButton);
+            popupOverlay.appendChild(popupContent);
+            document.body.appendChild(popupOverlay);
 
-    galleryItems.forEach(item => {
-        item.addEventListener('click', function() {
-            const img = document.createElement('img');
-            img.src = this.src;
-            popupContent.appendChild(img);
-            popupOverlay.style.display = 'block';
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = document.createElement('img');
+                    img.src = this.src;
+                    popupContent.appendChild(img);
+                    popupOverlay.style.display = 'flex';
+                });
+            });
+
+            closeButton.addEventListener('click', function() {
+                popupOverlay.style.display = 'none';
+                popupContent.querySelector('img').remove();
+            });
+
+            popupOverlay.addEventListener('click', function(event) {
+                if (event.target === popupOverlay) {
+                    popupOverlay.style.display = 'none';
+                    popupContent.querySelector('img').remove();
+                }
+            });
         });
-    });
-
-    closeButton.addEventListener('click', function() {
-        popupOverlay.style.display = 'none';
-        popupContent.querySelector('img').remove();
-    });
-
-    popupOverlay.addEventListener('click', function(event) {
-        if (event.target === popupOverlay) {
-            popupOverlay.style.display = 'none';
-            popupContent.querySelector('img').remove();
-        }
-    });
-});
- </script>
+    </script>
     <footer>
         <p>&copy; 2024 Biblioteca y Ludoteca</p>
         <div class="social-icons">
@@ -497,7 +471,5 @@
             <a href="#" class="fa fa-instagram"></a>
         </div>
     </footer>
-
- 
 </body>
 </html>
