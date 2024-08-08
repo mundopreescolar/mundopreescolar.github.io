@@ -59,6 +59,7 @@
             transform: scale(1.1);
         }
 
+        /* Media Queries para ajustar el tamaño del footer en pantallas más pequeñas */
         @media (max-width: 768px) {
             footer p {
                 font-size: 0.9em;
@@ -105,232 +106,326 @@
             transition: transform 1s ease;
         }
 
-/* Estilos base para la Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: linear-gradient(45deg, #ff6f61, #ffde59, #6bf178, #3bafda);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: linear-gradient(45deg, #ff4081, #ffeb3b, #4caf50, #2196f3, #ff5722);
+            background-size: 500% 500%;
+            animation: gradientAnimation 15s ease infinite;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 1s ease;
+        }
 
-/* Efecto de gradiente animado */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
 
-/* Navbar base */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: linear-gradient(45deg, #ff6f61, #ffde59, #6bf178, #3bafda);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
+        nav a {
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+            border-radius: 10px;
+            margin: 5px;
+            transition: color 0.3s, transform 0.3s, background-color 0.3s;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
 
-/* Efecto gradiente en la navbar */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+        nav a i {
+            margin-right: 8px;
+        }
 
-/* Estilo de los enlaces en la navbar */
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background 0.3s ease;
-    border-radius: 5px;
-}
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200%;
+            height: 2px;
+            background: #ffeb3b;
+            transition: transform 0.3s ease;
+            transform: translateX(-50%) scaleX(0);
+        }
 
-/* Hover en los enlaces */
-.navbar a:hover {
-    background: rgba(255, 255, 255, 0.2);
-}
+        nav a:hover::before {
+            transform: translateX(-50%) scaleX(1);
+        }
 
-/* Navbar responsiva para pantallas más pequeñas */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-    
-    .navbar a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 5px 0;
-    }
-}
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+            color: #333;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
 
-/* Navbar responsiva para pantallas muy pequeñas */
-@media (max-width: 480px) {
-    .navbar {
-        padding: 10px 5px;
-    }
-    
-    .navbar a {
-        padding: 10px 10px;
-    }
-}
+        nav a:nth-child(1) {
+            background-color: #ff4081;
+        }
 
+        nav a:nth-child(2) {
+            background-color: #ffeb3b;
+        }
+
+        nav a:nth-child(3) {
+            background-color: #4caf50;
+        }
+
+        nav a:nth-child(4) {
+            background-color: #2196f3;
+        }
+
+        nav a:nth-child(5) {
+            background-color: #ff5722;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff5722, #ff9800);
+            transition: transform 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
 
         main {
             flex: 1;
             padding: 20px;
+            margin-bottom: 80px;
+            box-sizing: border-box;
         }
 
-.gallery-item {
-    flex: 1 1 auto; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
-    max-width: 100%; /* Asegura que el contenedor no se haga más grande que la imagen */
-    box-sizing: border-box;
-    display: flex; /* Usa flexbox para centrar la imagen */
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    overflow: hidden; /* Oculta el contenido que se desborda */
-    position: relative; /* Permite el posicionamiento absoluto del overlay */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para el efecto de hover */
-}
+        .section {
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
 
-.gallery-item img {
-    max-width: 100%;
-    max-height: 300px; /* Limita la altura máxima para mantener el formato landscape */
-    width: auto;
-    height: auto;
-    object-fit: cover; /* Mantiene la proporción de la imagen y evita distorsión */
-    border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
-    transition: transform 0.3s ease; /* Transición para el efecto de hover */
-}
+        .section h2 {
+            color: #00796b;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-.gallery-item:hover img {
-    transform: scale(1.1); /* Escala la imagen al pasar el cursor */
-    filter: brightness(1.2); /* Aumenta el brillo al pasar el cursor */
-}
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Espacio entre las imágenes */
+            justify-content: center;
+        }
 
-.gallery-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Fondo oscuro semi-transparente */
-    opacity: 0;
-    transition: opacity 0.3s ease; /* Transición para el overlay */
-}
+        .gallery-item {
+            flex: 1 0 auto; /* Permite que el tamaño del contenedor se ajuste al tamaño de la imagen */
+            max-width: 100%; /* Asegura que el contenedor no se haga más grande que la imagen */
+            box-sizing: border-box;
+        }
 
-.gallery-item:hover::after {
-    opacity: 1; /* Muestra el overlay oscuro al pasar el cursor */
-}
+        .gallery-item img {
+            width: auto; /* Mantiene el tamaño original de la imagen */
+            height: auto; /* Mantiene el tamaño original de la imagen */
+            max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+            border-radius: 10px; /* Opcional: redondea las esquinas de las imágenes */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Opcional: sombra para darle un efecto de profundidad */
+        }
 
-.gallery-item:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Agrega una sombra al pasar el cursor */
-    transform: scale(1.05); /* Escala el contenedor ligeramente al pasar el cursor */
-}
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
+        .book-box {
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .book-box img {
+            width: auto;
+            height: 150px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .book-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #00796b;
+        }
+
+        .book-author {
+            color: #555;
+        }
+
+        .game-box {
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-box img {
+            width: auto;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .game-title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #00796b;
+        }
+
+        .game-description {
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        .popup-content {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .popup-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .popup-content .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .popup-content .close-btn:hover {
+            background: #e64a19;
+        }
+
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
     <header>
-      <div class="banner">
-        <img src="banner.jpeg" alt="Banner">
-    </div>
+        <div class="banner">
+            <img src="banner.jpeg" alt="Banner">
+        </div>
     </header>
 
     <nav>
-        <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-book"></i> Biblioteca</a>
-        <a href="#"><i class="fas fa-gamepad"></i> Ludoteca</a>
-        <a href="#"><i class="fas fa-paint-brush"></i> Materiales</a>
-        <a href="#"><i class="fas fa-image"></i> Galería</a>
+        <a href="inicio.html"><i class="fas fa-home"></i>Inicio</a>
+        <a href="biblioteca.html"><i class="fas fa-book"></i>Biblioteca</a>
+        <a href="ludoteca.html"><i class="fas fa-gamepad"></i>Ludoteca</a>
+        <a href="materiales.html"><i class="fas fa-box"></i>Materiales</a>
+        <a href="galeria.html"><i class="fas fa-images"></i>Galería</a>
     </nav>
 
-
     <main>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="image1.jpg" alt="Imagen 1">
-            </div>
-            <div class="gallery-item">
-                <img src="image2.jpg" alt="Imagen 2">
-            </div>
-            <div class="gallery-item">
-                <img src="image3.jpg" alt="Imagen 3">
-            </div>
-            <div class="gallery-item">
-                <img src="image4.jpg" alt="Imagen 4">
-            </div>
-            <div class="gallery-item">
-                <img src="image5.jpg" alt="Imagen 5">
-            </div>
-            <div class="gallery-item">
-                <img src="image6.jpg" alt="Imagen 6">
-            </div>
-            <div class="gallery-item">
-                <img src="image7.jpg" alt="Imagen 7">
-            </div>
-            <div class="gallery-item">
-                <img src="image8.jpg" alt="Imagen 8">
-            </div>
-            <div class="gallery-item">
-                <img src="image9.jpg" alt="Imagen 9">
-            </div>
-            <div class="gallery-item">
-                <img src="image10.jpg" alt="Imagen 10">
-            </div>
-            <div class="gallery-item">
-                <img src="image11.jpg" alt="Imagen 11">
-            </div>
-            <div class="gallery-item">
-                <img src="image12.jpg" alt="Imagen 12">
-            </div>
-            <div class="gallery-item">
-                <img src="image13.jpg" alt="Imagen 13">
-            </div>
-            <div class="gallery-item">
-                <img src="image14.jpg" alt="Imagen 14">
-            </div>
-            <div class="gallery-item">
-                <img src="image15.jpg" alt="Imagen 15">
+        <div class="section gallery">
+            <h2>Galería</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="image1.jpg" alt="Imagen 1"></div>
+                <div class="gallery-item"><img src="image2.jpg" alt="Imagen 2"></div>
+                <div class="gallery-item"><img src="image3.jpg" alt="Imagen 3"></div>
+                <div class="gallery-item"><img src="image4.jpg" alt="Imagen 4"></div>
+                <div class="gallery-item"><img src="image5.jpg" alt="Imagen 5"></div>
+                <div class="gallery-item"><img src="image6.jpg" alt="Imagen 6"></div>
+                <div class="gallery-item"><img src="image7.jpg" alt="Imagen 7"></div>
+                <div class="gallery-item"><img src="image8.jpg" alt="Imagen 8"></div>
+                <div class="gallery-item"><img src="image9.jpg" alt="Imagen 9"></div>
+                <div class="gallery-item"><img src="image10.jpg" alt="Imagen 10"></div>
+                <div class="gallery-item"><img src="image11.jpg" alt="Imagen 11"></div>
+                <div class="gallery-item"><img src="image12.jpg" alt="Imagen 12"></div>
+                <div class="gallery-item"><img src="image13.jpg" alt="Imagen 13"></div>
+                <div class="gallery-item"><img src="image14.jpg" alt="Imagen 14"></div>
+                <div class="gallery-item"><img src="image15.jpg" alt="Imagen 15"></div>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Mi Proyecto de Galería</p>
+            <p>&copy; 2024 Mi Sitio Web</p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
