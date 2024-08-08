@@ -440,23 +440,15 @@ body, html {
     height: 100%;
 }
 
-        /* Estilo del Header */
+       /* Estilo del Header */
         header {
             width: 100%;
             height: 60vh; /* Ajusta la altura del header según tus necesidades */
+            background-image: url('banner.jpeg');
+            background-size: cover; /* Escala la imagen para cubrir todo el header */
+            background-position: center; /* Centra la imagen en el header */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
             position: relative;
-            overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
-        }
-
-        /* Estilo de la Imagen en el Header */
-        header img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ajusta la imagen para cubrir completamente el contenedor */
-            transform: translate(-50%, -50%); /* Centra la imagen en el contenedor */
         }
 
 /* Opcional: Media Queries para pantallas más pequeñas */
