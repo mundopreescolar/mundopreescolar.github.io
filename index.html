@@ -432,16 +432,20 @@ footer .social-icons a:hover {
     }
 }
         .banner {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: auto; /* Mantiene la proporción de la imagen */
-            position: relative;
-            overflow: hidden;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .banner img {
             width: 100%;
-            height: auto; /* Mantiene la proporción de la imagen */
-            display: block;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen para cubrir el área del contenedor */
         }
    </style>
 </head>
