@@ -22,7 +22,12 @@
             overflow: auto;
             transition: transform 1s ease;
         }
-
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Ajusta la imagen para que se vea completa en pantallas pequeñas */
+        background-position: top; /* Opcional: mueve la imagen hacia arriba si es necesario */
+    }
+}
         header {
             background-color: #ffeb3b;
             color: #00796b;
